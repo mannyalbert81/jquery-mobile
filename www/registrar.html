@@ -15,7 +15,7 @@
 </head>
 <body>
 <div data-role="page" id="pagRegPrin">
-	<div data-role="header" data-position="fixed">
+	<div data-role="header" data-position="fixed" style="background-color: #28b463 ;">
 	 <a href="index.html" data-rel="back" class="ui-btn-left ui-btn  ui-btn-icon-notext ui-corner-all ui-icon-back">Regresar</a>
     <h1>Afiliacion</h1>
     </div>
@@ -23,76 +23,103 @@
 
 		<br>
 		<br>
+		
+		<center><p><b>¿Como te llamas? </b></p>
 		<br>
 		<br>
 		<br>
-			<center><input type="" id="txtNombres" name="txtNombres" value="" placeholder="" data-clear-btn="true">
+			<center><input type="text" id="txtNombres" name="txtNombres" value="" data-clear-btn="true">
 			<hr color="blue" size=3>
 			<p>Nombres </p>
-		
-			</select>
-			<button data-icon="check" data-theme="a" id="btnRegistrar" name="btnRegistrar" >Registrar</button>
-		
-
+		<br>
+		<center><input type="text" id="txtApellidos" name="txtApellidos" value=""  data-clear-btn="true">
+			<hr color="blue" size=3>
+			<p>Apellidos </p>
+		<br>
+			<a  data-role="button" href="#pag1">Siguiente</a>
 	</div>
 	<div data-role="footer" data-position="fixed">
 	</div>
 </div>
 <div data-role="page" id="pag1">
-	<div data-role="header" data-position="fixed">
+	<div data-role="header" data-position="fixed" style="background-color: #28b463 ;">
 	 <a href="index.html" data-rel="back" class="ui-btn-left ui-btn  ui-btn-icon-notext ui-corner-all ui-icon-back">Regresar</a>
     <h1>Afiliacion</h1>
     </div>
 	<div data-role="content">
-		
-			<input type="text" id="txtEmail" name="txtEmail" value="" placeholder="Ingrese email" data-clear-btn="true">
 
-			<input type="text" id="txtNombres" name="txtNombres" value="" placeholder="Ingrese nombres" data-clear-btn="true">
-			
-			<input type="text" id="txtApellidos" name="txtApellidos" value="" placeholder="Ingrese apellidos" data-clear-btn="true">
-			<input type="password" id="txtPwd" name="txtPwd" value="" autocomplete="off" placeholder="Ingrese clave" data-clear-btn="true">
-			<input type="tel" id="txtTelefono" name="txtTelefono" value="" placeholder="Ingrese Telefono" data-clear-btn="true">
-			<input type="tel" id="txtCelular" name="txtCelular"  value="" placeholder="Ingrese Celular" data-clear-btn="true">
-			<select>
-			<option>Docente</option>
-			<option>Estudiante</option>
-			</select>
-			<a href="#pag2">Siguiente</a>
-			<button data-icon="check" data-theme="a" id="btnRegistrar" name="btnRegistrar" >Siguiente</button>
-		
-
-			<a  data-role="button" href="#pag2">Siguiente</a>
-
-	</div>
-	<div data-role="footer" data-position="fixed">
-	</div>
-</div>
-<div data-role="page" id="pag2">
-	<div data-role="header" data-position="fixed">
-	 <a href="index.html" data-rel="back" class="ui-btn-left ui-btn  ui-btn-icon-notext ui-corner-all ui-icon-back">Regresar</a>
-    <h1>Afiliacion</h1>
-    </div>
-	<div data-role="content">
-		
-
-			<input type="" id="txtEmail" name="txtEmail" value="" placeholder="Ingrese email" data-clear-btn="true">
-			<input type="text" id="txtNombres" name="txtNombres" value="" placeholder="Ingrese nombres" data-clear-btn="true">
-			<input type="text" id="txtApellidos" name="txtApellidos" value="" placeholder="Ingrese apellidos" data-clear-btn="true">
+		<br>
+		<br>
+		<center><p><b>¿Tu Correo?</b></p>
+		<br>
+		<br>
+		<br>
+			<center><input type="text" id="txtEmail" name="txtEmail" value="" placeholder="" data-clear-btn="true">
 			<hr color="blue" size=3>
+			<p>Correo </p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+			<a  data-role="button" href="#pag2">Siguiente</a>
+	</div>
+	</div>
+	<div data-role="page" id="pag2">
+	<div data-role="header" data-position="fixed" style="background-color: #28b463 ;">
+	 <a href="index.html" data-rel="back" class="ui-btn-left ui-btn  ui-btn-icon-notext ui-corner-all ui-icon-back">Regresar</a>
+    <h1>Afiliacion</h1>
+    </div>
+	<div data-role="content">
 
-			<input type="password" id="txtPwd" name="txtPwd" value="" autocomplete="off" placeholder="Ingrese clave" data-clear-btn="true">
-			<input type="tel" id="txtTelefono" name="txtTelefono" value="" placeholder="Ingrese Telefono" data-clear-btn="true">
-			<input type="tel" id="txtCelular" name="txtCelular"  value="" placeholder="Ingrese Celular" data-clear-btn="true">
-			<select>
-			<option>Docente</option>
-			<option>Estudiante</option>
-			</select>
-			<button data-icon="check" data-theme="a" id="btnRegistrar" name="btnRegistrar" >Registrar</button>
-		
+		<br>
+		<br>
+		<center><p><b>¿Tu Número? </b></p>
+		<br>
+		<br>
+		<br>
+			<center><input type="tel" id="txtTelefono" name="txtTelefono" value="" data-clear-btn="true">
+			<hr color="blue" size=3>
+			<p>Teléfono </p>
+			
+			<center><input type="tel" id="txtCelular" name="txtCelular"  value="" data-clear-btn="true">
+			<hr color="blue" size=3>
+			<p>Celular </p>
+		<br>
+		<br>
+		<br>
+			<a  data-role="button" href="#pag3">Siguiente</a>
 	</div>
-	<div data-role="footer" data-position="fixed">
 	</div>
-</div>
+		<div data-role="page" id="pag3">
+	<div data-role="header" data-position="fixed" style="background-color: #28b463 ;">
+	 <a href="index.html" data-rel="back" class="ui-btn-left ui-btn  ui-btn-icon-notext ui-corner-all ui-icon-back">Regresar</a>
+    <h1>Afiliacion</h1>
+    </div>
+	<div data-role="content">
+
+		<br>
+		<br>
+		<center><p><b>¿Tu Clave?</b> </p>
+		<br>
+		<br>
+		<br>
+			<center><input type="password" id="txtPwd" name="txtPwd" value="" autocomplete="off" data-clear-btn="true">
+			<hr color="blue" size=3>
+			<p>Contraseña </p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+			<a  data-role="button" href="#pag3">Registrar</a>
+	</div>
+	</div>
+	
 
 </body>
 </html>
