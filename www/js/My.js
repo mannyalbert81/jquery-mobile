@@ -11,23 +11,42 @@ function ini()
 
 //<!--Calling onDeviceReady method-->
 document.addEventListener("deviceready", onDeviceReady, false);
-var db = window.openDatabase("my.db", "1.0", "MY DB", 200000); //will create database Dummy_DB or open it
+var db = window.openDatabase("vade.db", "1.0", "MY DB", 200000); //will create database Dummy_DB or open it
 
 
 function onDeviceReady() {
 
 	db.transaction(populateDB, errorCB, successCB);
-	//show();
-	
+
+
+
 	
 }
 
+
+
+
 //create table and insert some record
 function populateDB(tx) {
+	
+	var _name="Leonel Mesi";
+	var _club="Real Madrid";
+	
+	
     tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, club TEXT NOT NULL)');
-    tx.executeSql('INSERT INTO SoccerPlayer(name,club) VALUES ("Alexandre Pato", "AC Milan")');
     
-    tx.executeSql('INSERT INTO SoccerPlayer(name,club) VALUES ("Van Persie", "Arsenal")');
+    var executeQuery = "INSERT INTO SoccerPlayer(name,club) VALUES (?,?)";
+    
+    tx.executeSql(executeQuery, [_name,_club],
+    	function(tx, result) {
+    		alert('Inserted');
+    	},
+    	function(error){
+    		alert('Error occurred');
+    });
+    
+    
+    
     
 }
 
@@ -39,7 +58,8 @@ function errorCB(err) {
 //function will be called when process succeed
 function successCB() {
     alert("success!");
-    db.transaction(queryDB,errorCB);
+    show();
+    //db.transaction(queryDB,errorCB);
 }
 
 //select all from SoccerPlayer
@@ -61,10 +81,11 @@ function querySuccess(tx,result){
 function show(){
 	db.transaction(function(transaction) {
 	transaction.executeSql('SELECT * FROM SoccerPlayer', [], function (tx, results) {
-	var key = "";
+	var name = "";
+	var club = "";
 
 	//<!--Display the table head-->
-	var pair="<tr><th data-priority=\"1\"><center>Id</center></th><th data-priority=\"1\"><center>Name</center></th><th data-priority=\"2\"><center>Club</center></th><th><center>Update</center></th><th><center>Delete</center></th></tr>";
+	var pair="<tr><th data-priority=\"1\"><center>Name</center></th><th data-priority=\"2\"><center>Club</center></th><</tr>";
 	var i=0;
 
 	//<!--results.rows.length to get the total number of rows stored in the database-->
@@ -72,13 +93,13 @@ function show(){
 	for (i=0; i<=len-1; i++) {
 
 		//<!--Fetching the 'name' from the database-->
-	key = results.rows.item(i).name;
-
+	name = results.rows.item(i).name;
+	club = results.rows.item(i).club;
 	//<!--Fetching the 'id' from the database-->
 	id = results.rows.item(i).id;
 
 	//<!--Displaying all rows of the database in the table-->
-	pair += "<tr><td><center>"+id+"</center></td><td><center>"+key+"</center></td><td><center>"+results.rows.item(i).email+"</center></td><td><a class=\"update\" href=\"#myPopupDialog\" data-custom="+"'"+ id+ "'" +"data-rel=\"popup\" data-position-to=\"window\" data-transition=\"pop\"><center><i class='fa fa-pencil-square-o'></i></center></a></td><td><a id=\"delete\" data=\""+id+"\"><center><i class='fa fa-trash'></i></center></a></td></tr>";
+	pair += "<tr><td><center>"+name+"</center></td><td><center>"+club+"</center></td></tr>";
 	}
 	if (pair == "<tr><th>Name</th><th>Club</th></tr>") {
 	pair += "<tr><td><i>empty</i></td><td><i>empty</i></td></tr>";
@@ -86,7 +107,7 @@ function show(){
 	$("#myTable").html(pair);
 	}, null);
 	});
-	}
+}
 
 
 
