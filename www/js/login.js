@@ -10,9 +10,6 @@ function ini()
 	alert('Logueando');
 }
 
-
-
-
 //<!--Calling onDeviceReady method-->
 document.addEventListener("deviceready", onDeviceReady, false);
 var db = window.openDatabase("vade.db", "1.0", "MY DB", 200000); //will create database Dummy_DB or open it
@@ -23,8 +20,7 @@ function onDeviceReady() {
 	//db.transaction(populateDB, errorCB, successCB);
 
 
-	
-	$(document).on('click', '#btn-ingresar', function(){
+	$(document).on('click', '#ingresar', function(){
 		
 		alert('Login');
 		/*
@@ -201,28 +197,3 @@ function(error){alert('Something went Wrong');});
 
 
 
-
-
-$(document).ready(function(){  
-   
-	$('#ok').click(function(){  
-        var uname = document.getElementById("usuario").value;
-        var password = document.getElementById("clave").value;
-        var JSONObject= {
-             "uname":uname,
-             "password":password
-             };
-
-        $.ajax({  
-            url:'http://localhost:8090/LoginAuthRWS/rest/orders',  
-            type:'post',
-            data :  JSONObject,      
-            dataType: 'JSON',
-            success: function(data) { 
-                     var jsonData = $.parseJSON(data); //if data is not json
-                     $('#name').val(jsonData.name);  
-                     $('#email').val(jsonData.email);  
-                }  
-        });  
-    });  
-}); 

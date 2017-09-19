@@ -7,11 +7,8 @@ $(document).on("ready",ini);
 function ini()
 {
 	
-//	alert('MI error');
+	alert('Logueando');
 }
-
-
-
 
 //<!--Calling onDeviceReady method-->
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -22,9 +19,13 @@ function onDeviceReady() {
 
 	//db.transaction(populateDB, errorCB, successCB);
 
+<<<<<<< HEAD
 
 	
 	$(document).on('click', '#btn-ingresar', function(){
+=======
+	$(document).on('click', '#ingresar', function(){
+>>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
 		
 		alert('Login');
 		/*
