@@ -31,6 +31,10 @@ function populateDB(tx) {
 	//creamos  las tablas
 	tx.executeSql('CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT , nombres_usuarios TEXT NOT NULL, apellidos_usuarios TEXT NOT NULL, usuario_usuarios TEXT NOT NULL, clave_usuarios TEXT NOT NULL)');
 	
+	
+	
+	
+
 	var _id = 1;
 	
 	var _nombres_usuarios="Manuel Alberto";
