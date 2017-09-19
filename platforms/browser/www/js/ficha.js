@@ -20,21 +20,18 @@ function onDeviceReady() {
 }
 
 function errorCB(err) {
-    alert("Error maycol: "+err.code);
+    alert("Error processing SQL: "+err.code);
 }
 
 //function will be called when process succeed
 function successCB() {
     alert("!");
-    show_fichas();
+    show();
     //db.transaction(queryDB,errorCB);
 }
 
-function info(tx)
+function info()
 {
-	tx.executeSql('CREATE TABLE IF NOT EXISTS fichas_service (id_fichas_service INTEGER PRIMARY KEY AUTOINCREMENT, id_fichas INTEGER NOT NULL, nombre_fichas TEXT NOT NULL, encabezado_tabla_fichas TEXT NOT NULL, farmacocinetica_fichas TEXT NOT NULL, accion_terapeutica_fichas TEXT NOT NULL, clasificacion_farmacologica_fichas TEXT NOT NULL, forma_terapeutica_fichas TEXT NOT NULL, indicaciones_uso_fichas TEXT NOT NULL, interacciones_fichas TEXT NOT NULL, contraindicaciones_fichas TEXT NOT NULL, periodo_retiro_fichas TEXT NOT NULL, advertencias_fichas TEXT NOT NULL, presentacion_fichas TEXT NOT NULL, registro_sanitario_fichas TEXT NOT NULL, id_fichas_fotos INTEGER NOT NULL, consultas_fichas INTEGER NOT NULL, buscador TEXT NOT NULL, mecanismo_accion_fichas TEXT NOT NULL, efectos_colaterales_fichas TEXT NOT NULL, conservacion_fichas TEXT NOT NULL, ingredientes_fichas TEXT NOT NULL, tipo_alimento_fichas TEXT NOT NULL, encabezado_dosificacion_fichas TEXT NOT NULL, tipo_ficha TEXT NOT NULL, tabla_formas_administracion TEXT NOT NULL, tabla_laboratorios TEXT NOT NULL, tabla_distribuidores TEXT NOT NULL, tabla_composicion TEXT NOT NULL, tabla_dosificacion TEXT NOT NULL)');
-	
-	
 	$.ajax({
 		   type: 'POST',
 		   url: base_url+pag_service,
@@ -80,7 +77,7 @@ function info(tx)
 				    
 				    tx.executeSql(executeQuery, [ _id_fichas, _nombre_fichas, _encabezado_tabla_fichas, _farmacocinetica_fichas, _accion_terapeutica_fichas, _clasificacion_farmacologica_fichas, _forma_terapeutica_fichas, _indicaciones_uso_fichas, _interacciones_fichas, _contraindicaciones_fichas, _periodo_retiro_fichas, _advertencias_fichas, _presentacion_fichas, _registro_sanitario_fichas, _id_fichas_fotos, _consultas_fichas, _buscador, _mecanismo_accion_fichas, _efectos_colaterales_fichas, _conservacion_fichas, _ingredientes_fichas, _tipo_alimento_fichas, _encabezado_dosificacion_fichas, _tipo_ficha, _tabla_formas_administracion, _tabla_laboratorios, _tabla_distribuidores, _tabla_composicion, _tabla_dosificacion],
 				    	function(tx, result) {
-				    		//alert('Insertar Local');
+				    		alert('Insertar Local');
 				    	},
 				    	function(error){
 				    		alert('Error al Cargar Fichas');
