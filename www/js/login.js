@@ -10,9 +10,6 @@ function ini()
 //	alert('MI error');
 }
 
-
-
-
 //<!--Calling onDeviceReady method-->
 document.addEventListener("deviceready", onDeviceReady, false);
 var db = window.openDatabase("vade.db", "1.0", "MY DB", 200000); //will create database Dummy_DB or open it
@@ -22,8 +19,6 @@ function onDeviceReady() {
 
 	db.transaction(populateDB, errorCB, successCB);
 
-
-	
 	$(document).on('click', '#ingresar', function(){
 		
 		alert('Mi error');
