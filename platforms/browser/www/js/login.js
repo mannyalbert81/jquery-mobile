@@ -7,11 +7,8 @@ $(document).on("ready",ini);
 function ini()
 {
 	
-//	alert('MI error');
+	alert('Logueando');
 }
-
-
-
 
 //<!--Calling onDeviceReady method-->
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -20,33 +17,22 @@ var db = window.openDatabase("vade.db", "1.0", "MY DB", 200000); //will create d
 
 function onDeviceReady() {
 
-	db.transaction(populateDB, errorCB, successCB);
+	//db.transaction(populateDB, errorCB, successCB);
 
+<<<<<<< HEAD
 
 	
+	$(document).on('click', '#btn-ingresar', function(){
+=======
 	$(document).on('click', '#ingresar', function(){
+>>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
 		
-		alert('Mi error');
-		
+		alert('Login');
+		/*
 	var name = $("#usuario").val();
 	var clave = $("#clave").val();
-	db.transaction(function(transaction) {
-	var executeQuery = "SELECT * FROM usuarios  WHERE usuario_usuario = '"+ name +"'  AND clave_usuarios = '"+ clave +"' ";
-	tx.executeSql('SELECT * FROM SoccerPlayer',[],querySuccess,errorCB);
-	
-	
-	transaction.executeSql(
-			executeQuery, [name,email] , function(tx, result) 
-			{
-				show();
-			}, function(error)
-				{
-					//filter(function(aSome) {alert('Error occurred') });
-				}
-			);
-			
-	});
-
+    Loguear(name , clave);
+	*/
 
 	});
 	
@@ -58,30 +44,6 @@ function onDeviceReady() {
 
 
 
-
-//create table and insert some record
-function populateDB(tx) {
-	
-	var _name="Leonel Mesi";
-	var _club="Real Madrid";
-	
-	
-    tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, club TEXT NOT NULL)');
-    
-    var executeQuery = "INSERT INTO SoccerPlayer(name,club) VALUES (?,?)";
-    
-    tx.executeSql(executeQuery, [_name,_club],
-    	function(tx, result) {
-    		alert('Inserted');
-    	},
-    	function(error){
-    		alert('Error occurred');
-    });
-    
-    
-    
-    
-}
 
 
 function errorCB(err) {
@@ -111,34 +73,26 @@ function querySuccess(tx,result){
 }
 
 
-function show(){
+function Loguear(name, clave ){
 	db.transaction(function(transaction) {
-	transaction.executeSql('SELECT * FROM SoccerPlayer', [], function (tx, results) {
-	var name = "";
+	transaction.executeSql("SELECT * FROM usuarios  WHERE usuario_usuario = '"+ name +"'  AND clave_usuarios = '"+ clave +"' ", [], function (tx, results) {
+	var _usuario_usuarios = "";
 	var club = "";
 
 	//<!--Display the table head-->
-	var pair="<tr><th data-priority=\"1\"><center>Name</center></th><th data-priority=\"2\"><center>Club</center></th><</tr>";
 	var i=0;
 
 	//<!--results.rows.length to get the total number of rows stored in the database-->
-	var len = results.rows.length, i;
-	for (i=0; i<=len-1; i++) {
+		var len = results.rows.length, i;
+		for (i=0; i<=len-1; i++) {
 
-		//<!--Fetching the 'name' from the database-->
-	name = results.rows.item(i).name;
-	club = results.rows.item(i).club;
-	//<!--Fetching the 'id' from the database-->
-	id = results.rows.item(i).id;
-
-	//<!--Displaying all rows of the database in the table-->
-	pair += "<tr><td><center>"+name+"</center></td><td><center>"+club+"</center></td></tr>";
-	}
-	if (pair == "<tr><th>Name</th><th>Club</th></tr>") {
-	pair += "<tr><td><i>empty</i></td><td><i>empty</i></td></tr>";
-	}
-	$("#myTable").html(pair);
-	}, null);
+			//<!--Fetching the 'name' from the database-->
+			_usuario_usuarios = results.rows.item(i).usuario_usuarios;
+	
+			//<!--Fetching the 'id' from the database-->
+			id = results.rows.item(i).id;
+   
+			alert('Usuario: ' + _usuario_usuarios ); 
 	});
 }
 
