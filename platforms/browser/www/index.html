@@ -12,7 +12,8 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-	<!-- <script type="text/javascript" src="js/My.js"></script> -->
+	<script type="text/javascript" src="js/database.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
 	<script type="text/javascript" src="js/cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/SQLitePlugin.js"></script>
 
@@ -29,11 +30,11 @@
     	<img  src="img/logo_vademano.png" vspace="2" /> 
     	</div>
     	    <label for="txt-email">Usuario</label>
-            <input type="text" name="txt-email" id="txt-email" value="">
+            <input type="text"  id="user" value="">
             <label for="txt-password">Password</label>
-            <input type="password" name="txt-password" id="txt-password" value="">
+            <input type="password"  id="clave" value="">
            
-           <a href="#dlg-invalid-credentials" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Ingresar</a>
+           <a href="#dlg-invalid-credentials" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" data-role="button" >Ingresar</a>
            <div data-role="popup" id="dlg-invalid-credentials" data-dismissible="false" style="max-width:400px;">
                 <div role="main" class="ui-content">
                     <h3 class="mc-text-danger">Login Failed</h3>
@@ -42,11 +43,11 @@
                 </div>
            </div>
             
-        <p class="mc-top-margin-1-5"><b>No tienes Cuenta?</b></p>
-        <a href="registrar.html" class="ui-btn ui-btn-b ui-corner-all">Registrarse</a>
+        <p class="mc-top-margin-1-5">No tienes Cuenta?</p>
+        <a href="registrar.html" data-role="button" >Registrarse</a>
         <p></p>
     </div><!-- /content -->
-        <div data-role="footer" data-position="fixed" data-theme="b">
+        <div data-role="footer" data-position="fixed" style="background-color: #28b463 ;" data-theme="b">
 	        <h1>2017-2018</h1>
 	    </div><!-- /footer -->
     </div><!-- /page -->

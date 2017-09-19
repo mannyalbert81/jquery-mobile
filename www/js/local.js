@@ -1,4 +1,4 @@
-$(document).on("ready",ini);
+/*$(document).on("ready",ini);
 
 function ini()
 {
