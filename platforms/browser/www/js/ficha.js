@@ -7,7 +7,7 @@ $(document).on("ready",ini);
 
 function ini()
 {	
-	info();
+	
 }
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -19,16 +19,7 @@ function onDeviceReady() {
 	db.transaction(info, errorCB, successCB);
 }
 
-function errorCB(err) {
-    alert("Error maycol: "+err.code);
-}
 
-//function will be called when process succeed
-function successCB() {
-    alert("!");
-    show_fichas();
-    //db.transaction(queryDB,errorCB);
-}
 
 function info(tx)
 {
@@ -74,6 +65,9 @@ function info(tx)
 				   var _tabla_distribuidores=x[i]["tabla_distribuidores"];
 				   var _tabla_composicion=x[i]["tabla_composicion"];
 				   var _tabla_dosificacion=x[i]["tabla_dosificacion"];
+				   
+				   
+				   
 				   
 				   
 				   var executeQuery = "INSERT INTO fichas_service(id_fichas, nombre_fichas, encabezado_tabla_fichas, farmacocinetica_fichas, accion_terapeutica_fichas, clasificacion_farmacologica_fichas, forma_terapeutica_fichas, indicaciones_uso_fichas, interacciones_fichas, contraindicaciones_fichas, periodo_retiro_fichas, advertencias_fichas, presentacion_fichas, registro_sanitario_fichas, id_fichas_fotos, consultas_fichas, buscador, mecanismo_accion_fichas, efectos_colaterales_fichas, conservacion_fichas, ingredientes_fichas, tipo_alimento_fichas, encabezado_dosificacion_fichas, tipo_ficha, tabla_formas_administracion, tabla_laboratorios, tabla_distribuidores, tabla_composicion, tabla_dosificacion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -133,3 +127,14 @@ function show_fichas(){
 	});
 }
 
+
+function errorCB(err) {
+    alert("Error maycol: "+err.code);
+}
+
+//function will be called when process succeed
+function successCB() {
+    alert("!zvxv");
+    show_fichas();
+    //db.transaction(queryDB,errorCB);
+}
