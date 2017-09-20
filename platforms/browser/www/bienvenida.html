@@ -1,11 +1,18 @@
 <!DOCTYPE html> 
-<html>
+<html lang="en">
 <head>
 	<title>Bienvenida Masoft</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta charset="utf-8" />	
-	<link rel="shortcut icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Menu multinivel responsive</title>
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/main.js"></script>
+
+
+<link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
 	
@@ -13,240 +20,55 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-	
 	<script type="text/javascript" src="js/cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/SQLitePlugin.js"></script>
-    
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-
-
-
-<style type="text/css">
-* {
-	padding:0;
-	margin:0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
- 
-body {background:#FEFEFE;}
- 
-.menu_bar {
-	display:none;
-}
- 
-header {
-	width: 100%;
-}
- 
-header nav {
-	background:#023859;
-	z-index:1000;
-	max-width: 1000px;
-	width:95%;
-	margin:20px auto;
-}
- 
-header nav ul {
-	list-style:none;
-}
- 
-header nav ul li {
-	display:inline-block;
-	position: relative;
-}
- 
-header nav ul li:hover {
-	background:#E6344A;
-}
- 
-header nav ul li a {
-	color:#fff;
-	display:block;
-	text-decoration:none;
-	padding: 20px;
-}
- 
-header nav ul li a span {
-	margin-right:10px;
-}
- 
-header nav ul li:hover .children {
-	display:block;
-}
- 
-header nav ul li .children {
-	display: none;
-	background:#011826;
-	position: absolute;
-	width: 150%;
-	z-index:1000;
-}
- 
-header nav ul li .children li {
-	display:block;
-	overflow: hidden;
-	border-bottom: 1px solid rgba(255,255,255,.5);
-}
- 
-header nav ul li .children li a {
-	display: block;
-}
- 
-header nav ul li .children li a span {
-	float: right;
-	position: relative;
-	top:3px;
-	margin-right:0;
-	margin-left:10px;
-}
- 
-header nav ul li .caret {
-	position: relative;
-	top:3px;
-	margin-left:10px;
-	margin-right:0px;
-}
- 
-@media screen and (max-width: 800px) {
-	body {
-		padding-top:80px;
-	}
- 
-	.menu_bar {
-		display:block;
-		width:100%;
-		position: fixed;
-		top:20%;
-		background:#E6344A;
-	}
- 
-	.menu_bar .bt-menu {
-		display: block;
-		padding: 20px;
-		color: #fff;
-		overflow: hidden;
-		font-size: 25px;
-		font-weight: bold;
-		text-decoration: none;
-	}
- 
-	.menu_bar span {
-		float: right;
-		font-size: 40px;
-	}
- 
-	header nav {
-		width: 80%;
-		height: calc(100% - 80px);
-		position: fixed;
-		right:100%;
-		margin: 0;
-		overflow: scroll;
-	}
- 
-	header nav ul li {
-		display: block;
-		border-bottom:1px solid rgba(255,255,255,.5);
-	}
- 
-	header nav ul li a {
-		display: block;
-	}
- 
-	header nav ul li:hover .children {
-		display: none;
-	}
- 
-	header nav ul li .children {
-		width: 100%;
-		position: relative;
-	}
- 
-	header nav ul li .children li a {
-		margin-left:20px;
-	}
- 
-	header nav ul li .caret {
-		float: right;
-	}
-}
-</style>
-
-<script type="text/javascript">
-
-	
-$(document).ready(main);
- 
-var contador = 1;
- 
-function main () {
-	$('.menu_bar').click(function(){
-		if (contador == 1) {
-			$('nav').animate({
-				left: '0'
-			});
-			contador = 0;
-		} else {
-			contador = 1;
-			$('nav').animate({
-				left: '-100%'
-			});
-		}
-	});
- 
-	// Mostramos y ocultamos submenus
-	$('.submenu').click(function(){
-		$(this).children('.children').slideToggle();
-	});
-}
-</script>
 
 </head>
-
 <body>
+	<div data-role="page">
+	<div role="main" class="ui-content">
+    	
+   <header>
+		<span id="button-menu" class="fa fa-bars"></span>
+        <nav class="navegacion">
+			<ul class="menu">
+				<!-- TITULAR -->
+				<li class="title-menu">Todas las categorias</li>
+				<!-- TITULAR -->
 
-<div data-role="page">
-    <div role="main" class="ui-content">
-    	
-    	
-    	
-    	<div align="center" >
-    	<img  src="img/logo_vademano.png" vspace="2"/> 
-    	</div>
-    	
-    	
-     	<header>
-		<div class="menu_bar">
-			<a href="#" class="bt-menu"><span class="icon-list2"></span>Menú</a>
-		</div>
- 
-		<nav>
-			<ul>
-				<li><a href="#"><span class="icon-house"></span>Inicio</a></li>
-				<li><a href="#"><span class="icon-suitcase"></span>Trabajos</a></li>
-				<li class="submenu">
-					<a href="#"><span class="icon-rocket"></span>Proyectos<span class="caret icon-arrow-down6"></span></a>
-					<ul class="children">
-						<li><a href="#">SubElemento #1 <span class="icon-dot"></span></a></li>
-						<li><a href="#">SubElemento #2 <span class="icon-dot"></span></a></li>
-						<li><a href="#">SubElemento #3 <span class="icon-dot"></span></a></li>
+				<li><a href="#"><span class="fa fa-home icon-menu"></span>Inicio</a></li>
+
+				<li class="item-submenu" menu="1">
+					<a href="#"><span class="fa fa-suitcase icon-menu"></span>Servicios</a>
+					<ul class="submenu">
+						<li class="title-menu"><span class="fa fa-suitcase icon-menu"></span>Servicios</li>
+						<li class="go-back">Atras</li>
+
+						<li><a href="#">Diseño web</a></li>
+						<li><a href="#">Alojamiento web</a></li>
+						<li><a href="#">Dominios</a></li>
 					</ul>
 				</li>
-				<li><a href="#"><span class="icon-earth"></span>Servicios</a></li>
-				<li><a href="#"><span class="icon-mail"></span>Contacto</a></li>
+
+				<li class="item-submenu" menu="2">
+					<a href="#"><span class="fa fa-shopping-bag icon-menu"></span>Tienda</a>
+					<ul class="submenu">
+						<li class="title-menu"><span class="fa fa-shopping-bag icon-menu"></span>Tienda</li>
+						<li class="go-back">Atras</li>
+
+						<li><a href="#">Laptops</a></li>
+						<li><a href="#">Smarphones</a></li>
+						<li><a href="#">Consolas de viejuegos</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#"><span class="fa fa-envelope icon-menu"></span>Contacto</a></li>
+				<li><a href="#"><span class="fa fa-tag icon-menu"></span>Blog</a></li>
 			</ul>
 		</nav>
-	</header>
-    	
-    	
-    	
-    </div><!-- /content -->
-        <div data-role="footer" data-position="fixed" style="background-color: #28b463 ;" data-theme="b">
-	        <h1>2017-2018</h1>
-	    </div><!-- /footer -->
-    </div><!-- /page -->
+	 </header>
+    </div>
+    </div>
 
 </body>
 

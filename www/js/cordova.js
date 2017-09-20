@@ -1610,7 +1610,7 @@ function findCordovaPath() {
 exports.load = function(callback) {
     var pathPrefix = findCordovaPath();
     if (pathPrefix === null) {
-        console.log('Could not find cordova.js script tag. Plugin loading may fail.');
+        console.log('encontre Error Could not find cordova.js script tag. Plugin loading may fail.');
         pathPrefix = '';
     }
     injectIfNecessary('cordova/plugin_list', pathPrefix + 'cordova_plugins.js', function() {

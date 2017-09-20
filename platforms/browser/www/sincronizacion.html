@@ -1,8 +1,9 @@
 <!DOCTYPE html> 
 <html>
 <head>
-	<title>Demo Masoft</title>
+	<title>Bienvenida Masoft</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta charset="utf-8" />	
 	<link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -12,10 +13,13 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-	<script type="text/javascript" src="js/database.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
+	
 	<script type="text/javascript" src="js/cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/SQLitePlugin.js"></script>
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+
 
 
 </head>
@@ -25,22 +29,24 @@
 <div data-role="page">
     <div role="main" class="ui-content">
     	
+    	
+    	
     	<div align="center" >
-    	<img  src="img/logo_vademano.png" vspace="2" /> 
+    	<img  src="img/logo_vademano.png" vspace="2"/> 
+    
+    	<input accept="image/*"  type="file" capture/>
     	</div>
-    	    <label for="txt-email">Usuario</label>
-            <input type="text"  id="usuario" value="">
-            <label for="txt-password">Password</label>
-            <input type="password"  id="clave" value="">
-           
-        <a  id="btn-ingresar" data-role="button" >Ingresar</a>
-            
-        <p class="mc-top-margin-1-5">No tienes Cuenta?</p>
-        <a href="registrar.html" data-role="button" >Registrarse</a>
-         
-        <p></p>
-    </div>
-    </div>
+    	
+    	
+        	
+    	
+    	
+    </div><!-- /content -->
+        <div data-role="footer" data-position="fixed" style="background-color: #28b463 ;" data-theme="b">
+	        <h1>2017-2018</h1>
+	    </div><!-- /footer -->
+    </div><!-- /page -->
 
 </body>
+
 </html>
