@@ -56,11 +56,7 @@ function errorCB(err) {
 
 //function will be called when process succeed
 function successCB() {
-<<<<<<< HEAD
+
     alert("success!");
-=======
-  // alert("success!");
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
-    //show();
-    //db.transaction(queryDB,errorCB);
+
 }
