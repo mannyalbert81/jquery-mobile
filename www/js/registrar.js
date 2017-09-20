@@ -26,7 +26,8 @@ function afiliar()
 			clave:$('#txtPwd').val()}
 	$.ajax({
 		   type: 'POST',
-		   dataType:'text',
+		   //dataType:'text',
+		   crossDomain: true,
 		   url: base_url+pag_service,
 		   data:dataenviar,
 		   success: function (data) {
