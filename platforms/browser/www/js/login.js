@@ -7,7 +7,7 @@ $(document).on("ready",ini);
 function ini()
 {
 	
-	alert('Logueando');
+	//alert('Logueando');
 }
 
 
@@ -72,7 +72,7 @@ function getlogin_success(tx, results){
     //alert( pasw );
     //alert(password);
     if(username==uname && password == pasw  ){
-     alert("Login Success");
+    	window.location.href = "bienvenida.html";
      break;
     }
     else{
@@ -82,9 +82,10 @@ function getlogin_success(tx, results){
    
    if(status==1)
     {
+	   
        //alert("login failed");
        //alertDGC("login failed");
-       alert("Hola", "Error al iniciar Sesion");
+       alert("Error al iniciar Sesion");
        //jAlert('This is a custom alert box', 'Alert Dialog');
     }
 }
