@@ -109,7 +109,7 @@ function info(tx1)
 				  }*/
 				   
 				   var _id = 1;
-					var _nombres_usuarios="Manuel Alberto";
+					var _nombres_usuarios="Maycol Flores";
 					var _apellidos_usuarios ="Rosabal Gutiérrez";
 					var _usuario_usuarios="JASON";
 					var _clave_usuarios="JASON";
