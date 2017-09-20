@@ -1,38 +1,48 @@
-$('#qr-canvas').WebCodeCam({
-  ReadQRCode: true, 
-  ReadBarecode: true, 
-  width: 320,
-  height: 240,
+ $(document).ready(function () {
 
-  <a href="http://www.jqueryscript.net/tags.php?/video/">video</a>Source: {
-    // max Videosource resolution width
-    maxWidth: 640,
-    // max Videosource resolution height
-    maxHeight: 480 
-  },
+	 $('#qr-canvas').WebCodeCam({
+		  ReadQRCode: true, 
+		  ReadBarecode: true, 
+		  width: 320,
+		  height: 240,
 
-  flipVertical: false,  
-  flipHorizontal: false,  
+		  <a href="http://www.jqueryscript.net/tags.php?/video/">video</a>Source: {
+		    // max Videosource resolution width
+		    maxWidth: 640,
+		    // max Videosource resolution height
+		    maxHeight: 480 
+		  },
 
-  // if zoom = -1, auto zoom for optimal resolution else int
-  zoom: -1, 
+		  flipVertical: false,  
+		  flipHorizontal: false,  
 
-  // string, audio file location
-  beep: "js/beep.mp3", 
+		  // if zoom = -1, auto zoom for optimal resolution else int
+		  zoom: -1, 
 
-  // functional when value autoBrightnessValue is int
-  autoBrightnessValue: false, 
+		  // string, audio file location
+		  beep: "js/beep.mp3", 
 
-  brightness: 0, 
-  grayScale: false, 
-  contrast: 0, 
-  threshold: 0, 
+		  // functional when value autoBrightnessValue is int
+		  autoBrightnessValue: false, 
 
-  // or matrix, example for sharpness ->  [0, -1, 0, -1, 5, -1, 0, -1, 0]
-  sharpness: [], 
+		  brightness: 0, 
+		  grayScale: false, 
+		  contrast: 0, 
+		  threshold: 0, 
 
-  resultFunction: function(resText, lastImageSrc) {
-    // resText as decoded code, lastImageSrc as image source 
-    alert(resText);
-  }
-});
+		  // or matrix, example for sharpness ->  [0, -1, 0, -1, 5, -1, 0, -1, 0]
+		  sharpness: [], 
+
+		  resultFunction: function(resText, lastImageSrc) {
+		    // resText as decoded code, lastImageSrc as image source 
+		    alert(resText);
+		  }
+		});            
+	 
+	 
+	 
+	 
+	 
+
+     
+ });    
