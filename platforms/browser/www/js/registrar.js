@@ -5,10 +5,10 @@
 //var base_url = 'http://186.4.203.42:4000/Vademano/';
 //var pag_service = 'index.php?controll
 //var pag_service = 'index.php?controller=Afiliaciones&action=registraAfiliadoMobil' ;
-var base_url = 'http://localhost:5000/vademano/webservices/';
-var pag_service = 'afiliadoService.php' ;
-//var base_url = 'http://186.4.203.42:4000/vademano/webservices/';
+//var base_url = 'http://localhost:5000/vademano/webservices/';
 //var pag_service = 'afiliadoService.php' ;
+var base_url = 'http://186.4.203.42:4000/Vademano/webservices/';
+var pag_service = 'afiliadoService.php' ;
 
 
 $(document).on("ready",ini);

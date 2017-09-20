@@ -1,19 +1,17 @@
 ////local
-
-
-
 $(document).on("ready",ini);
-
 function ini()
 {
 	
-	alert('Logueando');
+	//alert('Logueando');
 }
+var db;
+var dbCreated = false;
 
-//<!--Calling onDeviceReady method-->
 document.addEventListener("deviceready", onDeviceReady, false);
-var db = window.openDatabase("vade.db", "1.0", "MY DB", 200000); //will create database Dummy_DB or open it
 
+function onDeviceReady(){
+ db = window.openDatabase("vade.db", "1.0", "MY DB", 200000); //will create database Dummy_DB or open it
 
 function onDeviceReady() {
 
@@ -96,104 +94,73 @@ function Loguear(name, clave ){
 
 
 	//<!--window.sqlitePlugin.openDatabase creates/open a non existing/existing database-->
+
+ if (dbCreated)
+  {
+	 alert("No creada");
+  }
+ 
+ else{
 	 
-	
-	//var db = window.sqlitePlugin.openDatabase({name: "my.db"});
-/*
-	show();
-
-db.transaction(function(tx) {
-tx.executeSql('CREATE TABLE IF NOT EXISTS mydata (id integer primary key, name text, email text)');
-});
-
-//<!--Method to insert new row in the database-->
-$(document).on('click', '#creat', function(){
-	
-	alert('Mi error');
-	/*
-var name = $("#name").val();
-var email = $("#email").val();
-db.transaction(function(transaction) {
-var executeQuery = "INSERT INTO mydata (name, email) VALUES (?,?)";
-transaction.executeSql(
-		executeQuery, [name,email] , function(tx, result) 
-		{
-			show();
-		}, function(error)
-			{
-				//filter(function(aSome) {alert('Error occurred') });
-			}
-		);
-		
-});
-
-
-});
-*/
-
-//<!--Display all rows stored in the database-->
-
-
-/*
-
-//<!--Method to delete any row from the database-->
-$(document).on('click', '#delete', function(){
-var id = $(this).attr("data");
-db.transaction(function(transaction) {
-transaction.executeSql("DELETE FROM mydata where id=?", [id],
-function(tx, result) {
-show();
-},
-function(error){
-// alert('Something went Wrong');
-});
-});
-});
-
-//<!--Method to update the values of any row in the database-->
-$(document).on('click', '#upd', function(){
-var id = $("#id").val();
-var name = $("#uname").val();
-var email = $("#uemail").val();
-db.transaction(function(transaction) {
-var executeQuery = "";
-transaction.executeSql("UPDATE mydata SET name=?, email=? WHERE id=?", [name,email,id],
-function(tx, result) {alert('Updated successfully');
-show();
-},
-function(error){alert('Something went Wrong');});
-});
-});
-$(document).on('click', '.update', function(){
-var id = $(this).attr('data-custom');
-$("#id").val(id);
-db.transaction(function(transaction) {
-transaction.executeSql('SELECT name,email FROM mydata where id=?', [id], function (tx, results) {
-var name = results.rows.item(0).name;
-var email = results.rows.item(0).email;
-$("#uname").val(name);
-$("#uemail").val(email);
-},
-function(error){
-alert('Something went Wrong');
-});
-});
-});
-
-//<!--Method to clear all rows from the database-->
-$(document).on('click', '#clearall', function(){
-db.transaction(function(transaction) {
-transaction.executeSql("DELETE FROM mydata", [],
-function(tx, result) {alert('Delete successfully');
-show();
-},
-function(error){alert('Something went Wrong');});
-});
-});
+	 //alert("creada");
+    
+    
+    
+    
+    
+    $(document).on('click', '#btn-ingresar', function(){
+    
+    	//alert('Hola');
+    	db.transaction(getregistdata, transaction_error);
+    
+    });
+    
+    
+    
+    
+    
+ }
+ 
+ 
+ 
+ 
 }
 
+function getregistdata(tx){
+ 
+  var sql = "SELECT * FROM usuarios";
+  tx.executeSql(sql, [], getlogin_success);
+}
 
-*/
+function transaction_error(tx, error) {
+ alert("Database Error: " + error);
+}
 
-
-
+function getlogin_success(tx, results){
+   var len = results.rows.length;
+   for (var i=0; i< len; i++) {  
+    var employee = results.rows.item(i);
+    var username=document. getElementById("usuario").value;
+    var password=document. getElementById("clave").value;
+    var uname=employee.usuario_usuarios;
+    var pasw=employee.clave_usuarios;
+    //alert( pasw );
+    //alert(password);
+    if(username==uname && password == pasw  ){
+    	window.location.href = "bienvenida.html";
+     break;
+    }
+    else{
+        var status=1;
+     }
+   }
+   
+   if(status==1)
+    {
+	   
+       //alert("login failed");
+       //alertDGC("login failed");
+       alert("Error al iniciar Sesion");
+       //jAlert('This is a custom alert box', 'Alert Dialog');
+    }
+}
