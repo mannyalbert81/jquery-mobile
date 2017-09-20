@@ -4,41 +4,50 @@
  <title>Afiliacion</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8" />	
-<meta charset="utf-8" />	
+    <meta charset="utf-8" />	
 	<link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/main.js"></script>
 	
-	<link rel="stylesheet" href="css/app.css">
-	<script src="js/jquery.js"></script>
-	<script src="js/index.js"></script>
-	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-	
-	<script type="text/javascript" src="js/ficha.js"></script>
-	<script type="text/javascript" src="js/cordova.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/SQLitePlugin.js"></script>
-    
-    
 </head>
-<body load="info();">
-<div data-role="page" id="pagRegPrin">
-	<div data-role="header" data-position="fixed" style="background-color: #28b463 ;">
-   <h1>Buscador</h1>
-    </div>
-	<div data-role="content">
+<body >
 
-		<br>
-		<br>
-		
-		
-		<input type="text" id="txtNombres" name="txtNombres" value="" data-clear-btn="true">
-			<hr color="blue" size=3>
-	    </div>
-	<div id='myTable1'></div>
-	
-	
-	
-</div>
+<div data-role="page">
+	<div role="main" class="ui-content">
+
+	<header>
+		<span id="button-menu" class="fa fa-bars"></span>
+        <nav class="navegacion">
+			<ul class="menu">
+				<!-- TITULAR -->
+				<li class="title-menu">Todas las Opciones</li>
+				<!-- TITULAR -->
+				<li><a href="index.html"><span class="fa fa-home icon-menu"></span>Inicio</a></li>
+                <li><a href="buscador.html"><span class="fa fa-folder icon-menu"></span>Vademécum</a></li>
+				<li class="item-submenu" menu="1">
+					<a href="#"><span class="fa fa-envelope icon-menu"></span>Contactos</a>
+					<ul class="submenu">
+						<li class="title-menu"><span class="fa fa-envelope icon-menu"></span>Contactos</li>
+						<li class="go-back">Atras</li>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="http://vademano.masoft.net/">Sitio Web</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</nav>
+	 </header>
+
+  <div align="center" style="margin-top:180px;">
+    	<img  src="img/logo_vademano.png" class="zoom" vspace="5" /> 
+    	</div>
+    </div>
+    </div>
 
 	
 	
