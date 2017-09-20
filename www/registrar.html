@@ -12,6 +12,18 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script type="text/javascript" src="js/cordova.js"></script>
+		 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
  
 </head>
 <body>
@@ -43,6 +55,11 @@
 			<p><h6>Contraseña </h6>
 			<input type="password" id="txtPwd" name="txtPwd" value="" autocomplete="off" data-clear-btn="true">
 			<hr color="green" size=3>
+			
+			<p><h6>Fecha </h6>
+			<input type="date" id="datepicker" name="txtPwd" value="" autocomplete="off" data-clear-btn="true">
+			<hr color="green" size=3>
+			
 	
 			<button data-role="button" id="btnRegistrar" value="" style="background-color: #28b463 ;">Registrar</button>
 	 		<div data-role="popup" id="dlg-invalid-credentials" data-dismissible="false" style="max-width:400px;">
