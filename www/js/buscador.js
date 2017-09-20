@@ -28,33 +28,51 @@ function onDeviceReady(){
  else{
 	
     $(document).on('click', '#btn_buscar', function(){
-    	db.transaction(getregistdata, transaction_error);
+    	db.transaction(show_fichas, transaction_error);
     });
     
  }
  
 }
-
+/*
 function getregistdata(tx){
+ 
  
   var sql = "SELECT * FROM fichas_service";
   tx.executeSql(sql, [], getfichas_success);
-}
+}*/
 
 function transaction_error(tx, error) {
  alert("Database Error: " + error);
 }
 
-function getfichas_success(tx, results){
+
+function show_fichas(){
+	db.transaction(function(transaction) {
+	transaction.executeSql('SELECT * FROM fichas_service', [], function (tx, results) {
+	
+	var id_fichas = "";
+	var nombre_fichas = "";
+
+	//<!--results.rows.length to get the total number of rows stored in the database-->
+	var len = results.rows.length, i;
+	
+	$("#tabla_fichas").html(len);
+	}, null);
+	});
+}
+/*
+  function getfichas_success(tx, results){
    var len = results.rows.length;
    for (var i=0; i< len; i++) {  
     var employee = results.rows.item(i);
     var contenido_busqueda=document. getElementById("contenido_busqueda").value;
     var buscador=employee.nombre_fichas;
-   
-   
+  
+	
+    
     if(contenido_busqueda==buscador){
-    	alert("si hay datos");
+    	alert("Existe datos");
      break;
     }
     else{
@@ -73,7 +91,7 @@ function getfichas_success(tx, results){
 
 
 
-
+*/
 
 
 
