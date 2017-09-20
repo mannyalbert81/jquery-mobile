@@ -16,7 +16,9 @@ header{
 	left: 0;
 
 	padding: 20px;
-	background: #34495E;
+	/*background: #34495E;*/
+	background: #77CD6A;
+	
 }
 
 header #button-menu{
@@ -50,7 +52,8 @@ header #button-menu{
 
 .navegacion .menu li.title-menu{
 	padding: 20px;
-	background: #5F6F81;
+	/*background: #5F6F81;*/
+	background: #7D8A9C;
 	color: #fff;
 	text-align: center;
 	font-size: 22px;
@@ -118,3 +121,19 @@ header #button-menu{
 		width: 100%;
 	}
 }
+
+
+
+.zoom{
+		transition: 1.5s ease;
+ 		-moz-transition: 1.5s ease; /* Firefox */
+ 		-webkit-transition: 1.5s ease; /* Chrome - Safari */
+ 		-o-transition: 1.5s ease; /* Opera */
+	}
+	.zoom:hover{
+		transform : scale(1.2);
+		-moz-transform : scale(1.2); /* Firefox */
+		-webkit-transform : scale(1.2); /* Chrome - Safari */
+		-o-transform : scale(1.2); /* Opera */
+		-ms-transform : scale(1.2); /* IE9 */
+	}
