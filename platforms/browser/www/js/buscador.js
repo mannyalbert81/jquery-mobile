@@ -49,30 +49,15 @@ function transaction_error(tx, error) {
 
 function show_fichas(){
 	db.transaction(function(transaction) {
-	transaction.executeSql('SELECT * FROM fichas_service ', [], function (tx, results) {
+	transaction.executeSql('SELECT * FROM fichas_service', [], function (tx, results) {
+	
 	var id_fichas = "";
 	var nombre_fichas = "";
 
-	//<!--Display the table head-->
-	var pair="<tr><th data-priority=\"1\"><center>Id</center></th><th data-priority=\"2\"><center>Nombre</center></th><</tr>";
-	var i=0;
-
 	//<!--results.rows.length to get the total number of rows stored in the database-->
 	var len = results.rows.length, i;
-	for (i=0; i<=len-1; i++) {
-
-		//<!--Fetching the 'name' from the database-->
-		id = results.rows.item(i).id_fichas;
-		nombre = results.rows.item(i).nombre_fichas;
 	
-
-	//<!--Displaying all rows of the database in the table-->
-	pair += "<tr><td><center>"+id+"</center></td><td><center>"+nombre+"</center></td></tr>";
-	}
-	if (pair == "<tr><th>Id</th><th>Nombre</th></tr>") {
-	pair += "<tr><td><i>empty</i></td><td><i>empty</i></td></tr>";
-	}
-	$("#tabla_fichas").html(pair);
+	$("#tabla_fichas").html(len);
 	}, null);
 	});
 }
