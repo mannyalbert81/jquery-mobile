@@ -19,13 +19,8 @@ function onDeviceReady() {
 
 	//db.transaction(populateDB, errorCB, successCB);
 
-<<<<<<< HEAD
 
-	
-	$(document).on('click', '#btn-ingresar', function(){
-=======
 	$(document).on('click', '#ingresar', function(){
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
 		
 		alert('Login');
 		/*
@@ -202,28 +197,3 @@ function(error){alert('Something went Wrong');});
 
 
 
-
-
-$(document).ready(function(){  
-   
-	$('#ok').click(function(){  
-        var uname = document.getElementById("usuario").value;
-        var password = document.getElementById("clave").value;
-        var JSONObject= {
-             "uname":uname,
-             "password":password
-             };
-
-        $.ajax({  
-            url:'http://localhost:8090/LoginAuthRWS/rest/orders',  
-            type:'post',
-            data :  JSONObject,      
-            dataType: 'JSON',
-            success: function(data) { 
-                     var jsonData = $.parseJSON(data); //if data is not json
-                     $('#name').val(jsonData.name);  
-                     $('#email').val(jsonData.email);  
-                }  
-        });  
-    });  
-}); 
