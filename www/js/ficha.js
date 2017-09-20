@@ -22,11 +22,103 @@ function init_pag(tx)
 {
 	tx.executeSql("CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT , nombres_usuarios TEXT NOT NULL, apellidos_usuarios TEXT NOT NULL, usuario_usuarios TEXT NOT NULL, clave_usuarios TEXT NOT NULL);");
 	tx.executeSql("DELETE FROM usuarios;");
+	traeFichas();
 }
 
 function traeFichas()
 {
-	
+	$.ajax({
+		   type: 'POST',
+		   url: base_url+pag_service,
+		   data:{action:'consulta'},
+		   dataType: 'json',
+		   success: function (x) {
+			   
+			   console.log(x);
+			   console.log(x.length);
+			   
+			   for(var i=0;i<x.length;i++)
+				   {
+				   
+				   }
+			  
+			   for(var i=0;i<=x.length;i++){
+				   
+				  /* var _id_fichas=x[i]["id_fichas"];
+				   var _nombre_fichas=x[i]["nombre_fichas"];
+				   var _encabezado_tabla_fichas=x[i]["encabezado_tabla_fichas"];
+				   var _farmacocinetica_fichas=x[i]["farmacocinetica_fichas"];
+				   var _accion_terapeutica_fichas=x[i]["accion_terapeutica_fichas"];
+				   var _clasificacion_farmacologica_fichas=x[i]["clasificacion_farmacologica_fichas"];
+				   var _forma_terapeutica_fichas=x[i]["forma_terapeutica_fichas"];
+				   var _indicaciones_uso_fichas=x[i]["indicaciones_uso_fichas"];
+				   var _interacciones_fichas=x[i]["interacciones_fichas"];
+				   var _contraindicaciones_fichas=x[i]["contraindicaciones_fichas"];
+				   var _periodo_retiro_fichas=x[i]["periodo_retiro_fichas"];
+				   var _advertencias_fichas=x[i]["advertencias_fichas"];
+				   var _presentacion_fichas=x[i]["presentacion_fichas"];
+				   var _registro_sanitario_fichas=x[i]["registro_sanitario_fichas"];
+				   var _id_fichas_fotos=x[i]["id_fichas_fotos"];
+				   var _consultas_fichas=x[i]["consultas_fichas"];
+				   var _buscador=x[i]["buscador"];
+				   var _mecanismo_accion_fichas=x[i]["mecanismo_accion_fichas"];
+				   var _efectos_colaterales_fichas=x[i]["efectos_colaterales_fichas"];
+				   var _conservacion_fichas=x[i]["conservacion_fichas"];
+				   var _ingredientes_fichas=x[i]["ingredientes_fichas"];
+				   var _tipo_alimento_fichas=x[i]["tipo_alimento_fichas"];
+				   var _encabezado_dosificacion_fichas=x[i]["encabezado_dosificacion_fichas"];
+				   var _tipo_ficha=x[i]["tipo_ficha"];
+				   var _tabla_formas_administracion=x[i]["tabla_formas_administracion"];
+				   var _tabla_laboratorios=x[i]["tabla_laboratorios"];
+				   var _tabla_distribuidores=x[i]["tabla_distribuidores"];
+				   var _tabla_composicion=x[i]["tabla_composicion"];
+				   var _tabla_dosificacion=x[i]["tabla_dosificacion"];
+				   */
+				   /*
+				   var _id_fichas=1;
+				   var _nombre_fichas="sdfsdf";
+				   var _encabezado_tabla_fichas="sd";
+				   var _farmacocinetica_fichas="sd";
+				   var _accion_terapeutica_fichas="sd";
+				   var _clasificacion_farmacologica_fichas="sd";
+				   var _forma_terapeutica_fichas="sd";
+				   var _indicaciones_uso_fichas="sd";
+				   var _interacciones_fichas="sd";
+				   var _contraindicaciones_fichas="sd";
+				   var _periodo_retiro_fichas="sd";
+				   var _advertencias_fichas="sd";
+				   var _presentacion_fichas="sd";
+				   var _registro_sanitario_fichas="sd";
+				   var _id_fichas_fotos=2;
+				   var _consultas_fichas=2;
+				   var _buscador="sd";
+				   var _mecanismo_accion_fichas="sd";
+				   var _efectos_colaterales_fichas="sd";
+				   var _conservacion_fichas="sd";
+				   var _ingredientes_fichas="sd";
+				   var _tipo_alimento_fichas="sd";
+				   var _encabezado_dosificacion_fichas="sd";
+				   var _tipo_ficha="sd";
+				   var _tabla_formas_administracion="sd";
+				   var _tabla_laboratorios="sd";
+				   var _tabla_distribuidores="sd";
+				   var _tabla_composicion="sd";
+				   var _tabla_dosificacion="sd";
+				   
+				  
+				  }*/
+				   
+				   
+				    
+			   }
+			   
+			      
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+			     $("#fichas_registradas").html("Ocurrio un error al cargar la informacion de Usuarios..."+jqXHR);
+		 }
+
+		});
 }
 
 
