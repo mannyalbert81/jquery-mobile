@@ -5,19 +5,22 @@
 	<meta charset="utf-8" />	
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/efecto_logo.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/main_menu.js"></script>
-    <link rel="stylesheet" href="view/css/bootstrap.css">
-   	<script src="view/js/jquery.js"></script>
-	<script src="view/js/bootstrapValidator.min.js"></script>
-  	<script src="view/js/noty.js"></script>
- 	<link rel="stylesheet" href="view/font-awesome/css/font-awesome.min.css">
- 	<script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+	<script src="js/cordova.js"></script>
+   
+
 
 
 </head>
-<body>
+<body >
+
+
+
+
+
 	<div data-role="page">
 	<div role="main" class="ui-content">
     	
@@ -52,11 +55,15 @@
     	<img  src="img/logo_vademano.png" class="zoom" vspace="5" /> 
     	</div>
     	 <form action=" method=" target="_blank" enctype="multipart/form-data" class="col-lg-12">
+    	
+    	 
   		  	<div class="col-lg-12 col-md-12 division" style="-webkit-box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.69); border-radius: 24px 24px 24px 24px; margin-top: 20px; ">
 			<div class="col-lg-7 col-md-7 col-xs-12" style="margin-top: 30px;">
 		<div style="font-family: Arial; font-size:16pt; color:#31B046; width: 100%; text-align: center; ">
-		<font size=6><strong>RELÁMPAGO</strong></font>
+		<font size=6><strong><div id="nombre_fichas"></div></strong></font>
 		</div>
+  	
+ 
   	
 		<div id="divSerp">
 			<br>
@@ -182,5 +189,8 @@
 </form>
 </div>  
 </div>
+
+
+<script type="text/javascript" src="js/cargar_ficha.js"></script>
 </body>  
 </html>
