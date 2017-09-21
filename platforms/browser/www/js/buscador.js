@@ -96,7 +96,7 @@ function count_fichas(){
 			pair1 += "<div class='mascara'>";
 			pair1 += "<h2>"+nombre+"</h2>";
 			pair1 += "<p>"+clasificacion_farmacologica_fichas+"</p>";
-			pair1 += "<a class='link' href='FichaOnline.html?id_fichas="+id1+"'>Leer mas</a>";
+			pair1 += "<a class='link' href='FichaOnlineAli.html?id_fichas="+id1+"'>Leer mas</a>";
 			pair1 += "</div>";
 			pair1 += "</div>";
 			pair1 += "</div>";
