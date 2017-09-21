@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-var base_url = 'http://192.168.10.157:4000/Vademano/webservices/';
-=======
-var base_url = 'http://localhost:5000/Vademano/webservices/';
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
+
+var base_url = 'http://localhost:4000/Vademano/webservices/';
+
 var pag_service = 'FichaService.php' ;
 //var base_url = 'http://186.4.203.42:4000/Vademano/webservices/';
 //var pag_service = 'FichaService.php' ;
