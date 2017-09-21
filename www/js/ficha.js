@@ -1,6 +1,7 @@
 var base_url = 'http://localhost:4000/Vademano/webservices/';
 var pag_service = 'FichaService.php' ;
-var fichas = null;
+//var base_url = 'http://186.4.203.42:4000/Vademano/webservices/';
+//var pag_service = 'FichaService.php' ;
 
 $(document).on("ready",ini);
 
@@ -20,7 +21,8 @@ function onDeviceReady()
 
 function init_pag(tx)
 {
-	//tx.executeSql('DROP TABLE IF EXISTS "fichas_service"');
+	
+	//tx.executeSql('DROP TABLE IF EXISTS fichas_service');
 	var tblFichas = 'CREATE TABLE IF NOT EXISTS fichas_service';
 	tblFichas +='(id_fichas_service INTEGER PRIMARY KEY AUTOINCREMENT, id_fichas INTEGER  , nombre_fichas TEXT  ,'; 
 	tblFichas +='encabezado_tabla_fichas TEXT  , farmacocinetica_fichas TEXT  , accion_terapeutica_fichas TEXT  ,'; 

@@ -8,5 +8,6 @@
         PhoneGap Team
     </author>
     <content src="index.html" />
+    <access origin="*" />
     <access origin="http://vademano.masoft.net/" />
 </widget>
