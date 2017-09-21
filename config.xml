@@ -10,10 +10,14 @@
     <plugin name="cordova-plugin-whitelist" version="1" />
     <content src="index.html" />
     <access origin="*" />
+<<<<<<< HEAD
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+=======
+    <access origin="http://vademano.masoft.net/" />
+>>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
 </widget>
