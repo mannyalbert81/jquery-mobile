@@ -56,11 +56,12 @@ function show_fichas(){
 
 	//<!--results.rows.length to get the total number of rows stored in the database-->
 	var len = results.rows.length, i;
-	
-	$("#tabla_fichas").html(len);
+	alert(len);
+	$("#count_productos").html(len);
 	}, null);
 	});
 }
+
 /*
   function getfichas_success(tx, results){
    var len = results.rows.length;
@@ -69,8 +70,6 @@ function show_fichas(){
     var contenido_busqueda=document. getElementById("contenido_busqueda").value;
     var buscador=employee.nombre_fichas;
   
-	
-    
     if(contenido_busqueda==buscador){
     	alert("Existe datos");
      break;
