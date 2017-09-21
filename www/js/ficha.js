@@ -1,4 +1,4 @@
-var base_url = 'http://localhost:5000/Vademano/webservices/';
+var base_url = 'http://localhost:4000/Vademano/webservices/';
 var pag_service = 'FichaService.php' ;
 var fichas = null;
 
