@@ -1,6 +1,4 @@
-var base_url = 'http://localhost:4000/Vademano/webservices/';
-
-var base_url = 'http://localhost:4000/Vademano/webservices/';
+var base_url = 'http://localhost:5000/Vademano/webservices/';
 
 var pag_service = 'FichaService.php' ;
 //var base_url = 'http://186.4.203.42:4000/Vademano/webservices/';
@@ -133,19 +131,12 @@ function successCB (){
 function traeImagen()
 {
 	var queryIns = 'INSERT INTO ficha_foto(id_fichas, foto) VALUES (?,?)';
-	var jsonIMG = 'R0lGODlhEAAOALMAAOazToeHh0tLS/7LZv/0jvb29t/f3//Ub/';
-		jsonIMG+='/ge8WSLf/rhf/3kdbW1mxsbP//mf///yH5BAAAAAAALAAAAAAQAA4AAARe8L1Ekyky67QZ1hLnjM5UUde0ECwLJoExK';
-		jsonIMG+='cppV0aCcGCmTIHEIUEqjgaORCMxIC6e0CcguWw6aFjsVMkkIr7g77ZKPJjPZqIyd7sJAgVGoEGv2xsBxqNgYPj/gAwXEQA7';
 	// recolecta los valores que inserto el usuario
 	var datosUsuario ='';	
   	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
   	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
-		//console.log(  x[0].foto_fichas_fotos);
-		var image = $('#imgficha');
-		image.attr('src', "data:image/png;base64," +  x[0].foto_fichas_fotos);
 		
-		//console.log(img);
 		 $.each(x, function(i, j) {
 			   //console.log( j.id_fichas );
 			   db.transaction(function (tx) {
