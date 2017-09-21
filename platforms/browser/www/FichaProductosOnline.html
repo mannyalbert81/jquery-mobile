@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-	<title>Ficha Alimentos Online Masoft</title>
+	<title>Ficha Online Masoft</title>
 	<meta charset="utf-8" />	
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="css/estilos.css">
@@ -304,7 +304,7 @@
       	</div>
       	
       	<div class=" col-lg-4 col-md-4 col-xs-6">
-	 		 <h4><button type="button" name="composicion" id="composicion" style="margin-top:5px; background-color:#999E9A; color:#FFFFFF; font-family:verdana; font-size:100%; text-align:center; width: 100%; height: 100;"><strong>COMPOSICIÓN NUTRICIONAL:</strong></button></h4>
+	 		 <h4><button type="button" name="composicion" id="composicion" style="margin-top:5px; background-color:#999E9A; color:#FFFFFF; font-family:verdana; font-size:100%; text-align:center; width: 100%; height: 100;"><strong>COMPOSICIÓN:</strong></button></h4>
 	 	</div>
 	 	 <div class="row">
         	<div class="col-xs-12 col-md-12" id="div_composicion" style="display: none;" >
@@ -333,7 +333,20 @@
         	</div>
       	</div>
       	
-      
+      		<div class=" col-lg-4 col-md-4 col-xs-6">
+	 		 <h4><button type="button" name="mecanismos_accion" id="mecanismos_accion" style="margin-top:5px; background-color:#999E9A; color:#FFFFFF; font-family:verdana; font-size:100%; text-align:center; width: 100%; height: 100;"><strong>MECANISMOS DE ACCIÓN:</strong></button></h4>
+	 	</div>
+	 	 <div class="row">
+        	<div class="col-xs-12 col-md-12" id="div_mecanismos_accion" style="display: none;" >
+      	 		<div class="panel panel-info">
+	     			<div class="panel-body"> 
+        				<div class="col-xs-6 col-md-6 col-lg-6">
+        					<font size=2 style="color:#010a01; font-family: Times New Roman;  width:100%;"><div style="text-align:justify;" id="mecanismo_accion_fichas"></div></font>
+						</div>
+       				</div>
+        		</div>
+        	</div>
+      	</div>
       	
       		<div class=" col-lg-4 col-md-4 col-xs-6">
 	 		 <h4><button type="button" name="indicaciones_uso" id="indicaciones_uso" style="margin-top:5px; background-color:#999E9A; color:#FFFFFF; font-family:verdana; font-size:100%; text-align:center; width: 100%; height: 100;"><strong>INDICACIONES DE USO:</strong></button></h4>
@@ -351,7 +364,7 @@
       	</div>
       	
       		<div class=" col-lg-4 col-md-4 col-xs-6">
-	 		 <h4><button type="button" name="dosificacion" id="dosificacion" style="margin-top:5px; background-color:#999E9A; color:#FFFFFF; font-family:verdana; font-size:100%; text-align:center; width: 100%; height: 100;"><strong>RECOMENDACION DE ALIMENTACION DIARIA:</strong></button></h4>
+	 		 <h4><button type="button" name="dosificacion" id="dosificacion" style="margin-top:5px; background-color:#999E9A; color:#FFFFFF; font-family:verdana; font-size:100%; text-align:center; width: 100%; height: 100;"><strong>DOSIFICACIÓN DE:</strong></button></h4>
 	 	</div>
 	 	 <div class="row">
         	<div class="col-xs-12 col-md-12" id="div_dosificacion" style="display: none;" >
@@ -426,6 +439,21 @@
       	</div>
       	
       		<div class=" col-lg-4 col-md-4 col-xs-6">
+	 		 <h4><button type="button" name="contradicciones" id="contradicciones" style="margin-top:5px; background-color:#999E9A; color:#FFFFFF; font-family:verdana; font-size:100%; text-align:center; width: 100%; height: 100;"><strong>CONTRAINDICACIONES:</strong></button></h4>
+	 	</div>
+	 	 <div class="row">
+        	<div class="col-xs-12 col-md-12" id="div_contradicciones" style="display: none;" >
+      	 		<div class="panel panel-info">
+	     			<div class="panel-body"> 
+        				<div class="col-xs-6 col-md-6 col-lg-6">
+        					<font size=2 style="color:#010a01; font-family: Times New Roman;  width:100%;"><div style="text-align:justify;" id="contraindicaciones_fichas"></div></font>
+						</div>
+       				</div>
+        		</div>
+        	</div>
+      	</div>
+      	
+      		<div class=" col-lg-4 col-md-4 col-xs-6">
 	 		 <h4><button type="button" name="efectos_colaterales" id="efectos_colaterales" style="margin-top:5px; background-color:#999E9A; color:#FFFFFF; font-family:verdana; font-size:100%; text-align:center; width: 100%; height: 100;"><strong>EFECTOS COLATERALES:</strong></button></h4>
 	 	</div>
 	 	 <div class="row">
@@ -493,7 +521,7 @@
       	 		<div class="panel panel-info">
 	     			<div class="panel-body"> 
         				<div class="col-xs-6 col-md-6 col-lg-6">
-        					<font size=2 style="color:#010a01; font-family: Times New Roman;  width:100%;"><center><div id="tabla_laboratorios"></center></div></font>
+        					<font size=2 style="color:#010a01; font-family: Times New Roman;  width:100%;"><div style="text-align:justify;" id="tabla_laboratorios"></div></font>
 						</div>
        				</div>
         		</div>
@@ -508,7 +536,7 @@
       	 		<div class="panel panel-info">
 	     			<div class="panel-body"> 
         				<div class="col-xs-6 col-md-6 col-lg-6">
-        					<font size=2 style="color:#010a01; font-family: Times New Roman;  width:100%;"><center><div style="text-align:justify;" id="tabla_distribuidores"></div></center></font>
+        					<font size=2 style="color:#010a01; font-family: Times New Roman;  width:100%;"><div style="text-align:justify;" id="tabla_distribuidores"></div></font>
 						</div>
        				</div>
         		</div>
