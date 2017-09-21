@@ -64,6 +64,7 @@
 			  <div class="col-xs-4 col-md-4">
 			  	<div class="input-group">
 			      <input type="text" name="contenido_busqueda" id="contenido_busqueda" class="form-control" placeholder="Texto a buscar...">
+			      <div id="mensaje_contenido" class="errores"></div>	
 			      <span class="input-group-btn">
 			       <a id="btn_buscar" data-role="button" class="btn btn-primary"><span class="glyphicon glyphicon-search	" ></span></a>
 			       </span>
@@ -72,16 +73,21 @@
 			
 			</div>
 			<br>
-		<div class="col-xs-5 col-md-5">
-		 </div>
 			 <div class="row" style="text-align: center;"  >
-	         <div class="col-xs-4 col-md-4">
+	     <div class="col-xs-4 col-md-4">
+		 </div>
+		 
+			  <div class="col-xs-4 col-md-4">
 			  		<ul class="nav nav-pills" role="tablist" >
-			 		 <li role="presentation" id="option-productos" class="active"><a href="#">Productos <span class="badge" id="count_productos"></span></a></li>
-		     		 <li role="presentation" id="option-alimentos" class="active"><a href="#">Alimentos <span class="badge" id=""></span></a></li>
-                   </ul>
-    	 	</div>
-    	 	</div>
+			  <li role="presentation" id="option-productos" class="active"><a href="#">Productos <span class="badge"><?php echo $CantProductos;?></span></a></li>
+		      <li role="presentation" id="option-alimentos" class="active"><a href="#">Alimentos <span class="badge"><?php echo $CantAlimentos;?></span></a></li>
+			</ul>
+    	  </div>
+			
+			</div>
+			<br>
+		 
+    	  
 		 </div>
 		 
     </div>
