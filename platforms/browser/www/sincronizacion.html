@@ -1,72 +1,72 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-<head>
-	<title>Bienvenida Masoft</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta charset="utf-8" />	
-	<link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
-	
-	<link rel="stylesheet" href="css/app.css">
-	<script src="js/jquery.js"></script>
-	<script src="js/index.js"></script>
-	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-	
-	<script type="text/javascript" src="js/cordova.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/SQLitePlugin.js"></script>
-    
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <title>QRCode Reader APP</title>
+        
+        
+         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
 
-	<script type="text/javascript" src="js/ReaderQR.js"></script>
-	
-	
-	<script src="js/jquery.js"></script>
-	<script src="js/WebCodeCam.js"></script>
-	
-	<script src="js/qrcodelib.js"></script>
-	<script src="js/DecoderWorker.js"></script>
-	
+		<script type="text/javascript">
+        
+        	$(document).on("ready",ini);
 
-</head>
+        	function ini()
+        	{
+                	scan();
+        	}
 
-<body>
+        </script>
+        
+        <script>
+            function scan()
+            {
+                cordova.plugins.barcodeScanner.scan(
+                    function (result) {
+                        if(!result.cancelled)
+                        {
+                        	
+                            if(result.format == "QR_CODE")
+                            {
+                            	 var value = result.text;
+                            	 alert(value);                            
+                            	 
+                            }
+                        }
+                    },
+                    function (error) {
+                        alert("Scanning failed: " + error);
+                    }
+               );
+            }
 
-<div data-role="page">
-    <div role="main" class="ui-content">
-    	
-    	
-    	
-    	<div align="center" >
-    	<img  src="img/logo_vademano.png" vspace="2"/> 
-    
+           
 
-        	
-  	<div class="jumbotron">
+            function openURL(url)
+            {
+                window.open(url, '_blank', 'location=yes');
+            }
 
-   </div>
+            //initialize
+            if(localStorage.getItem("LocalData") == null)
+            {
+                var data = [];
+                data = JSON.stringify(data);
+                localStorage.setItem("LocalData", data);
+            }
+        </script>
+        
 
-     
+    </head>
+    <body>
 
-   <div style="container">
-	  <canvas id="qr-canvas" width="320" height="240"></canvas>    
-	  <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
-	  <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
-	  <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
-	  <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
-	</div>
-    	
-    	
-    	
-    	
-    </div><!-- /content -->
-        <div data-role="footer" data-position="fixed" style="background-color: #28b463 ;" data-theme="b">
-	        <h1>2017-2018</h1>
-	    </div><!-- /footer -->
-    </div><!-- /page -->
-    </div>
+                
 
-</body>
-
+        
+       
+    </body>
 </html>
