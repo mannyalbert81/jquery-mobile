@@ -91,6 +91,8 @@ function count_fichas(){
 		var len3 = results.rows.length, i;
 		var imgficha ='';
 		
+		
+		
 		for (i=0; i<=len3-1; i++) {
 			clasificacion_farmacologica_fichas = results.rows.item(i).clasificacion_farmacologica_fichas;
 			nombre = results.rows.item(i).nombre_fichas;
@@ -107,6 +109,7 @@ function count_fichas(){
 			pair1 += "</div>";
 			pair1 += "</div>";
 		}
+		
 		
 		 $(document).on('click', '#btn_ali', function(){
 		$("#tabla_ali").html(pair1);
