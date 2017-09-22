@@ -1,4 +1,6 @@
 var base_url = 'http://localhost:4000/Vademano/webservices/';
+
+
 var pag_service = 'FichaService.php' ;
 //var base_url = 'http://186.4.203.42:4000/Vademano/webservices/';
 //var pag_service = 'FichaService.php' ;
@@ -34,11 +36,17 @@ function init_pag(tx)
 	tblFichas +='tipo_alimento_fichas TEXT  , encabezado_dosificacion_fichas TEXT  , tipo_ficha TEXT  ,'; 
 	tblFichas +='tabla_formas_administracion TEXT  , tabla_laboratorios TEXT  , tabla_distribuidores TEXT  ,';
 	tblFichas +='tabla_composicion TEXT  , tabla_dosificacion TEXT  )';
+	
+	var tblImagen = 'CREATE TABLE IF NOT EXISTS ficha_foto ';
+			tblImagen += '(id_fichas_fotos INTEGER PRIMARY KEY AUTOINCREMENT,';
+		    tblImagen += 'id_fichas INTEGER ,foto TEXT)';
 		
+	tx.executeSql(tblImagen);	    
 	tx.executeSql(tblFichas);
-	tx.executeSql("CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT , nombres_usuarios TEXT NOT NULL, apellidos_usuarios TEXT NOT NULL, usuario_usuarios TEXT NOT NULL, clave_usuarios TEXT NOT NULL);");
 	tx.executeSql("DELETE FROM fichas_service;");
+	tx.executeSql("DELETE FROM ficha_foto;");
 	traeFichas();
+	traeImagen();
 }
 
 function traeFichas()
@@ -85,41 +93,28 @@ function traeFichas()
 }
 
 
-function show_fichas(){
-	db.transaction(function(transaction) {
-	transaction.executeSql('SELECT * FROM fichas_service ', [], function (tx, results) {
-	var id = "";
-	var nombre = "";
-
-	//<!--Display the table head-->
-	var pair="<tr><th data-priority=\"1\"><center>Id</center></th><th data-priority=\"1\"><center>Nombre</center></th><</tr>";
-	var i=0;
-
-	//<!--results.rows.length to get the total number of rows stored in the database-->
-	var len = results.rows.length, i;
-	for (i=0; i<=len-1; i++) {
-
-		//<!--Fetching the 'name' from the database-->
-		id = results.rows.item(i).id_fichas;
-		nombre = results.rows.item(i).nombre_fichas;
-	
-
-	//<!--Displaying all rows of the database in the table-->
-	pair += "<tr><td><center>"+id+"</center></td><td><center>"+nombre+"</center></td></tr>";
-	}
-	if (pair == "<tr><th>Id</th><th>Nombre</th></tr>") {
-	pair += "<tr><td><i>empty</i></td><td><i>empty</i></td></tr>";
-	}
-	$("#myTable1").html(pair);
-	}, null);
-	});
-}
-
-
 function errorCB(err) {
     console.log('error encontrado');
 }
 function successCB (){
+}
+
+function traeImagen()
+{
+	var queryIns = 'INSERT INTO ficha_foto(id_fichas, foto) VALUES (?,?)';
+
+	var datosUsuario ='';	
+ 	archivoValidacion = "http://localhost:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+ 	$.getJSON( archivoValidacion, { imagen:datosUsuario })
+	.done(function(x) {
+		
+		 $.each(x, function(i, j) {
+			 
+			    db.transaction(function (tx) {
+				 tx.executeSql(queryIns,[j.id_fichas,j.foto_fichas_fotos ],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
+			   });
+		 });
+	})
 }
 
 
