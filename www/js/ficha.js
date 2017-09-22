@@ -1,4 +1,4 @@
-var base_url = 'http://localhost:5000/Vademano/webservices/';
+var base_url = 'http://localhost:4000/Vademano/webservices/';
 
 
 var pag_service = 'FichaService.php' ;
@@ -108,6 +108,7 @@ function traeImagen()
 {
 	var queryIns = 'INSERT INTO ficha_foto(id_fichas, foto) VALUES (?,?)';
 
+<<<<<<< HEAD
 	var datosUsuario ='fichas';	
  	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
@@ -128,6 +129,10 @@ function traeImagenEspecies()
 
 	var datosUsuario ='especies';	
  	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+=======
+	var datosUsuario ='';	
+ 	archivoValidacion = "http://localhost:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+>>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
 		
