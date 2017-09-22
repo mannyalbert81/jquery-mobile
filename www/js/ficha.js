@@ -1,4 +1,4 @@
-var base_url = 'http://localhost:4000/Vademano/webservices/';
+var base_url = 'http://localhost:5000/Vademano/webservices/';
 
 
 var pag_service = 'FichaService.php' ;
@@ -52,6 +52,7 @@ function init_pag(tx)
 	tx.executeSql("DELETE FROM foto_especies;");
 	traeFichas();
 	traeImagen();
+	traeImagenEspecies();
 }
 
 function traeFichas()
@@ -107,8 +108,6 @@ function successCB (){
 function traeImagen()
 {
 	var queryIns = 'INSERT INTO ficha_foto(id_fichas, foto) VALUES (?,?)';
-
-<<<<<<< HEAD
 	var datosUsuario ='fichas';	
  	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
@@ -126,20 +125,16 @@ function traeImagen()
 function traeImagenEspecies()
 {
 	var queryIns = 'INSERT INTO foto_especies(id_fichas_especies,id_fichas,id_especies,nombre_especies,logo_especies) VALUES (?,?,?,?,?)';
-
 	var datosUsuario ='especies';	
  	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
-=======
-	var datosUsuario ='';	
- 	archivoValidacion = "http://localhost:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
+
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
 		
 		 $.each(x, function(i, j) {
 			 
 			    db.transaction(function (tx) {
-				 tx.executeSql(queryIns,[j.id_fichas,j.foto_fichas_fotos ],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
+				 tx.executeSql(queryIns,[j.id_fichas_especies,j.id_fichas,j.id_especies,j.nombre_especies,j.logo_especies ],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
 			   });
 		 });
 	})

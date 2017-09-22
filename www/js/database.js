@@ -2,7 +2,6 @@ $(document).on("ready",ini);
 
 function ini()
 {
-
 }
 
 //<!--Calling onDeviceReady method-->
@@ -14,7 +13,6 @@ function onDeviceReady() {
 
 	db.transaction(populateDB, errorCB, successCB);
 }
-
 
 //create table and insert some record
 function populateDB(tx) {
@@ -39,14 +37,8 @@ function populateDB(tx) {
     		alert('Error al cargar Usuarios');
     });
     
-   
-    
 }  
    
-    
- 
-
-
 function errorCB(err) {
     alert("Error processing SQL: "+err.code);
 }
