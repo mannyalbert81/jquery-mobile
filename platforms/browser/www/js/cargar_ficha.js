@@ -76,8 +76,6 @@ function cargar_fichas(){
     var tipo_alimento_fichas="";
     var encabezado_dosificacion_fichas="";
     var tipo_ficha="";
-    
-    
     var tabla_formas_administracion="";
     var tabla_laboratorios="";
     var tabla_distribuidores="";
@@ -88,9 +86,7 @@ function cargar_fichas(){
 	var i=0;
 	var len1 = results.rows.length, i;
 	for (i=0; i<=len1-1; i++) {
-		
-   	
-		
+			
 		id_fichas 						= results.rows.item(i).id_fichas;
 		nombre_fichas 					= results.rows.item(i).nombre_fichas;
 	    encabezado_tabla_fichas			=results.rows.item(i).encabezado_tabla_fichas;
