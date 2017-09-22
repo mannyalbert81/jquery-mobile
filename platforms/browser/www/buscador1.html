@@ -17,8 +17,10 @@
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="view/font-awesome/css/font-awesome.min.css">
+ 
 
- 	<style type="text/css">
+ <style type="text/css">
   .boton_personalizado{
     text-decoration: none;
     padding: 6px;
@@ -28,6 +30,10 @@
     background-color: #1883ba;
     border-radius: 6px;
     border: 2px solid #0016b0;
+  }
+  .boton_personalizado:hover{
+    color: #1883ba;
+    background-color: #ffffff;
   }
 </style>
 <style> 
@@ -96,7 +102,7 @@ input[type=text]:focus {
 			      <span class="input-group-btn">
 			      <br>
 			      
-			      <a class="boton_personalizado" role="presentation"  id="btn_buscar" data-role="button" class="btn btn-primary" class="active" href="#">Buscar	</a>
+			      <a class="boton_personalizado" role="presentation"  id="btn_buscar" data-role="button" class="btn btn-primary" class="active" href="#"><i class="fa fa-search" aria-hidden="true"></i>	</a>
 		     		
 			       </span>
 			    </div>
@@ -110,6 +116,7 @@ input[type=text]:focus {
 			  		<ul class="nav nav-pills" role="tablist" >
 					 <a class="boton_personalizado" role="presentation"  id="btn_pro" class="active" href="#">Productos <span class="badge" id="countprod"></span></a></a>
 		     		 <a class="boton_personalizado" role="presentation"  id="btn_ali" class="active" href="#">Alimentos <span class="badge" id="countali"></span></a></a>
+                   <br>
                    </ul>
     	 	</div>
     	 	</div>
