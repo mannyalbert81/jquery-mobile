@@ -122,6 +122,8 @@ function retornaImagen(id)
 	db.transaction(function(transaction) {
 		transaction.executeSql('SELECT * FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id], function (tx, results) {
 		return  results.rows.item(0).foto;
+
+		}
 }
 
 

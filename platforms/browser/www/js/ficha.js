@@ -1,5 +1,4 @@
 var base_url = 'http://localhost:4000/Vademano/webservices/';
-
 var pag_service = 'FichaService.php' ;
 //var base_url = 'http://186.4.203.42:4000/Vademano/webservices/';
 //var pag_service = 'FichaService.php' ;
@@ -35,17 +34,11 @@ function init_pag(tx)
 	tblFichas +='tipo_alimento_fichas TEXT  , encabezado_dosificacion_fichas TEXT  , tipo_ficha TEXT  ,'; 
 	tblFichas +='tabla_formas_administracion TEXT  , tabla_laboratorios TEXT  , tabla_distribuidores TEXT  ,';
 	tblFichas +='tabla_composicion TEXT  , tabla_dosificacion TEXT  )';
-	
-	var tblImagen = 'CREATE TABLE IF NOT EXISTS ficha_foto ';
-		tblImagen += '(id_fichas_fotos INTEGER PRIMARY KEY AUTOINCREMENT,';
-		tblImagen += 'id_fichas INTEGER ,foto TEXT)';
 		
 	tx.executeSql(tblFichas);
-	tx.executeSql(tblImagen);
+	tx.executeSql("CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT , nombres_usuarios TEXT NOT NULL, apellidos_usuarios TEXT NOT NULL, usuario_usuarios TEXT NOT NULL, clave_usuarios TEXT NOT NULL);");
 	tx.executeSql("DELETE FROM fichas_service;");
-	tx.executeSql("DELETE FROM ficha_foto;");
 	traeFichas();
-	traeImagen();
 }
 
 function traeFichas()
@@ -128,25 +121,6 @@ function errorCB(err) {
 }
 function successCB (){
 }
-
-function traeImagen()
-{
-	var queryIns = 'INSERT INTO ficha_foto(id_fichas, foto) VALUES (?,?)';
-	// recolecta los valores que inserto el usuario
-	var datosUsuario ='';	
-  	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
-  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
-	.done(function(x) {
-		
-		 $.each(x, function(i, j) {
-			   //console.log( j.id_fichas );
-			   db.transaction(function (tx) {
-				 tx.executeSql(queryIns,[j.id_fichas,j.foto_fichas_fotos ],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
-			   });
-		 });
-	})
-}
-
 
 
 /*FALLOS*/
