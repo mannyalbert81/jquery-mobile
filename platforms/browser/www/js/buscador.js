@@ -59,7 +59,19 @@ function count_fichas(){
 		clasificacion_farmacologica_fichas = results.rows.item(i).clasificacion_farmacologica_fichas;
 		nombre = results.rows.item(i).nombre_fichas;
 		id2 = results.rows.item(i).id_fichas;
-		
+
+		imgficha = '';//'data:image/png;base64,'+retornaImagen(id2);
+		pair += "<img src="+imgficha+" width='200' height='150' />";
+        pair += "<div class='col-lg-3 col-md-3 col-xs-6'>";
+		pair += "<div class='contenedor-img ejemplo-1'>";
+		pair += "<div class='mascara'>";
+		pair += "<h2>"+nombre+"</h2>";
+		pair += "<p>"+clasificacion_farmacologica_fichas+"</p>";
+		pair += "<a class='link' href='FichaOnline.html?id_fichas="+id2+"'>Leer mas</a>";
+		pair += "</div>";
+		pair += "</div>";
+		pair += "</div>";
+
 		db.transaction(function(transaction) {
 			transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id2], function (tx, results) {
 				var len_foto1 = results.rows.length, i;
@@ -104,7 +116,7 @@ function count_fichas(){
 		});
 		
 		
-       
+
 	}
 	
 	$(document).on('click', '#btn_pro', function(){
@@ -124,7 +136,7 @@ function count_fichas(){
 		var pair1="";
 		var i=0;
 		var len3 = results.rows.length, i;
-		var imgficha ='';
+		var imgficha ='',foto;
 		
 		
 		
@@ -133,6 +145,19 @@ function count_fichas(){
 			nombre = results.rows.item(i).nombre_fichas;
 			id1 = results.rows.item(i).id_fichas;
 			
+
+			imgficha = 'data:image/png;base64,'+retornaImagen(id1);
+			pair1 += "<img src="+imgficha+" width='200' height='150' />";
+			pair1 += "<div class='col-lg-3 col-md-3 col-xs-6'>";
+			pair1 += "<div class='contenedor-img ejemplo-1'>";
+			pair1 += "<div class='mascara'>";
+			pair1 += "<h2>"+nombre+"</h2>";
+			pair1 += "<p>"+clasificacion_farmacologica_fichas+"</p>";
+			pair1 += "<a class='link' href='FichaOnlineAli.html?id_fichas="+id1+"'>Leer mas</a>";
+			pair1 += "</div>";
+			pair1 += "</div>";
+			pair1 += "</div>";
+
 			db.transaction(function(transaction) {
 				transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id1], function (tx, results) {
 					var len_foto = results.rows.length, i;
@@ -176,9 +201,7 @@ function count_fichas(){
 				},null);
 			});
 			
-			
-			
-			
+
 		}
 		
 		
@@ -190,9 +213,6 @@ function count_fichas(){
 		}, null);
 		});
 	}
-
-
-
 
 
 
