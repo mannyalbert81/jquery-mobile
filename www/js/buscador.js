@@ -125,7 +125,6 @@ function retornaImagen(id)
 		return  results.rows.item(0).foto;
 		},null);
 	});
-		
 }
 
 
