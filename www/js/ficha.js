@@ -43,6 +43,7 @@ function init_pag(tx)
 	tx.executeSql(tblFichas);
 	tx.executeSql(tblImagen);
 	tx.executeSql("DELETE FROM fichas_service;");
+	tx.executeSql("DELETE FROM ficha_foto;");
 	traeFichas();
 	traeImagen();
 }
