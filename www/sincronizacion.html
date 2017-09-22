@@ -10,18 +10,6 @@
          <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-
-		<script type="text/javascript">
-        
-        	$(document).on("ready",ini);
-
-        	function ini()
-        	{
-                	scan();
-        	}
-
-        </script>
-        
         <script>
             function scan()
             {
@@ -33,9 +21,7 @@
                             if(result.format == "QR_CODE")
                             {
                             	 var value = result.text;
-                            	 alert(value);                            
-                            	 
-                            }
+                            	 alert(value);                            }
                         }
                     },
                     function (error) {
@@ -60,7 +46,18 @@
             }
         </script>
         
+        <script type="text/javascript">
+        
+        $(document).on("ready",ini);
 
+        function ini()
+        {
+        	
+        	scan();
+        }
+
+        </script>
+        
     </head>
     <body>
 
