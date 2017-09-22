@@ -2,6 +2,7 @@
 <html>
 <head>
  <title>Buscador</title>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta charset="utf-8" />	
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="css/estilos.css">
@@ -19,35 +20,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <script>		  
- .boton {
-border: 1px solid #2e518b; /*anchura, estilo y color borde*/
-padding: 10px; /*espacio alrededor texto*/
-background-color: #2e518b; /*color botón*/
-color: #ffffff; /*color texto*/
-text-decoration: none; /*decoración texto*/
-text-transform: uppercase; /*capitalización texto*/
-font-family: 'Helvetica', sans-serif; /*tipografía texto*/
-border-radius: 50px; /*bordes redondos*/
-}
- </script>		
- </head> 	
+
+ 		  
  
+ </head> 	
+ <body>
  
 <div data-role="page">
 <div role="main" class="ui-content">
  
-<header>
+ 	<header>
 		<span id="button-menu" class="fa fa-bars"></span>
         <nav class="navegacion">
 			<ul class="menu">
 				<!-- TITULAR -->
 				<li class="title-menu">Todas las Opciones</li>
 				<!-- TITULAR -->
-				<li><a href="bienvenida.html"><span class="fa fa-home icon-menu"></span>Inicio</a></li>
-
-		<li><a href="sincronizacion.html"><span class="fa fa-folder icon-menu"></span>Sincronizar Dispositivo</a></li>
+				<li><a href="index.html"><span class="fa fa-home icon-menu"></span>Inicio</a></li>
                 <li><a href="buscador1.html"><span class="fa fa-folder icon-menu"></span>Vademécum</a></li>
 				<li class="item-submenu" menu="1">
 					<a href="#"><span class="fa fa-envelope icon-menu"></span>Contactos</a>
@@ -64,7 +53,6 @@ border-radius: 50px; /*bordes redondos*/
 		</nav>
 	 </header>
 	 
-	 <body>
 	    <div align="center" style="margin-top:80px;">
     	<img  src="img/logo_vademano.png" class="zoom" vspace="5" /> 
     	</div>
@@ -89,7 +77,6 @@ border-radius: 50px; /*bordes redondos*/
 		 	  <div class="col-xs-4 col-md-4">
 			  		<ul class="nav nav-pills" role="tablist" >
 					 <li role="presentation"  id="btn_pro" class="active"><a href="#">Productos <span class="badge" id="countprod"></span></a></li>
-		     		 <a class="boton" href="http://laweb.com" target="_blank">Mi botón</a>
 		     		 <li role="presentation"  id="btn_ali" class="active"><a href="#">Alimentos <span class="badge" id="countali"></span></a></li>
                    </ul>
     	 	</div>
@@ -99,7 +86,7 @@ border-radius: 50px; /*bordes redondos*/
     	 	
     	 	<div id="tabla_prod" class="col-lg-12 col-md-12 col-xs-12"></div>
     	 	<div id="tabla_ali"  class="col-lg-12 col-md-12 col-xs-12"></div>
-	
+
 			
     	  </div>
 			
