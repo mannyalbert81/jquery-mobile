@@ -109,7 +109,7 @@ function traeImagen()
 {
 	var queryIns = 'INSERT INTO ficha_foto(id_fichas, foto) VALUES (?,?)';
 	var datosUsuario ='fichas';	
- 	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+ 	archivoValidacion = "http://localhost:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
 		

@@ -60,14 +60,13 @@ function count_fichas(){
 		nombre = results.rows.item(i).nombre_fichas;
 		id2 = results.rows.item(i).id_fichas;
 		
-		console.log(nombre);
 		
 		db.transaction(function(transaction) {
-			transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id2], function (tx, res) {
+			transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id2], function (tx1, res) {
 				var len_foto1 = res.rows.length, i;
 				var foto="";
 			
-				console.log(nombre);
+				
 				
 				if(len_foto1 > 0){
 					
@@ -137,14 +136,14 @@ function count_fichas(){
 			id1 = results.rows.item(i).id_fichas;
 			
 			db.transaction(function(transaction) {
-				transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id1], function (tx, results) {
-					var len_foto = results.rows.length, i;
+				transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id1], function (tx1, res) {
+					var len_foto = res.rows.length, i;
 					var foto="";
 					
 					if(len_foto > 0){
 						
 						for (var i=0; i<= len_foto-1; i++) {  
-							 foto = results.rows.item(i).foto;
+							 foto = res.rows.item(i).foto;
 						}
 						
 						 imgficha = 'data:image/png;base64,'+foto;
