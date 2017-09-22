@@ -66,12 +66,12 @@ function getlogin_success(tx, results){
    for (var i=0; i< len; i++) {  
     var employee = results.rows.item(i);
     var username=document. getElementById("usuario").value;
-    var password=document. getElementById("clave").value;
+    //var password=document. getElementById("clave").value;
     var uname=employee.usuario_usuarios;
-    var pasw=employee.clave_usuarios;
+    //var pasw=employee.clave_usuarios;
     //alert( pasw );
     //alert(password);
-    if(username==uname && password == pasw  ){
+    if(username==uname   ){
     	window.location.href = "bienvenida.html";
      break;
     }
