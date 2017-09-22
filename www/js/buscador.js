@@ -108,6 +108,7 @@ function count_fichas(){
 			pair1 += "</div>";
 		}
 		
+		
 		 $(document).on('click', '#btn_ali', function(){
 		$("#tabla_ali").html(pair1);
 		$("#tabla_prod").html("");
