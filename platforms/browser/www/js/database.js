@@ -22,18 +22,19 @@ function populateDB(tx) {
 
 	
 	//creamos  las tablas
-	tx.executeSql('CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT , nombres_usuarios TEXT NOT NULL, apellidos_usuarios TEXT NOT NULL, usuario_usuarios TEXT NOT NULL, clave_usuarios TEXT NOT NULL)');
+	tx.executeSql('CREATE TABLE IF NOT EXISTS 
+			usuarios (id_usuario INTEGER PRIMARY KEY AUTOINCREMENT , nombres_usuario TEXT, 	apellidos_usuario TEXT, usuario_usuarios TEXT, nombre_estado TEXT)');
 	
-	
+					
 	var _id = 1;
 	var _nombres_usuarios="Manuel Alberto";
 	var _apellidos_usuarios ="Rosabal Gutiérrez";
 	var _usuario_usuarios="JASON";
 	var _clave_usuarios="JASON";
 	
-    var executeQuery = "INSERT INTO usuarios(nombres_usuarios,apellidos_usuarios, usuario_usuarios, clave_usuarios) VALUES (?,?,?,?)";
+    var executeQuery = "INSERT INTO usuarios(nombres_usuario,apellidos_usuario, usuario_usuario) VALUES (?,?,?,?)";
     
-    tx.executeSql(executeQuery, [ _nombres_usuarios,  _apellidos_usuarios, _usuario_usuarios, _clave_usuarios],
+    tx.executeSql(executeQuery, [ _nombres_usuarios,  _apellidos_usuarios, _usuario_usuarios],
     	function(tx, result) {
     		//alert('Inserted');
     	},
