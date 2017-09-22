@@ -64,7 +64,7 @@ function count_fichas(){
 		pair += "<div class='mascara'>";
 		pair += "<h2>"+nombre+"</h2>";
 		pair += "<p>"+clasificacion_farmacologica_fichas+"</p>";
-		pair1 += "<a class='link' href='FichaOnline.html?id_fichas="+id2+"'>Leer mas</a>";
+		pair += "<a class='link' href='FichaOnline.html?id_fichas="+id2+"'>Leer mas</a>";
 		pair += "</div>";
 		pair += "</div>";
 		pair += "</div>";
@@ -87,16 +87,18 @@ function count_fichas(){
 		var pair1="";
 		var i=0;
 		var len3 = results.rows.length, i;
+		var imgficha = '';
 		for (i=0; i<=len3-1; i++) {
 			clasificacion_farmacologica_fichas = results.rows.item(i).clasificacion_farmacologica_fichas;
 			nombre = results.rows.item(i).nombre_fichas;
 			id1 = results.rows.item(i).id_fichas;
+			imgficha = 'data:image/png;base64,'+retornaImagen(id1);
 			pair1 += "<div class='col-lg-3 col-md-3 col-xs-6'>";
 			pair1 += "<div class='contenedor-img ejemplo-1'>";
 			pair1 += "<div class='mascara'>";
 			pair1 += "<h2>"+nombre+"</h2>";
 			pair1 += "<p>"+clasificacion_farmacologica_fichas+"</p>";
-			pair1 += "<a class='link' href='FichaOnline.html?id_fichas="+id1+"'>Leer mas</a>";
+			pair1 += "<a class='link' href='FichaOnlineAli.html?id_fichas="+id1+"'>Leer mas</a>";
 			pair1 += "</div>";
 			pair1 += "</div>";
 			pair1 += "</div>";
@@ -111,7 +113,12 @@ function count_fichas(){
 		});
 	}
 
-
+function retornaImagen(id)
+{
+	db.transaction(function(transaction) {
+		transaction.executeSql('SELECT * FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id], function (tx, results) {
+		return  results.rows.item(0).foto;
+}
 
 
 
