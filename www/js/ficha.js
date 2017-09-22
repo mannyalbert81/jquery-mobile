@@ -1,4 +1,4 @@
-var base_url = 'http://localhost:5000/Vademano/webservices/';
+var base_url = 'http://192.168.10.157:4000/Vademano/webservices/';
 
 
 var pag_service = 'FichaService.php' ;
@@ -109,7 +109,7 @@ function traeImagen()
 {
 	var queryIns = 'INSERT INTO ficha_foto(id_fichas, foto) VALUES (?,?)';
 	var datosUsuario ='fichas';	
- 	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+ 	archivoValidacion = "http://192.168.10.157:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
 		
