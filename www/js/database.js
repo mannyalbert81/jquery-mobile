@@ -2,8 +2,7 @@ $(document).on("ready",ini);
 
 function ini()
 {
-	
-	//alert('Creando Database');
+
 }
 
 //<!--Calling onDeviceReady method-->
@@ -40,7 +39,7 @@ function populateDB(tx) {
     		alert('Error al cargar Usuarios');
     });
     
-    
+   
     
 }  
    
