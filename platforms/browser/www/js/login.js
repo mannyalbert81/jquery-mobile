@@ -1,7 +1,5 @@
 ////local
 
-
-
 $(document).on("ready",ini);
 
 function ini()
@@ -26,16 +24,7 @@ function onDeviceReady(){
   }
  
  else{
-	 
-	 //alert("creada");
-    
-    
-    
-    
-    
-    $(document).on('click', '#btn-ingresar', function(){
-    
-    	//alert('Hola');
+	 $(document).on('click', '#btn-ingresar', function(){
     	db.transaction(getregistdata, transaction_error);
     
     });
@@ -66,12 +55,9 @@ function getlogin_success(tx, results){
    for (var i=0; i< len; i++) {  
     var employee = results.rows.item(i);
     var username=document. getElementById("usuario").value;
-    //var password=document. getElementById("clave").value;
-    var uname=employee.usuario_usuarios;
-    //var pasw=employee.clave_usuarios;
-    //alert( pasw );
-    //alert(password);
-    if(username==uname   ){
+    var uname=employee.usuario_usuario;
+    
+    if(username==uname  ){
     	window.location.href = "bienvenida.html";
      break;
     }
@@ -82,12 +68,8 @@ function getlogin_success(tx, results){
    
    if(status==1)
     {
-	   
-       //alert("login failed");
-       //alertDGC("login failed");
-       alert("Error al iniciar Sesion");
-       //jAlert('This is a custom alert box', 'Alert Dialog');
-    }
+	  alert("Error al iniciar Sesion");
+     }
 }
 
 
