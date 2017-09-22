@@ -59,7 +59,7 @@ function count_fichas(){
 		clasificacion_farmacologica_fichas = results.rows.item(i).clasificacion_farmacologica_fichas;
 		nombre = results.rows.item(i).nombre_fichas;
 		id2 = results.rows.item(i).id_fichas;
-<<<<<<< HEAD
+
 		imgficha = '';//'data:image/png;base64,'+retornaImagen(id2);
 		pair += "<img src="+imgficha+" width='200' height='150' />";
         pair += "<div class='col-lg-3 col-md-3 col-xs-6'>";
@@ -71,8 +71,7 @@ function count_fichas(){
 		pair += "</div>";
 		pair += "</div>";
 		pair += "</div>";
-=======
-		
+
 		db.transaction(function(transaction) {
 			transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id2], function (tx, results) {
 				var len_foto1 = results.rows.length, i;
@@ -117,8 +116,7 @@ function count_fichas(){
 		});
 		
 		
-       
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
+
 	}
 	
 	$(document).on('click', '#btn_pro', function(){
@@ -147,7 +145,7 @@ function count_fichas(){
 			nombre = results.rows.item(i).nombre_fichas;
 			id1 = results.rows.item(i).id_fichas;
 			
-<<<<<<< HEAD
+
 			imgficha = 'data:image/png;base64,'+retornaImagen(id1);
 			pair1 += "<img src="+imgficha+" width='200' height='150' />";
 			pair1 += "<div class='col-lg-3 col-md-3 col-xs-6'>";
@@ -159,7 +157,7 @@ function count_fichas(){
 			pair1 += "</div>";
 			pair1 += "</div>";
 			pair1 += "</div>";
-=======
+
 			db.transaction(function(transaction) {
 				transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id1], function (tx, results) {
 					var len_foto = results.rows.length, i;
@@ -203,10 +201,7 @@ function count_fichas(){
 				},null);
 			});
 			
-			
-			
-			
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
+
 		}
 		
 		
@@ -219,32 +214,6 @@ function count_fichas(){
 		});
 	}
 
-
-<<<<<<< HEAD
-var imgfun=function retornaImagen(id,callback)
-{  
-	db.transaction(function (tx) {
-		 tx.executeSql('SELECT * FROM ficha_foto  WHERE  id_fichas = ?',[id],function (tx, res) {
-			  return callback(res);				 
-			 	
-		 },function (e) {});
-	});
-}
-=======
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
-
-function retornaImagens(id)
-{  var defer = $.Deferred();
-	db.transaction(function (tx) {
-		 tx.executeSql('SELECT * FROM ficha_foto  WHERE  id_fichas = ?',[id],function (tx, res) {
-			 if(res.rows.length>0)
-			 	{
-				 defer.resolve(res.rows.item(0).foto);
-			 	}
-		 },function (e) {});
-	   });
-	 return defer.promise();;
-}
 
 
 
