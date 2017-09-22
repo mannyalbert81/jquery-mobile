@@ -59,7 +59,7 @@ function count_fichas(){
 		clasificacion_farmacologica_fichas = results.rows.item(i).clasificacion_farmacologica_fichas;
 		nombre = results.rows.item(i).nombre_fichas;
 		id2 = results.rows.item(i).id_fichas;
-		imgficha = 'data:image/png;base64,'+retornaImagen(id2);
+		imgficha = '';//'data:image/png;base64,'+retornaImagen(id2);
 		pair += "<img src="+imgficha+" width='200' height='150' />";
         pair += "<div class='col-lg-3 col-md-3 col-xs-6'>";
 		pair += "<div class='contenedor-img ejemplo-1'>";
@@ -89,12 +89,13 @@ function count_fichas(){
 		var pair1="";
 		var i=0;
 		var len3 = results.rows.length, i;
-		var imgficha ='';
+		var imgficha ='',foto;
 		
 		for (i=0; i<=len3-1; i++) {
 			clasificacion_farmacologica_fichas = results.rows.item(i).clasificacion_farmacologica_fichas;
 			nombre = results.rows.item(i).nombre_fichas;
 			id1 = results.rows.item(i).id_fichas;
+			
 			imgficha = 'data:image/png;base64,'+retornaImagen(id1);
 			pair1 += "<img src="+imgficha+" width='200' height='150' />";
 			pair1 += "<div class='col-lg-3 col-md-3 col-xs-6'>";
@@ -117,17 +118,29 @@ function count_fichas(){
 		});
 	}
 
-function retornaImagen(id)
-{
-	db.transaction(function(transaction) {
-		transaction.executeSql('SELECT * FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id], 
-		function (tx, results) {
-		return  results.rows.item(0).foto;
-		},null);
+
+var imgfun=function retornaImagen(id,callback)
+{  
+	db.transaction(function (tx) {
+		 tx.executeSql('SELECT * FROM ficha_foto  WHERE  id_fichas = ?',[id],function (tx, res) {
+			  return callback(res);				 
+			 	
+		 },function (e) {});
 	});
 }
 
-
+function retornaImagens(id)
+{  var defer = $.Deferred();
+	db.transaction(function (tx) {
+		 tx.executeSql('SELECT * FROM ficha_foto  WHERE  id_fichas = ?',[id],function (tx, res) {
+			 if(res.rows.length>0)
+			 	{
+				 defer.resolve(res.rows.item(0).foto);
+			 	}
+		 },function (e) {});
+	   });
+	 return defer.promise();;
+}
 
 
 
