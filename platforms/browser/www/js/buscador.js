@@ -68,6 +68,7 @@ function count_fichas(){
 				var foto="";
 			
 				console.log(nombre);
+				
 				if(len_foto1 > 0){
 					
 					for (var i=0; i<= len_foto1-1; i++) {  
