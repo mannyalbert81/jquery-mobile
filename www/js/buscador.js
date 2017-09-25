@@ -60,9 +60,8 @@ function count_fichas(){
 		id2 = results.rows.item(i).id_fichas;
 		foto_fichas1 = results.rows.item(i).foto_fichas_fotos;
 		
-		alert(foto_fichas1);
 		
-		if(foto_fichas1!=""){
+		if(foto_fichas1 != ""){
 			
 			
 			 imgficha = 'data:image/png;base64,'+foto_fichas1;
@@ -74,7 +73,7 @@ function count_fichas(){
 			 pair += "<div class='mascara'>";
 			 pair += "<h2>"+nombre+"</h2>";
 			 pair += "<p>"+clasificacion_farmacologica_fichas+"</p>";
-			 pair += "<a class='link' href='FichaOnlineAli.html?id_fichas="+id1+"'>Leer mas</a>";
+			 pair += "<a class='link' href='FichaOnline.html?id_fichas="+id2+"'>Leer mas</a>";
 			 pair += "</div>";
 			 pair += "</div>";
 			 pair += "</div>";
@@ -87,7 +86,7 @@ function count_fichas(){
 			pair += "<div class='mascara'>";
 			pair += "<h2>"+nombre+"</h2>";
 			pair += "<p>"+clasificacion_farmacologica_fichas+"</p>";
-			pair += "<a class='link' href='FichaOnlineAli.html?id_fichas="+id1+"'>Leer mas</a>";
+			pair += "<a class='link' href='FichaOnline.html?id_fichas="+id2+"'>Leer mas</a>";
 			pair += "</div>";
 			pair += "</div>";
 			pair += "</div>";
@@ -114,7 +113,7 @@ function count_fichas(){
 		var pair1="";
 		var i=0;
 		var len3 = results.rows.length, i;
-		var imgficha ='',fotoImg;
+		var imgficha ='';
 		
 		
 		for (i=0; i<=len3-1; i++) {
