@@ -52,6 +52,33 @@ function cargar_fichas(){
 	var id_fichas1 = $_GET("id_fichas");
     
 
+	db.transaction(function(transaction) {
+		transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id_fichas1], function (tx, results) {
+			var len_foto1 = results.rows.length, i;
+			var foto="";
+			
+			if(len_foto1 > 0){
+				
+				for (var i=0; i<= len_foto1-1; i++) {  
+					 foto = results.rows.item(i).foto;
+				}
+				 imgficha = 'data:image/png;base64,'+foto;
+				 
+				 $("#foto").attr({'src':imgficha});
+				 
+				 
+			}else{
+				
+				imgficha='img/nodisponible.jpg';
+				$("#foto").attr({'src':imgficha});
+			}
+			
+		}, null);
+	});
+				
+
+		
+	
     
 	db.transaction(function(transaction) {
 	transaction.executeSql('SELECT * FROM fichas_service WHERE id_fichas=?', [id_fichas1], function (tx, results) {

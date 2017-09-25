@@ -2,8 +2,6 @@ $(document).on("ready",ini);
 
 function ini()
 {
-	
-	//alert('Creando Database');
 }
 
 //<!--Calling onDeviceReady method-->
@@ -16,14 +14,12 @@ function onDeviceReady() {
 	db.transaction(populateDB, errorCB, successCB);
 }
 
-
 //create table and insert some record
 function populateDB(tx) {
 	
 	//creamos  las tablas
 	tx.executeSql('CREATE TABLE IF NOT EXISTS usuarios (id_usuario INTEGER PRIMARY KEY AUTOINCREMENT, nombres_usuario TEXT, apellidos_usuario TEXT, usuario_usuario TEXT, clave_usuario TEXT)');
-	
-					
+
 	var _id = 1;
 	var _nombres_usuarios="Manuel Alberto";
 	var _apellidos_usuarios ="Rosabal Gutiérrez";
@@ -40,14 +36,8 @@ function populateDB(tx) {
     		alert('Error al cargar Usuarios');
     });
     
-    
-    
 }  
    
-    
- 
-
-
 function errorCB(err) {
     alert("Error processing SQL: "+err.code);
 }
