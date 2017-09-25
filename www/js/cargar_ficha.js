@@ -164,10 +164,6 @@ function cargar_fichas(){
 	   }
 	
 	
-	
-	
-	
-	
 	    if (id_fichas!=""){
 	    	
 		    $("#id_fichas").html(id_fichas);
@@ -257,6 +253,7 @@ function cargar_fichas(){
 		}
 		
 		
+<<<<<<< HEAD
 		if (tabla_formas_administracion!=""){
 		$("#tabla_formas_administracion").html(tabla_formas_administracion);
 		}
@@ -280,6 +277,115 @@ function cargar_fichas(){
 		 
 	    
 	
+=======
+	}
+	if (id_fichas!=""){
+	$("#id_fichas").html(id_fichas);
+	}
+	
+	if (nombre_fichas!=""){
+	$("#nombre_fichas").html(nombre_fichas);
+	}
+	
+	if (encabezado_tabla_fichas!=""){
+	$("#encabezado_tabla_fichas").html(encabezado_tabla_fichas);
+	}
+	
+	if (farmacocinetica_fichas!=""){
+	$("#farmacocinetica_fichas").html(farmacocinetica_fichas);
+	}
+	
+	if (accion_terapeutica_fichas!=""){
+	$("#accion_terapeutica_fichas").html(accion_terapeutica_fichas);
+	}
+	
+	if (clasificacion_farmacologica_fichas!=""){
+	$("#clasificacion_farmacologica_fichas").html(clasificacion_farmacologica_fichas);
+	}
+	
+	if (forma_terapeutica_fichas!=""){
+	$("#forma_terapeutica_fichas").html(forma_terapeutica_fichas);
+	}
+	
+	if (indicaciones_uso_fichas!=""){
+	$("#indicaciones_uso_fichas").html(indicaciones_uso_fichas);
+	}
+	
+	if (interacciones_fichas!=""){
+	$("#interacciones_fichas").html(interacciones_fichas);
+	}
+	
+	if (contraindicaciones_fichas!=""){
+	$("#contraindicaciones_fichas").html(contraindicaciones_fichas);
+	}
+	
+	if (periodo_retiro_fichas!=""){
+	$("#periodo_retiro_fichas").html(periodo_retiro_fichas);
+	}
+	
+	if (advertencias_fichas!=""){
+	$("#advertencias_fichas").html(advertencias_fichas);
+	}
+	
+	if (presentacion_fichas!=""){
+	$("#presentacion_fichas").html(presentacion_fichas);
+	}
+	
+	if (registro_sanitario_fichas!=""){
+	$("#registro_sanitario_fichas").html(registro_sanitario_fichas);
+	}
+	
+	if (mecanismo_accion_fichas!=""){
+	$("#mecanismo_accion_fichas").html(mecanismo_accion_fichas);
+	}
+	
+	if (efectos_colaterales_fichas!=""){
+	$("#efectos_colaterales_fichas").html(efectos_colaterales_fichas);
+	}
+	
+	if (conservacion_fichas!=""){
+	$("#conservacion_fichas").html(conservacion_fichas);
+	}
+	
+	if (ingredientes_fichas!=""){
+	$("#ingredientes_fichas").html(ingredientes_fichas);
+	}
+	
+	if (tipo_alimento_fichas!=""){
+	$("#tipo_alimento_fichas").html(tipo_alimento_fichas);
+	}
+	
+	if (encabezado_dosificacion_fichas!=""){
+	$("#encabezado_dosificacion_fichas").html(encabezado_dosificacion_fichas);
+	}
+	
+	if (tipo_ficha!=""){
+	$("#tipo_ficha").html(tipo_ficha);
+	}
+	
+	
+	if (tabla_formas_administracion!=""){
+	$("#tabla_formas_administracion").html(tabla_formas_administracion);
+	}
+	
+	if (tabla_laboratorios!=""){
+	$("#tabla_laboratorios").html(tabla_laboratorios);
+	}
+	
+	if (tabla_distribuidores!=""){
+	$("#tabla_distribuidores").html(tabla_distribuidores);
+	}
+	
+	if (tabla_composicion!=""){
+	$("#tabla_composicion").html(tabla_composicion);
+	}
+	
+	
+	if (tabla_dosificacion!=""){
+	$("#tabla_dosificacion").html(tabla_dosificacion);
+	}
+	 
+>>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
     
 	}, null);
 	});
