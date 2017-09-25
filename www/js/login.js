@@ -57,19 +57,19 @@ function getlogin_success(tx, results){
     var username=document. getElementById("usuario").value;
     var uname=employee.usuario_usuario;
     
-    if(username==uname  ){
+    //if(username==uname  ){
     	window.location.href = "bienvenida.html";
      break;
-    }
-    else{
-        var status=1;
-     }
+    //}
+    //else{
+     //   var status=1;
+     //}
    }
    
-   if(status==1)
-    {
-	  alert("Error al iniciar Sesion");
-     }
+   //if(status==1)
+    //{
+	  //alert("Error al iniciar Sesion");
+     //}
 }
 
 

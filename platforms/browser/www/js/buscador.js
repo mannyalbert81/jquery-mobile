@@ -49,8 +49,8 @@ function count_fichas(){
     var id2 = "";
 	var nombre = "";
     var pair="";
-  
-	var i=0;
+    var foto_fichas1="";
+     var i=0;
 	var len1 = results.rows.length, i;
 	var imgficha ='';
 	
@@ -58,60 +58,41 @@ function count_fichas(){
 		clasificacion_farmacologica_fichas = results.rows.item(i).clasificacion_farmacologica_fichas;
 		nombre = results.rows.item(i).nombre_fichas;
 		id2 = results.rows.item(i).id_fichas;
+		foto_fichas1 = results.rows.item(i).foto_fichas_fotos;
 		
-<<<<<<< HEAD
-=======
 		
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
-		db.transaction(function(transaction) {
-			transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id2], function (tx1, res) {
-				var len_foto1 = res.rows.length, i;
-				var foto="";
+		if(foto_fichas1 != ""){
 			
-<<<<<<< HEAD
-=======
-				
-				
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
-				if(len_foto1 > 0){
-					
-					for (var i=0; i<= len_foto1-1; i++) {  
-						 foto = res.rows.item(i).foto;
-					}
-					
-					    imgficha = 'data:image/png;base64,'+foto;
-					 
-					 
-					    pair += "<div class='col-lg-3 col-md-3 col-xs-6'>";
-						pair += "<div class='contenedor-img ejemplo-1'>";
-						pair += "<img  src='"+imgficha+"' width='200' height='150'>";
-						pair += "<div class='mascara'>";
-						pair += "<h2>"+nombre+"</h2>";
-						pair += "<p>"+clasificacion_farmacologica_fichas+"</p>";
-						pair += "<a class='link' href='FichaOnline.html?id_fichas="+id2+"'>Leer mas</a>";
-						pair += "</div>";
-						pair += "</div>";
-						pair += "</div>";
-				}else{
-					imgficha='img/nodisponible.jpg';
-					
-					    pair += "<div class='col-lg-3 col-md-3 col-xs-6'>";
-						pair += "<div class='contenedor-img ejemplo-1'>";
-						pair += "<img  src='"+imgficha+"' width='200' height='150'>";
-						pair += "<div class='mascara'>";
-						pair += "<h2>"+nombre+"</h2>";
-						pair += "<p>"+clasificacion_farmacologica_fichas+"</p>";
-						pair += "<a class='link' href='FichaOnline.html?id_fichas="+id2+"'>Leer mas</a>";
-						pair += "</div>";
-						pair += "</div>";
-						pair += "</div>";
-					
-				}
-				
-			},null);
 			
-		});
-		
+			 imgficha = 'data:image/png;base64,'+foto_fichas1;
+				
+			 
+			 pair += "<div class='col-lg-3 col-md-3 col-xs-6'>";
+			 pair += "<div class='contenedor-img ejemplo-1'>";
+			 pair += "<img  src='"+imgficha+"' width='200' height='150'>";
+			 pair += "<div class='mascara'>";
+			 pair += "<h2>"+nombre+"</h2>";
+			 pair += "<p>"+clasificacion_farmacologica_fichas+"</p>";
+			 pair += "<a class='link' href='FichaOnline.html?id_fichas="+id2+"'>Leer mas</a>";
+			 pair += "</div>";
+			 pair += "</div>";
+			 pair += "</div>";
+		}else{
+			
+			imgficha='img/nodisponible.jpg';
+			pair += "<div class='col-lg-3 col-md-3 col-xs-6'>";
+			pair += "<div class='contenedor-img ejemplo-1'>";
+			pair += "<img  src='"+imgficha+"' width='200' height='150'>";
+			pair += "<div class='mascara'>";
+			pair += "<h2>"+nombre+"</h2>";
+			pair += "<p>"+clasificacion_farmacologica_fichas+"</p>";
+			pair += "<a class='link' href='FichaOnline.html?id_fichas="+id2+"'>Leer mas</a>";
+			pair += "</div>";
+			pair += "</div>";
+			pair += "</div>";
+			
+		}
+
 	}
 	
 	$(document).on('click', '#btn_pro', function(){
@@ -128,10 +109,11 @@ function count_fichas(){
 		$("#countali").html(len2);
 		var id1 = "";
 		var nombre = "";
+		var foto_fichas = "";
 		var pair1="";
 		var i=0;
 		var len3 = results.rows.length, i;
-		var imgficha ='',fotoImg;
+		var imgficha ='';
 		
 		
 		for (i=0; i<=len3-1; i++) {
@@ -139,63 +121,28 @@ function count_fichas(){
 			clasificacion_farmacologica_fichas = results.rows.item(i).clasificacion_farmacologica_fichas;
 			nombre = results.rows.item(i).nombre_fichas;
 			id1 = results.rows.item(i).id_fichas;
+			foto_fichas = results.rows.item(i).foto_fichas_fotos;
 			
-<<<<<<< HEAD
-			fotoImg=ponerImagen(id1,function(res){
-				if(res.rows.length>0)
-					{
-=======
-			db.transaction(function(transaction) {
-				transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id1], function (tx1, res) {
-					var len_foto = res.rows.length, i;
-					var foto="";
+
+			if(foto_fichas!=""){
+				
+				
+				 imgficha = 'data:image/png;base64,'+foto_fichas;
 					
-					if(len_foto > 0){
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
-						
-<<<<<<< HEAD
-						var fotostr = res.rows.item(0).foto;
-						console.log(fotostr);
-						$('#fotoimagen').data('id','228');
-						$('#fotoimagen').data('foto',4564);
-=======
-						for (var i=0; i<= len_foto-1; i++) {  
-							 foto = res.rows.item(i).foto;
-						}
-						
-						 imgficha = 'data:image/png;base64,'+foto;
-						
-						 
-						    pair1 += "<div class='col-lg-3 col-md-3 col-xs-6'>";
-							pair1 += "<div class='contenedor-img ejemplo-1'>";
-							pair1 += "<img  src='"+imgficha+"' width='200' height='150'>";
-							pair1 += "<div class='mascara'>";
-							pair1 += "<h2>"+nombre+"</h2>";
-							pair1 += "<p>"+clasificacion_farmacologica_fichas+"</p>";
-							pair1 += "<a class='link' href='FichaOnlineAli.html?id_fichas="+id1+"'>Leer mas</a>";
-							pair1 += "</div>";
-							pair1 += "</div>";
-							pair1 += "</div>";
-						 
-					}else{
-						imgficha='img/nodisponible.jpg';
-						    pair1 += "<div class='col-lg-3 col-md-3 col-xs-6'>";
-							pair1 += "<div class='contenedor-img ejemplo-1'>";
-							pair1 += "<img  src='"+imgficha+"' width='200' height='150'>";
-							pair1 += "<div class='mascara'>";
-							pair1 += "<h2>"+nombre+"</h2>";
-							pair1 += "<p>"+clasificacion_farmacologica_fichas+"</p>";
-							pair1 += "<a class='link' href='FichaOnlineAli.html?id_fichas="+id1+"'>Leer mas</a>";
-							pair1 += "</div>";
-							pair1 += "</div>";
-							pair1 += "</div>";
-						
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
-					}
-			});
-					
-			 imgficha = 'data:image/png;base64,'+$('#fotoimagen').data('foto');
-			 
+				 
+				    pair1 += "<div class='col-lg-3 col-md-3 col-xs-6'>";
+					pair1 += "<div class='contenedor-img ejemplo-1'>";
+					pair1 += "<img  src='"+imgficha+"' width='200' height='150'>";
+					pair1 += "<div class='mascara'>";
+					pair1 += "<h2>"+nombre+"</h2>";
+					pair1 += "<p>"+clasificacion_farmacologica_fichas+"</p>";
+					pair1 += "<a class='link' href='FichaOnlineAli.html?id_fichas="+id1+"'>Leer mas</a>";
+					pair1 += "</div>";
+					pair1 += "</div>";
+					pair1 += "</div>";
+			}else{
+				
+				imgficha='img/nodisponible.jpg';
 			    pair1 += "<div class='col-lg-3 col-md-3 col-xs-6'>";
 				pair1 += "<div class='contenedor-img ejemplo-1'>";
 				pair1 += "<img  src='"+imgficha+"' width='200' height='150'>";
@@ -206,6 +153,9 @@ function count_fichas(){
 				pair1 += "</div>";
 				pair1 += "</div>";
 				pair1 += "</div>";
+				
+			}
+			
 		}
 		
 		
@@ -219,16 +169,6 @@ function count_fichas(){
 	}
 
 
-function ponerImagen(idimg,callback)
-{ console.log(idimg);
-	var fotostr = '';
-	db.transaction(function(tx) {
-		tx.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [idimg], 
-		function (tx, res) {
-			callback(res);
-		}
-		);
-	});			
-}
+
 
 

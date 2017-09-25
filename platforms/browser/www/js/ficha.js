@@ -1,4 +1,6 @@
-var base_url = 'http://192.168.10.157:4000/Vademano/webservices/';
+
+var base_url = 'http://localhost:4000/Vademano/webservices/';
+
 
 
 var pag_service = 'FichaService.php' ;
@@ -35,23 +37,19 @@ function init_pag(tx)
 	tblFichas +='efectos_colaterales_fichas TEXT  , conservacion_fichas TEXT  , ingredientes_fichas TEXT  ,'; 
 	tblFichas +='tipo_alimento_fichas TEXT  , encabezado_dosificacion_fichas TEXT  , tipo_ficha TEXT  ,'; 
 	tblFichas +='tabla_formas_administracion TEXT  , tabla_laboratorios TEXT  , tabla_distribuidores TEXT  ,';
-	tblFichas +='tabla_composicion TEXT  , tabla_dosificacion TEXT  )';
+	tblFichas +='tabla_composicion TEXT  , tabla_dosificacion TEXT , foto_fichas_fotos TEXT )';
 	
-	var tblImagen = 'CREATE TABLE IF NOT EXISTS ficha_foto ';
-			tblImagen += '(id_fichas_fotos INTEGER PRIMARY KEY AUTOINCREMENT,';
-		    tblImagen += 'id_fichas INTEGER ,foto TEXT)';
+
     var tblImagenEspecies = 'CREATE TABLE IF NOT EXISTS foto_especies ' ;
 		tblImagenEspecies += '(id_fichas_especies INTEGER, id_fichas INTEGER,id_especies INTEGER,';
 	    tblImagenEspecies += 'nombre_especies TEXT , logo_especies TEXT)';
 
-	tx.executeSql(tblImagen);	    
+		    
 	tx.executeSql(tblFichas);
 	tx.executeSql(tblImagenEspecies);
 	tx.executeSql("DELETE FROM fichas_service;");
-	tx.executeSql("DELETE FROM ficha_foto;");
 	tx.executeSql("DELETE FROM foto_especies;");
 	traeFichas();
-	traeImagen();
 	traeImagenEspecies();
 }
 
@@ -59,7 +57,7 @@ function traeFichas()
 {
 	
 	//var query='INSERT INTO usuarios (nombres_usuarios, apellidos_usuarios,usuario_usuarios,clave_usuarios) VALUES (?,?,?,?)';
-	var queryIns = 'INSERT INTO fichas_service(id_fichas, nombre_fichas, encabezado_tabla_fichas, farmacocinetica_fichas, accion_terapeutica_fichas, clasificacion_farmacologica_fichas, forma_terapeutica_fichas, indicaciones_uso_fichas, interacciones_fichas, contraindicaciones_fichas, periodo_retiro_fichas, advertencias_fichas, presentacion_fichas, registro_sanitario_fichas, id_fichas_fotos, consultas_fichas, buscador, mecanismo_accion_fichas, efectos_colaterales_fichas, conservacion_fichas, ingredientes_fichas, tipo_alimento_fichas, encabezado_dosificacion_fichas, tipo_ficha, tabla_formas_administracion, tabla_laboratorios, tabla_distribuidores, tabla_composicion, tabla_dosificacion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+	var queryIns = 'INSERT INTO fichas_service(id_fichas, nombre_fichas, encabezado_tabla_fichas, farmacocinetica_fichas, accion_terapeutica_fichas, clasificacion_farmacologica_fichas, forma_terapeutica_fichas, indicaciones_uso_fichas, interacciones_fichas, contraindicaciones_fichas, periodo_retiro_fichas, advertencias_fichas, presentacion_fichas, registro_sanitario_fichas, id_fichas_fotos, consultas_fichas, buscador, mecanismo_accion_fichas, efectos_colaterales_fichas, conservacion_fichas, ingredientes_fichas, tipo_alimento_fichas, encabezado_dosificacion_fichas, tipo_ficha, tabla_formas_administracion, tabla_laboratorios, tabla_distribuidores, tabla_composicion, tabla_dosificacion, foto_fichas_fotos) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
 	   
 	$.ajax({
 		   type: 'POST',
@@ -83,7 +81,8 @@ function traeFichas()
 					                           j.efectos_colaterales_fichas,j.conservacion_fichas,
 					                           j.ingredientes_fichas,j.tipo_alimento_fichas, j.encabezado_dosificacion_fichas,
 					                           j.tipo_ficha, j.tabla_formas_administracion,j.tabla_laboratorios,
-					                           j.tabla_distribuidores,j.tabla_composicion, j.tabla_dosificacion ],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
+					                           j.tabla_distribuidores,j.tabla_composicion, j.tabla_dosificacion,
+					                           j.foto_fichas_fotos],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
 					 
 				   });
 				  });
@@ -105,28 +104,13 @@ function errorCB(err) {
 function successCB (){
 }
 
-function traeImagen()
-{
-	var queryIns = 'INSERT INTO ficha_foto(id_fichas, foto) VALUES (?,?)';
-	var datosUsuario ='fichas';	
- 	archivoValidacion = "http://192.168.10.157:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
- 	$.getJSON( archivoValidacion, { imagen:datosUsuario })
-	.done(function(x) {
-		
-		 $.each(x, function(i, j) {
-			 
-			    db.transaction(function (tx) {
-				 tx.executeSql(queryIns,[j.id_fichas,j.foto_fichas_fotos ],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
-			   });
-		 });
-	})
-}
+
 
 function traeImagenEspecies()
 {
 	var queryIns = 'INSERT INTO foto_especies(id_fichas_especies,id_fichas,id_especies,nombre_especies,logo_especies) VALUES (?,?,?,?,?)';
 	var datosUsuario ='especies';	
- 	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+ 	archivoValidacion = "http://localhost:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
 
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
