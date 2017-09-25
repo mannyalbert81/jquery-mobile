@@ -25,6 +25,8 @@ function transaction_error(tx, error) {
 }
 
 
+
+
 function cargar_fichas(){
 
 	var param = document.location.href; 
