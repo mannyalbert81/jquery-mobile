@@ -58,21 +58,15 @@ function count_fichas(){
 		clasificacion_farmacologica_fichas = results.rows.item(i).clasificacion_farmacologica_fichas;
 		nombre = results.rows.item(i).nombre_fichas;
 		id2 = results.rows.item(i).id_fichas;
-		
-<<<<<<< HEAD
-=======
-		
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
+
 		db.transaction(function(transaction) {
 			transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id2], function (tx1, res) {
 				var len_foto1 = res.rows.length, i;
 				var foto="";
-			
-<<<<<<< HEAD
-=======
+
 				
 				
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
+
 				if(len_foto1 > 0){
 					
 					for (var i=0; i<= len_foto1-1; i++) {  
@@ -140,25 +134,23 @@ function count_fichas(){
 			nombre = results.rows.item(i).nombre_fichas;
 			id1 = results.rows.item(i).id_fichas;
 			
-<<<<<<< HEAD
+
 			fotoImg=ponerImagen(id1,function(res){
 				if(res.rows.length>0)
 					{
-=======
+
 			db.transaction(function(transaction) {
 				transaction.executeSql('SELECT foto FROM ficha_foto  WHERE 1=1 AND id_fichas = ?', [id1], function (tx1, res) {
 					var len_foto = res.rows.length, i;
 					var foto="";
 					
 					if(len_foto > 0){
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
-						
-<<<<<<< HEAD
+
 						var fotostr = res.rows.item(0).foto;
 						console.log(fotostr);
 						$('#fotoimagen').data('id','228');
 						$('#fotoimagen').data('foto',4564);
-=======
+
 						for (var i=0; i<= len_foto-1; i++) {  
 							 foto = res.rows.item(i).foto;
 						}
@@ -190,7 +182,7 @@ function count_fichas(){
 							pair1 += "</div>";
 							pair1 += "</div>";
 						
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
+
 					}
 			});
 					
