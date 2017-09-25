@@ -4,47 +4,77 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        
-        <title>QRCode Reader APP</title>
-    </head>
-    <body>
-
-        <div data-role="page" id="home">
-            <div data-role="header">
-                <h1>Home</h1>
-            </div>
-
-            <div data-role="main" class="ui-content">
-                <p>
-                    <a target="_blank" href="javascript:scan();" style="text-decoration: none"><button>Scan</button></a>
-                    <a target="_blank" href="#display" style="text-decoration: none"><button>Display Scanned Data</button></a>
-                </p>
-            </div>
-        </div>
-
-        <div data-role="page" id="display">
-            <div data-role="header">
-                <a target="_blank" href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
-                <h1>Display</h1>
-            </div>
-
-            <div data-role="main" class="ui-content">
-                <table data-role="table" data-mode="column" id="allTable" class="ui-responsive table-stroke">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      
+      	  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
+      	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+      	
+        	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/efecto_logo.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+        
+        	<script src="js/main_menu.js"></script>
+	
+        <title>QRCode Reader APP</title>
+    </head>
+    <header>
+    
+    	<span id="button-menu" class="fa fa-bars"></span>
+        <nav class="navegacion">
+			<ul class="menu">
+				<!-- TITULAR -->
+				<li class="title-menu">Todas las Opciones</li>
+				<!-- TITULAR -->
+				<li><a href="bienvenida.html"><span class="fa fa-home icon-menu"></span>Inicio</a></li>
+
+
+   			<li><a href="sincronizacion.html"><span class="fa fa-folder icon-menu"></span>Sincronizar Dispositivo</a></li>
+                <li><a href="buscador1.html"><span class="fa fa-folder icon-menu"></span>Vademécum</a></li>
+				<li class="item-submenu" menu="1">
+					<a href="#"><span class="fa fa-envelope icon-menu"></span>Contactos</a>
+					<ul class="submenu">
+						<li class="title-menu"><span class="fa fa-envelope icon-menu"></span>Contactos</li>
+						<li class="go-back">Atras</li>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="http://vademano.masoft.net/">Sitio Web</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</nav>
+	 </header>
+    
+    
+    <body>
+    	 
+		  
+         
+            <div style="margin-top: 40%;'" data-role="main" class="ui-content">
+                <p>
+                    <a target="_blank" href="javascript:scan();" data-icon="delete" data-iconpos="top" ><button>Leer QR</button></a>
+                	
+                
+                </p>
+            </div>
+        
+        
+      
+        <script type="text/javascript">
+	        
+	        $(document).on("ready",ini);
+	
+	        function ini()
+	        {
+	        	
+	        	scan();
+	        }
+
+        </script>
+      	
+      
+      
         <script>
         
         
@@ -56,19 +86,8 @@
                         {
                             if(result.format == "QR_CODE")
                             {
-                                navigator.notification.prompt("Please enter name of data",  function(input){
-                                    var name = input.input1;
-                                    var value = result.text;
-
-                                    var data = localStorage.getItem("LocalData");
-                                    console.log(data);
-                                    data = JSON.parse(data);
-                                    data[data.length] = [name, value];
-
-                                    localStorage.setItem("LocalData", JSON.stringify(data));
-
-                                    alert("Done");
-                                });
+                            	var value = result.text;
+                            	alert(value);
                             }
                         }
                     },
@@ -78,63 +97,18 @@
                );
             }
 
-            $(document).on("pagebeforeshow", "#display", function() {
-                $("table#allTable tbody").empty();
-
-                var data = localStorage.getItem("LocalData");
-                console.log(data);
-                data = JSON.parse(data);
-
-                var html = "";
-
-                for(var count = 0; count < data.length; count++)
-                {
-                    html = html + "<tr><td>" + data[count][0] + "</td><td><a href='javascript:openURL(\"" + data[count][1] + "\")'>" + data[count][1] + "</a></td></tr>";
-                }
-
-                $("table#allTable tbody").append(html).closest("table#allTable").table("refresh").trigger("create");
-
-            });
-
+           
             function openURL(url)
             {
                 window.open(url, '_blank', 'location=yes');
             }
-
-            //initialize
-            if(localStorage.getItem("LocalData") == null)
-            {
-                var data = [];
-                data = JSON.stringify(data);
-                localStorage.setItem("LocalData", data);
-            }
+				
+           
         </script>
-<<<<<<< HEAD
     </body>
-</html>
-          
-=======
-        
-        <script type="text/javascript">
-        
-        $(document).on("ready",ini);
-
-        function ini()
-        {
-        	
-        	scan();
-        }
-
-        </script>
-        
-    </head>
     
-    <body>
- 
-                
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
+</html>
 
         
-       
-    </body>
-</html>
+    
+ 
