@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-var base_url = 'http://192.168.10.157:5000/Vademano/webservices/';
-=======
-var base_url = 'http://localhost:4000/Vademano/webservices/';
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
-
+var base_url = 'http://localhost:5000/Vademano/webservices/';
 
 var pag_service = 'FichaService.php' ;
 //var base_url = 'http://186.4.203.42:4000/Vademano/webservices/';
@@ -71,10 +66,11 @@ function traeFichas()
 		   data:{action:'consulta'},
 		   dataType: 'json',
 		   success: function (x) {
-			   
+			   console.log(x);
 			   $.each(x, function(i, j) {
 				   //console.log( j.nombre_fichas );
 				   db.transaction(function (tx) {
+					   
 					   
 					   tx.executeSql(queryIns,[j.id_fichas,j.nombre_fichas, j.encabezado_tabla_fichas,
 					                           j.farmacocinetica_fichas, j.accion_terapeutica_fichas,
@@ -114,7 +110,7 @@ function traeImagen()
 {
 	var queryIns = 'INSERT INTO ficha_foto(id_fichas, foto) VALUES (?,?)';
 	var datosUsuario ='fichas';	
- 	archivoValidacion = "http://localhost:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+ 	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
 		
@@ -131,7 +127,7 @@ function traeImagenEspecies()
 {
 	var queryIns = 'INSERT INTO foto_especies(id_fichas_especies,id_fichas,id_especies,nombre_especies,logo_especies) VALUES (?,?,?,?,?)';
 	var datosUsuario ='especies';	
- 	archivoValidacion = "http://localhost:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+ 	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
 
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
