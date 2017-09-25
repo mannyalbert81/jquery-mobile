@@ -1,4 +1,4 @@
-var base_url = 'http://192.168.10.157:4000/Vademano/webservices/';
+var base_url = 'http://192.168.10.157:5000/Vademano/webservices/';
 
 
 var pag_service = 'FichaService.php' ;
@@ -35,7 +35,7 @@ function init_pag(tx)
 	tblFichas +='efectos_colaterales_fichas TEXT  , conservacion_fichas TEXT  , ingredientes_fichas TEXT  ,'; 
 	tblFichas +='tipo_alimento_fichas TEXT  , encabezado_dosificacion_fichas TEXT  , tipo_ficha TEXT  ,'; 
 	tblFichas +='tabla_formas_administracion TEXT  , tabla_laboratorios TEXT  , tabla_distribuidores TEXT  ,';
-	tblFichas +='tabla_composicion TEXT  , tabla_dosificacion TEXT  )';
+	tblFichas +='tabla_composicion TEXT  , tabla_dosificacion TEXT , foto_fichas_fotos TEXT )';
 	
 	var tblImagen = 'CREATE TABLE IF NOT EXISTS ficha_foto ';
 			tblImagen += '(id_fichas_fotos INTEGER PRIMARY KEY AUTOINCREMENT,';
@@ -83,7 +83,8 @@ function traeFichas()
 					                           j.efectos_colaterales_fichas,j.conservacion_fichas,
 					                           j.ingredientes_fichas,j.tipo_alimento_fichas, j.encabezado_dosificacion_fichas,
 					                           j.tipo_ficha, j.tabla_formas_administracion,j.tabla_laboratorios,
-					                           j.tabla_distribuidores,j.tabla_composicion, j.tabla_dosificacion ],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
+					                           j.tabla_distribuidores,j.tabla_composicion, j.tabla_dosificacion,
+					                           j.foto_fichas_fotos],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
 					 
 				   });
 				  });
