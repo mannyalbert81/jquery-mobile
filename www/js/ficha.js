@@ -1,4 +1,4 @@
-var base_url = 'http://192.168.10.157:4000/Vademano/webservices/';
+var base_url = 'http://localhost:4000/Vademano/webservices/';
 
 
 var pag_service = 'FichaService.php' ;
@@ -109,7 +109,7 @@ function traeImagen()
 {
 	var queryIns = 'INSERT INTO ficha_foto(id_fichas, foto) VALUES (?,?)';
 	var datosUsuario ='fichas';	
- 	archivoValidacion = "http://192.168.10.157:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+ 	archivoValidacion = "http://localhost:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
 		
@@ -126,7 +126,7 @@ function traeImagenEspecies()
 {
 	var queryIns = 'INSERT INTO foto_especies(id_fichas_especies,id_fichas,id_especies,nombre_especies,logo_especies) VALUES (?,?,?,?,?)';
 	var datosUsuario ='especies';	
- 	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+ 	archivoValidacion = "http://localhost:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
 
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
