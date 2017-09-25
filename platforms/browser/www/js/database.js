@@ -18,7 +18,7 @@ function onDeviceReady() {
 function populateDB(tx) {
 	
 	//creamos  las tablas
-	var tblUsuarios = 'CREATE TABLE IF NOT EXISTS usuarios (id_usuario INTEGER PRIMARY KEY AUTOINCREMENT, nombres_usuario TEXT, apellidos_usuario TEXT, usuario_usuario TEXT, nombre_estado TEXT)';
+	var tblUsuarios = 'CREATE TABLE IF NOT EXISTS usuarios (nombre_estado TEXT, id_usuario INTEGER PRIMARY KEY AUTOINCREMENT, nombres_usuario TEXT, apellidos_usuario TEXT, usuario_usuario TEXT, celular_usuario TEXT, telefono_usuario TEXT)';
 
 	
 	tx.executeSql(tblUsuarios), [],
