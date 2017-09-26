@@ -164,14 +164,11 @@ function cargar_fichas(){
 	   }
 	
 	
-	    if (id_fichas!=""){
-	    	
-		    $("#id_fichas").html(id_fichas);
+	if (id_fichas!=""){
+		$("#id_fichas").html(id_fichas);
 		}
 		
 		if (nombre_fichas!=""){
-		
-	    	
 		$("#nombre_fichas").html(nombre_fichas);
 		}
 		
@@ -188,7 +185,6 @@ function cargar_fichas(){
 		}
 		
 		if (clasificacion_farmacologica_fichas!=""){
-			
 		$("#clasificacion_farmacologica_fichas").html(clasificacion_farmacologica_fichas);
 		}
 		
@@ -253,7 +249,6 @@ function cargar_fichas(){
 		}
 		
 		
-
 		if (tabla_formas_administracion!=""){
 		$("#tabla_formas_administracion").html(tabla_formas_administracion);
 		}
@@ -274,6 +269,8 @@ function cargar_fichas(){
 		if (tabla_dosificacion!=""){
 		$("#tabla_dosificacion").html(tabla_dosificacion);
 		}
+		 
+	    
 		 
 	    
 
