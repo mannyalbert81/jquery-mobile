@@ -9,7 +9,47 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "jquer.com"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "jquer.com"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "jquer.com"
+        }
+    }
 }

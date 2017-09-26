@@ -58,6 +58,4 @@ function errorCB(err) {
 //function will be called when process succeed
 function successCB() {
 
-    alert("success!");
-
 }
