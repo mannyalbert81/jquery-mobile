@@ -2,6 +2,7 @@ $(document).on("ready",ini);
 
 function ini()
 {
+
 }
 
 //<!--Calling onDeviceReady method-->
@@ -39,11 +40,8 @@ function populateDB(tx) {
 	//creamos  las tablas
 	var tblUsuarios = 'CREATE TABLE IF NOT EXISTS usuarios (nombre_estado TEXT, id_usuario INTEGER PRIMARY KEY AUTOINCREMENT, nombres_usuario TEXT, apellidos_usuario TEXT, usuario_usuario TEXT, celular_usuario TEXT, telefono_usuario TEXT)';
 
-	
-	tx.executeSql(tblUsuarios), [],
-    	function(tx, result) {
-    		//alert('Inserted');
-    	},
+	tx.executeSql(tblUsuarios, [],
+    	function(tx, result) {},
     	function(error){
     		alert('Error al crear Tabla Usuarios');
     });
@@ -52,7 +50,6 @@ function populateDB(tx) {
 	tx.executeSql(tblImagenEspecies,[],function(tx,result){},function(error){alert('Error al iniciar especies')});
 	tx.executeSql("DELETE FROM fichas_service;");
 	tx.executeSql("DELETE FROM foto_especies;");
-	
 }  
    
 function errorCB(err) {
