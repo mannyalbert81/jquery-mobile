@@ -31,10 +31,12 @@ function traeFichas()
 	 
 	$.getJSON( base_url+pag_service, { action:'consulta'})
 	.done(function(x) {
-		$.each(x, function(i, j) {
-			   
-			   db.transaction(function (tx) {
-				   
+		db.transaction(function (tx) {
+			 tx.executeSql("DELETE FROM fichas_service;");
+			});
+		
+		$.each(x, function(i, j) {			
+			   db.transaction(function (tx) {				  
 				   tx.executeSql(queryIns,[j.id_fichas,j.nombre_fichas, j.encabezado_tabla_fichas,
 				                           j.farmacocinetica_fichas, j.accion_terapeutica_fichas,
 				                           j.clasificacion_farmacologica_fichas, j.forma_terapeutica_fichas,
@@ -69,9 +71,11 @@ function traeImagenEspecies()
 
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
+		db.transaction(function (tx) {
+			tx.executeSql("DELETE FROM foto_especies;");
+			});
 		
 		 $.each(x, function(i, j) {
-			 
 			    db.transaction(function (tx) {
 				 tx.executeSql(queryIns,[j.id_fichas_especies,j.id_fichas,j.id_especies,j.nombre_especies,j.logo_especies ],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
 			   });

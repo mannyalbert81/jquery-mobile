@@ -48,8 +48,7 @@ function populateDB(tx) {
     
     tx.executeSql(tblFichas,[],function(tx,result){},function(error){alert('Error al iniciar fichas')});
 	tx.executeSql(tblImagenEspecies,[],function(tx,result){},function(error){alert('Error al iniciar especies')});
-	tx.executeSql("DELETE FROM fichas_service;");
-	tx.executeSql("DELETE FROM foto_especies;");
+	
 }  
    
 function errorCB(err) {
