@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Buscador</title>
+  <meta charset="utf-8" />	
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/efecto_logo.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/main_menu.js"></script>
+	<script src="js/cordova.js"></script>
+	<script charset="utf-8" src="js/SQLitePlugin.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+ 
+
+ <style type="text/css">
+  .boton_personalizado{
+    text-decoration: none;
+    padding: 6px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+  .boton_personalizado:hover{
+    color: #1883ba;
+    background-color: #ffffff;
+  }
+</style>
+<style> 
+input[type=text] {
+    width: 350px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    }
+
+input[type=text]:focus {
+    width: 100%;
+}
+</style>
+ 
+ </head> 	
+ <body>
+ 
+<div data-role="page">
+<input type="hidden" id="fotoimagen" data-id="" data-foto="" />
+<div role="main" class="ui-content">
+ 
+ 	<header>
+		<span id="button-menu" class="fa fa-bars"></span>
+        <nav class="navegacion">
+			<ul class="menu">
+				<!-- TITULAR -->
+				<li class="title-menu">Todas las Opciones</li>
+				<!-- TITULAR -->
+				<li><a href="index.html"><span class="fa fa-home icon-menu"></span>Inicio</a></li>
+                <li><a href="buscador1.html"><span class="fa fa-folder icon-menu"></span>Vademécum</a></li>
+				<li class="item-submenu" menu="1">
+					<a href="#"><span class="fa fa-envelope icon-menu"></span>Contactos</a>
+					<ul class="submenu">
+						<li class="title-menu"><span class="fa fa-envelope icon-menu"></span>Contactos</li>
+						<li class="go-back">Atras</li>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="http://vademano.masoft.net/">Sitio Web</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</nav>
+	 </header>
+	 
+	    <div align="center" style="margin-top:80px;">
+    	<img  src="img/logo_vademano.png" class="zoom" vspace="5" /> 
+    	</div>
+    	<br><br>
+ 		 <div class="row" style="text-align: center;"  >
+	     <div class="col-xs-4 col-md-4">
+		 </div>
+		 	  <div class="col-xs-4 col-md-4">
+			  	<div class="input-group">
+			      <input type="text" name="contenido_busqueda" id="contenido_busqueda" class="form-control" placeholder="Texto a buscar...">
+			      <br>
+			      <div id="mensaje_contenido" class="errores"></div>	
+			      <span class="input-group-btn">
+			      <br>
+			      
+			      <a class="boton_personalizado" role="presentation"  id="btn_buscar" data-role="button" class="btn btn-primary" class="active" href="#"><i class="fa fa-search" aria-hidden="true"></i>	</a>
+		     		
+			       </span>
+			    </div>
+			  </div>
+			</div>
+			<br>
+			 <div class="row" style="text-align: center;"  >
+	     <div class="col-xs-5 col-md-5">
+		 </div>
+		  <div class="row" style="text-align: center;"  >
+	     <div class="col-xs-4 col-md-4">
+		 </div>
+		 	  <div class="col-xs-4 col-md-4">
+			  	<div class="input-group">
+	
+		 	  		<ul class="nav nav-pills" role="tablist" >
+					 <a class="boton_personalizado" role="presentation"  id="btn_pro" class="active" href="#">Productos <span class="badge" id="countprod"></span></a>
+		     		 <a class="boton_personalizado" role="presentation"  id="btn_ali" class="active" href="#">Alimentos <span class="badge" id="countali"></span></a>
+                   
+                   </ul>
+                   <br>
+                      </div>
+			  </div>
+			</div>
+    	 	</div>
+    	 	  <div class="col-xs-4 col-md-4">
+			
+    	 	<div id="tabla_prod" class="col-lg-12 col-md-12 col-xs-12"></div>
+    	 	<div id="tabla_ali"  class="col-lg-12 col-md-12 col-xs-12"></div>
+    	  </div>
+		  </div>
+		 
+    </div>
+  
+	
+<script type="text/javascript" src="js/ficha.js"></script>
+<script type="text/javascript" src="js/buscador.js"></script>
+</body>
+</html>
