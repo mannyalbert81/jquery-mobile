@@ -14,7 +14,7 @@ header{
 	width: 100%;
 	top: 0;
 	left: 0;
-
+	z-index: 5;
 	padding: 20px;
 	/*background: #34495E;*/
 	background: #77CD6A;
@@ -25,6 +25,7 @@ header #button-menu{
 	font-size: 30px;
 	color: #fff;
 	cursor: pointer;
+	
 }
 
 .navegacion{
