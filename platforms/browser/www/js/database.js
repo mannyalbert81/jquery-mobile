@@ -18,22 +18,15 @@ function onDeviceReady() {
 function populateDB(tx) {
 	
 	//creamos  las tablas
-	tx.executeSql('CREATE TABLE IF NOT EXISTS usuarios (id_usuario INTEGER PRIMARY KEY AUTOINCREMENT, nombres_usuario TEXT, apellidos_usuario TEXT, usuario_usuario TEXT, clave_usuario TEXT)');
+	var tblUsuarios = 'CREATE TABLE IF NOT EXISTS usuarios (nombre_estado TEXT, id_usuario INTEGER PRIMARY KEY AUTOINCREMENT, nombres_usuario TEXT, apellidos_usuario TEXT, usuario_usuario TEXT, celular_usuario TEXT, telefono_usuario TEXT)';
 
-	var _id = 1;
-	var _nombres_usuarios="Manuel Alberto";
-	var _apellidos_usuarios ="Rosabal Gutiérrez";
-	var _usuario_usuarios="JASON";
-	var _clave_usuarios="JASON";
 	
-    var executeQuery = "INSERT INTO usuarios(nombres_usuario,apellidos_usuario, usuario_usuario, clave_usuario) VALUES (?,?,?,?)";
-    
-    tx.executeSql(executeQuery, [ _nombres_usuarios,  _apellidos_usuarios, _usuario_usuarios, _clave_usuarios],
+	tx.executeSql(tblUsuarios), [],
     	function(tx, result) {
     		//alert('Inserted');
     	},
     	function(error){
-    		alert('Error al cargar Usuarios');
+    		alert('Error al crear Tabla Usuarios');
     });
     
 }  
