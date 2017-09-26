@@ -164,118 +164,112 @@ function cargar_fichas(){
 	   }
 	
 	
-	if (id_fichas!=""){
+		if (id_fichas!=""){
 		$("#id_fichas").html(id_fichas);
-		}
+		}else{$('#id_fichas_display').css({'display':'none'});}
 		
 		if (nombre_fichas!=""){
 		$("#nombre_fichas").html(nombre_fichas);
-		}
-		
+		}else{$('#nombre_fichas_display').css({'display':'none'});}
+			
 		if (encabezado_tabla_fichas!=""){
 		$("#encabezado_tabla_fichas").html(encabezado_tabla_fichas);
-		}
-		
+		}else{$('#encabezado_tabla_fichas_display').css({'display':'none'});}
+			
 		if (farmacocinetica_fichas!=""){
 		$("#farmacocinetica_fichas").html(farmacocinetica_fichas);
-		}
-		
+		}else{$('#farmacocinetica_fichas_display').css({'display':'none'});}
+			
 		if (accion_terapeutica_fichas!=""){
 		$("#accion_terapeutica_fichas").html(accion_terapeutica_fichas);
-		}
-		
+		}else{$('#caracteristicas_display').css({'display':'none'});}
+			
 		if (clasificacion_farmacologica_fichas!=""){
 		$("#clasificacion_farmacologica_fichas").html(clasificacion_farmacologica_fichas);
-		}
-		
+		}else{$('#categoria_farmacologica_display').css({'display':'none'});}
+			
 		if (forma_terapeutica_fichas!=""){
 		$("#forma_terapeutica_fichas").html(forma_terapeutica_fichas);
-		}
-		
+		}else{$('#forma_farmaceutica_display').css({'display':'none'});}
+			
 		if (indicaciones_uso_fichas!=""){
 		$("#indicaciones_uso_fichas").html(indicaciones_uso_fichas);
-		}
-		
+		}else{$('#indicaciones_uso_display').css({'display':'none'});}
+			
 		if (interacciones_fichas!=""){
 		$("#interacciones_fichas").html(interacciones_fichas);
-		}
-		
+		}else{$('#interacciones_display').css({'display':'none'});}
+	
 		if (contraindicaciones_fichas!=""){
 		$("#contraindicaciones_fichas").html(contraindicaciones_fichas);
-		}
+		}else{$('#contradicciones_display').css({'display':'none'});}
 		
 		if (periodo_retiro_fichas!=""){
 		$("#periodo_retiro_fichas").html(periodo_retiro_fichas);
-		}
+		}else{$('#periodo_retiro_display').css({'display':'none'});}
 		
 		if (advertencias_fichas!=""){
 		$("#advertencias_fichas").html(advertencias_fichas);
-		}
-		
+		}else{$('#advertencias_display').css({'display':'none'});}
+			
 		if (presentacion_fichas!=""){
 		$("#presentacion_fichas").html(presentacion_fichas);
-		}
-		
+		}else{$('#presentaciones_display').css({'display':'none'});}
+			
 		if (registro_sanitario_fichas!=""){
 		$("#registro_sanitario_fichas").html(registro_sanitario_fichas);
-		}
-		
+		}else{$('#registro_agrocalidad_display').css({'display':'none'});}
+			
 		if (mecanismo_accion_fichas!=""){
 		$("#mecanismo_accion_fichas").html(mecanismo_accion_fichas);
-		}
-		
+		}else{$('#mecanismos_accion_display').css({'display':'none'});}
+			
 		if (efectos_colaterales_fichas!=""){
 		$("#efectos_colaterales_fichas").html(efectos_colaterales_fichas);
-		}
+		}else{$('#efectos_colaterales_display').css({'display':'none'});}
+		
 		
 		if (conservacion_fichas!=""){
 		$("#conservacion_fichas").html(conservacion_fichas);
-		}
-		
+		}else{$('#conservacion_display').css({'display':'none'});}
+			
 		if (ingredientes_fichas!=""){
 		$("#ingredientes_fichas").html(ingredientes_fichas);
-		}
-		
+		}else{$('#ingredientes_fichas_display').css({'display':'none'});}
+			
 		if (tipo_alimento_fichas!=""){
 		$("#tipo_alimento_fichas").html(tipo_alimento_fichas);
-		}
-		
+		}else{$('#tipo_alimento_fichas_display').css({'display':'none'});}
+			
 		if (encabezado_dosificacion_fichas!=""){
 		$("#encabezado_dosificacion_fichas").html(encabezado_dosificacion_fichas);
-		}
-		
+		}else{$('#dosificacion_display').css({'display':'none'});}
+			
 		if (tipo_ficha!=""){
 		$("#tipo_ficha").html(tipo_ficha);
-		}
-		
-		
+		}else{$('#tipo_ficha_display').css({'display':'none'});}
+			
 		if (tabla_formas_administracion!=""){
 		$("#tabla_formas_administracion").html(tabla_formas_administracion);
-		}
-		
+		}else{$('#via_administracion_display').css({'display':'none'});}
+			
 		if (tabla_laboratorios!=""){
 		$("#tabla_laboratorios").html(tabla_laboratorios);
-		}
-		
+		}else{$('#fabricado_por_display').css({'display':'none'});}
+			
 		if (tabla_distribuidores!=""){
 		$("#tabla_distribuidores").html(tabla_distribuidores);
-		}
+		}else{$('#distribuido_por_display').css({'display':'none'});}
 		
 		if (tabla_composicion!=""){
 		$("#tabla_composicion").html(tabla_composicion);
-		}
-		
+		}else{$('#composicion_display').css({'display':'none'});}
+			
 		
 		if (tabla_dosificacion!=""){
 		$("#tabla_dosificacion").html(tabla_dosificacion);
-		}
-		 
-	    
-		 
-	    
-
-
-    
+		}else{$('#tabla_dosificacion_display').css({'display':'none'});}
+	
 	}, null);
 	});
 		
