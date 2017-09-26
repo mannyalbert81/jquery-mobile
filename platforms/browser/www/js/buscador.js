@@ -21,7 +21,7 @@ function onDeviceReady(){
  else{
 	
     $(document).on('click', '#btn_buscar', function(){
-    	//db.transaction(count_fichas, transaction_error);
+    	db.transaction(count_fichas, transaction_error);
     	
     	$("#tabla_prod").html("");
     	$("#tabla_ali").html("");
@@ -37,7 +37,7 @@ function transaction_error(tx, error) {
  alert("Database Error: " + error);
 }
 
-/*
+
 function count_fichas(){
 	
 	var contenido_busqueda=document. getElementById("contenido_busqueda").value;
@@ -167,7 +167,7 @@ function count_fichas(){
 		}, null);
 		});
 	}
-*/
+
 
 
 
