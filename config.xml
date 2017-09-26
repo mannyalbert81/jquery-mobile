@@ -7,8 +7,7 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
-    <plugin name="cordova-plugin-whitelist" version="1" />
-    <plugin name="cordova-plugin-barcodescanner" source="npm" spec="~1.2.1" />
+   
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
