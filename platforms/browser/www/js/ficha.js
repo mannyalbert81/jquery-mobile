@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-
-var base_url = 'http://localhost:4000/Vademano/webservices/';
-
-=======
-var base_url = 'http://192.168.10.157:4000/Vademano/webservices/';
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
+var base_url = 'http://192.168.10.180:5000/Vademano/webservices/';
 
 var pag_service = 'FichaService.php' ;
 
@@ -26,30 +20,6 @@ function onDeviceReady()
 
 function init_pag(tx)
 {
-	
-	//tx.executeSql('DROP TABLE IF EXISTS fichas_service');
-	var tblFichas = 'CREATE TABLE IF NOT EXISTS fichas_service';
-	tblFichas +='(id_fichas_service INTEGER PRIMARY KEY AUTOINCREMENT, id_fichas INTEGER  , nombre_fichas TEXT  ,'; 
-	tblFichas +='encabezado_tabla_fichas TEXT  , farmacocinetica_fichas TEXT  , accion_terapeutica_fichas TEXT  ,'; 
-	tblFichas +='clasificacion_farmacologica_fichas TEXT  , forma_terapeutica_fichas TEXT  , indicaciones_uso_fichas TEXT  ,'; 
-	tblFichas +='interacciones_fichas TEXT  , contraindicaciones_fichas TEXT  , periodo_retiro_fichas TEXT  ,'; 
-	tblFichas +='advertencias_fichas TEXT  , presentacion_fichas TEXT  , registro_sanitario_fichas TEXT  ,'; 
-	tblFichas +='id_fichas_fotos INTEGER  , consultas_fichas INTEGER  , buscador TEXT  , mecanismo_accion_fichas TEXT  ,';
-	tblFichas +='efectos_colaterales_fichas TEXT  , conservacion_fichas TEXT  , ingredientes_fichas TEXT  ,'; 
-	tblFichas +='tipo_alimento_fichas TEXT  , encabezado_dosificacion_fichas TEXT  , tipo_ficha TEXT  ,'; 
-	tblFichas +='tabla_formas_administracion TEXT  , tabla_laboratorios TEXT  , tabla_distribuidores TEXT  ,';
-	tblFichas +='tabla_composicion TEXT  , tabla_dosificacion TEXT , foto_fichas_fotos TEXT )';
-	
-
-    var tblImagenEspecies = 'CREATE TABLE IF NOT EXISTS foto_especies ' ;
-		tblImagenEspecies += '(id_fichas_especies INTEGER, id_fichas INTEGER,id_especies INTEGER,';
-	    tblImagenEspecies += 'nombre_especies TEXT , logo_especies TEXT)';
-
-		    
-	tx.executeSql(tblFichas);
-	tx.executeSql(tblImagenEspecies);
-	tx.executeSql("DELETE FROM fichas_service;");
-	tx.executeSql("DELETE FROM foto_especies;");
 	traeFichas();
 	traeImagenEspecies();
 }
@@ -105,20 +75,12 @@ function errorCB(err) {
 }
 function successCB (){
 }
-
-
-
 function traeImagenEspecies()
 {
 	var queryIns = 'INSERT INTO foto_especies(id_fichas_especies,id_fichas,id_especies,nombre_especies,logo_especies) VALUES (?,?,?,?,?)';
 	var datosUsuario ='especies';	
 
-<<<<<<< HEAD
- 	archivoValidacion = "http://localhost:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
-
-=======
-	archivoValidacion = "http://192.168.10.157:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
->>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
+	archivoValidacion = "http://192.168.10.180:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
 
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
@@ -132,12 +94,3 @@ function traeImagenEspecies()
 	})
 }
 
-
-/*FALLOS*/
-/*//tx.executeSql('INSERT INTO usuarios (nombres_usuarios, apellidos_usuarios,usuario_usuarios,clave_usuarios) VALUES (?,?,?,?)',[],errorCB(tx),successCB);*/
-//tx.executeSql('INSERT INTO usuarios (nombres_usuarios, apellidos_usuarios,usuario_usuarios,clave_usuarios) VALUES ("a","b","c","d")',[],successCB,errorCB(tx));					
-/******PARA COMPROBAR**********/
-/*
-tx.executeSql(queryIns,[j.id_fichas,
-j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas,j.nombre_fichas, j.id_fichas ],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
-*/
