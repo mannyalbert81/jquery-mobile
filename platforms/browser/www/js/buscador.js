@@ -21,7 +21,7 @@ function onDeviceReady(){
  else{
 	
     $(document).on('click', '#btn_buscar', function(){
-    	//db.transaction(count_fichas, transaction_error);
+    	db.transaction(count_fichas, transaction_error);
     	
     	$("#tabla_prod").html("");
     	$("#tabla_ali").html("");
@@ -37,7 +37,7 @@ function transaction_error(tx, error) {
  alert("Database Error: " + error);
 }
 
-/*
+
 function count_fichas(){
 	
 	var contenido_busqueda=document. getElementById("contenido_busqueda").value;
@@ -68,27 +68,27 @@ function count_fichas(){
 				
 			 
 			 pair += "<div class='col-lg-3 col-md-3 col-xs-6'>";
-			 pair += "<div class='contenedor-img ejemplo-1'>";
+			 pair += "<center><div class='contenedor-img ejemplo-1'>";
 			 pair += "<img  src='"+imgficha+"' width='200' height='150'>";
 			 pair += "<div class='mascara'>";
 			 pair += "<h2>"+nombre+"</h2>";
 			 pair += "<p>"+clasificacion_farmacologica_fichas+"</p>";
 			 pair += "<a class='link' href='FichaOnline.html?id_fichas="+id2+"'>Leer mas</a>";
 			 pair += "</div>";
-			 pair += "</div>";
+			 pair += "</div></center>";
 			 pair += "</div>";
 		}else{
 			
 			imgficha='img/nodisponible.jpg';
-			pair += "<div class='col-lg-3 col-md-3 col-xs-6'>";
-			pair += "<div class='contenedor-img ejemplo-1'>";
+			pair += "<center><div class='col-lg-3 col-md-3 col-xs-6'>";
+			pair += "<center><div class='contenedor-img ejemplo-1'>";
 			pair += "<img  src='"+imgficha+"' width='200' height='150'>";
 			pair += "<div class='mascara'>";
 			pair += "<h2>"+nombre+"</h2>";
 			pair += "<p>"+clasificacion_farmacologica_fichas+"</p>";
 			pair += "<a class='link' href='FichaOnline.html?id_fichas="+id2+"'>Leer mas</a>";
 			pair += "</div>";
-			pair += "</div>";
+			pair += "</div></center>";
 			pair += "</div>";
 			
 		}
@@ -131,27 +131,27 @@ function count_fichas(){
 					
 				 
 				    pair1 += "<div class='col-lg-3 col-md-3 col-xs-6'>";
-					pair1 += "<div class='contenedor-img ejemplo-1'>";
+					pair1 += "<center><div class='contenedor-img ejemplo-1'>";
 					pair1 += "<img  src='"+imgficha+"' width='200' height='150'>";
 					pair1 += "<div class='mascara'>";
 					pair1 += "<h2>"+nombre+"</h2>";
 					pair1 += "<p>"+clasificacion_farmacologica_fichas+"</p>";
 					pair1 += "<a class='link' href='FichaOnlineAli.html?id_fichas="+id1+"'>Leer mas</a>";
 					pair1 += "</div>";
-					pair1 += "</div>";
+					pair1 += "</div></center>";
 					pair1 += "</div>";
 			}else{
 				
 				imgficha='img/nodisponible.jpg';
 			    pair1 += "<div class='col-lg-3 col-md-3 col-xs-6'>";
-				pair1 += "<div class='contenedor-img ejemplo-1'>";
+				pair1 += "<center><div class='contenedor-img ejemplo-1'>";
 				pair1 += "<img  src='"+imgficha+"' width='200' height='150'>";
 				pair1 += "<div class='mascara'>";
 				pair1 += "<h2>"+nombre+"</h2>";
 				pair1 += "<p>"+clasificacion_farmacologica_fichas+"</p>";
 				pair1 += "<a class='link' href='FichaOnlineAli.html?id_fichas="+id1+"'>Leer mas</a>";
 				pair1 += "</div>";
-				pair1 += "</div>";
+				pair1 += "</div></center>";
 				pair1 += "</div>";
 				
 			}
@@ -167,7 +167,7 @@ function count_fichas(){
 		}, null);
 		});
 	}
-*/
+
 
 
 

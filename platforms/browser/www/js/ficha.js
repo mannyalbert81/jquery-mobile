@@ -1,15 +1,12 @@
 <<<<<<< HEAD
 
-var base_url = 'http://192.168.10.157:4000/Vademano/webservices/';
-
+var base_url = 'http://localhost:4000/Vademano/webservices/';
 
 =======
-var base_url = 'http://localhost:4000/Vademano/webservices/';
+var base_url = 'http://192.168.10.157:4000/Vademano/webservices/';
 >>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
 
 var pag_service = 'FichaService.php' ;
-//var base_url = 'http://186.4.203.42:4000/Vademano/webservices/';
-//var pag_service = 'FichaService.php' ;
 
 $(document).on("ready",ini);
 
@@ -115,10 +112,12 @@ function traeImagenEspecies()
 {
 	var queryIns = 'INSERT INTO foto_especies(id_fichas_especies,id_fichas,id_especies,nombre_especies,logo_especies) VALUES (?,?,?,?,?)';
 	var datosUsuario ='especies';	
+
 <<<<<<< HEAD
- 	archivoValidacion = "http://192.168.10.157:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+ 	archivoValidacion = "http://localhost:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+
 =======
- 	archivoValidacion = "http://localhost:5000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+	archivoValidacion = "http://192.168.10.157:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
 >>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
 
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
