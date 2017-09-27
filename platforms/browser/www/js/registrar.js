@@ -26,7 +26,7 @@ function registrar(id)
 			   db.transaction(function (tx) {				  
 				   tx.executeSql(queryIns,
 						   ['1','1','1','1','1'],
-						   function (tx, res) {alert('usario refgistrado'); window.location.href = "bienvenida.html";},
+						   function (tx, res) {alert('usario registrado'); window.location.href = "bienvenida.html";},
 						   function (e) {alert("ERROR: " + e.message);});
 				 
 			   });
