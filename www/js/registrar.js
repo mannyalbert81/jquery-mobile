@@ -46,7 +46,7 @@ function scan()
                 	if(value!="")
                 		{
                 			//registrar(value);
-                			window.location.href = "index.html";
+                			window.location.href = "Bienvenida.html";
                 		}
                 }
             }
