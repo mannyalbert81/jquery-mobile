@@ -45,7 +45,8 @@ function scan()
                 	var value = result.text;
                 	if(value!="")
                 		{
-                			registrar(value);
+                			//registrar(value);
+                			window.location.href = "index.html";
                 		}
                 }
             }
