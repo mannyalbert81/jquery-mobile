@@ -3,22 +3,14 @@
 <head>
  <title>Buscador</title>
   <meta charset="utf-8" />	
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/estilos.css">
+	 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script src="js/jquery-3.2.1.js"></script>
 	<link rel="stylesheet" href="css/efecto_logo.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/main_menu.js"></script>
 	<script src="js/cordova.js"></script>
-	<script charset="utf-8" src="js/SQLitePlugin.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 
- 
 
  <style type="text/css">
   .boton_personalizado{
@@ -60,12 +52,9 @@ input[type=text]:focus {
  </head> 	
  <body>
  
-<div data-role="page">
-<input type="hidden" id="fotoimagen" data-id="" data-foto="" />
-<div role="main" class="ui-content">
- 
+	<div data-role="page" id="index">
+	<div role="main" class="ui-content">
  <header>
-    
     	<span id="button-menu" class="fa fa-bars"></span>
         <nav class="navegacion">
 			<ul class="menu">
@@ -85,10 +74,12 @@ input[type=text]:focus {
 					</ul>
 				</li>
 				
+				
 			</ul>
 		</nav>
 	 </header>
-    
+    <div data-role="page" id="index">
+	
 	    <div align="center" style="margin-top:80px;">
     	<img  src="img/logo_vademano.png" class="zoom" vspace="5" /> 
     	</div>
@@ -130,13 +121,14 @@ input[type=text]:focus {
 			  </div>
 			</div>
     	 	</div>
+    	 	</div>
+    	 	
     	 	
     		<div align="center"	id="tabla_prod" class="col-lg-12 col-md-12 col-xs-12"></div>
     	 	<div id="tabla_ali"  class="col-lg-12 col-md-12 col-xs-12"></div>
-    	 
     </div>
+     </div>
   
-	
 <script type="text/javascript" src="js/ficha.js"></script>
 <script type="text/javascript" src="js/buscador.js"></script>
 </body>
