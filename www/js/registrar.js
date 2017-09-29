@@ -46,11 +46,9 @@ function scan()
                 	var value = result.text;
                 	if(value!="")
                 		{
-
                 			registrar(value);
                 			window.location.href = "Bienvenida.html";
 
-                			
                 		}
                 }
             }
