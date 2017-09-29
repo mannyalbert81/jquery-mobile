@@ -14,7 +14,7 @@ function ini()
 
 function registrar(id)
 {
-	var queryIns = 'INSERT INTO usuarios( nombres_usuario , apellidos_usuario , usuario_usuario , celular_usuario , telefono_usuario ) VALUES (?,?,?,?,?)';
+	var queryIns = 'INSERT INTO usuarios( nombre_estado, nombres_usuario , apellidos_usuario , usuario_usuario , celular_usuario , telefono_usuario ) VALUES (?,?,?,?,?)';
 	 
 	$.getJSON( base_url+pag_service, { id_usuario:id})
 	.done(function(x) {
@@ -26,7 +26,7 @@ function registrar(id)
 		$.each(x, function(i, j) {			
 			   db.transaction(function (tx) {				  
 				   tx.executeSql(queryIns,
-						   [j.nombres,j.apellidos,j.usuario,j.celular,j.telefono],
+						   [j.estado,j.nombres,j.apellidos,j.usuario,j.celular,j.telefono],
 						   function (tx, res) {/*alert('usuario registrado'); window.location.href = "index.html";*/},
 						   function (e) {alert("ERROR: " + e.message);});
 				 
