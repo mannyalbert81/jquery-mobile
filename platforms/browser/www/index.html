@@ -16,23 +16,24 @@
 	    <script src="js/registrar.js"></script>
        	<script src="js/main_menu.js"></script>
 
-
- 
-</head>
-
-<body>
+<body >
 <!-- index -->
-	<div data-role="page" id="index">
+	<div data-role="page" id="index" >
 	<div role="main" class="ui-content">
     	<div style="margin-top: 30%" align="center" >
     	<img  src="img/logo_vademano.png" class="zoom" vspace="2" /> 
     	</div>
     	<br>
-      <a  href="#sincronizar" data-role="button">Ingresar</a>
-        <p></p>
+      <div style="margin-top: 0%" data-role="main" class="ui-content">
+                <p>
+                    <a id="btn-scanner" data-icon="delete" data-iconpos="top" ><button>Ingresar</button></a>
+                </p>
+            </div>
     </div>
     </div>
 <!-- /index -->
+<<<<<<< HEAD
+=======
 <!-- sincronizar -->
     <div data-role="page" id="sincronizar">
    <header>
@@ -63,15 +64,15 @@
     <div style="margin-top: 0%" data-role="main" class="ui-content">
                 <p>
                     <a id="btn-scanner" data-icon="delete" data-iconpos="top" ><button>Leer Código QR</button></a>
+                    <a id="btn-veringreso" data-role="button" data-iconpos="top" >ver Usuarios</a>
                 </p>
             </div>
        
 </div>
 <!-- /sincronizar -->
+>>>>>>> branch 'master' of https://github.com/mannyalbert81/jquery-mobile.git
 
  
 </body>
-<script type="text/javascript">
-$('#btn-registrar').click(function(){window.location.href = "buscador1.html";})
-</script>
+
 </html>

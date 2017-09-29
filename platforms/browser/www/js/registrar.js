@@ -9,6 +9,7 @@ $(document).on("ready",ini);
 function ini()
 {
 	$('#btn-scanner').click(scan);
+	//$('#btn-scanner').click(registrar(19));
 }
 
 function registrar(id)
@@ -25,8 +26,8 @@ function registrar(id)
 		$.each(x, function(i, j) {			
 			   db.transaction(function (tx) {				  
 				   tx.executeSql(queryIns,
-						   ['1','1','1','1','1'],
-						   function (tx, res) {alert('usario registrado'); window.location.href = "index.html";},
+						   [j.nombres,j.apellidos,j.usuario,j.celular,j.telefono],
+						   function (tx, res) {/*alert('usuario registrado'); window.location.href = "index.html";*/},
 						   function (e) {alert("ERROR: " + e.message);});
 				 
 			   });
@@ -45,8 +46,11 @@ function scan()
                 	var value = result.text;
                 	if(value!="")
                 		{
-                			//registrar(value);
-                			window.location.href = "index.html";
+
+                			registrar(value);
+                			window.location.href = "Bienvenida.html";
+
+                			
                 		}
                 }
             }
