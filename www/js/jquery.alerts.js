@@ -147,7 +147,9 @@
 			$.alerts._overlay('hide');
 			$.alerts._maintainPosition(false);
 		},
-		
+		if (){
+		else []
+		}
 		_overlay: function(status) {
 			switch( status ) {
 				case 'show':
