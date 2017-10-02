@@ -20,7 +20,7 @@ tblFichas +='id_fichas_fotos INTEGER  , consultas_fichas INTEGER  , buscador TEX
 tblFichas +='efectos_colaterales_fichas TEXT  , conservacion_fichas TEXT  , ingredientes_fichas TEXT  ,'; 
 tblFichas +='tipo_alimento_fichas TEXT  , encabezado_dosificacion_fichas TEXT  , tipo_ficha TEXT  ,'; 
 tblFichas +='tabla_formas_administracion TEXT  , tabla_laboratorios TEXT  , tabla_distribuidores TEXT  ,';
-tblFichas +='tabla_composicion TEXT  , tabla_dosificacion TEXT , foto_fichas_fotos TEXT )';
+tblFichas +='tabla_composicion TEXT  , tabla_dosificacion TEXT , foto_fichas_fotos TEXT, nombre_laboratorios TEXT, nombre_distribuidores TEXT)';
 
 
 var tblImagenEspecies = 'CREATE TABLE IF NOT EXISTS foto_especies ' ;

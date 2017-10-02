@@ -119,7 +119,8 @@ function cargar_fichas(){
     var tabla_dosificacion="";
     var foto_fichas="";
     var imgficha="";
-  
+    var nombre_laboratorios="";
+    var nombre_distribuidores="";
 	var i=0;
 	var len1 = results.rows.length, i;
 	for (i=0; i<=len1-1; i++) {
@@ -151,7 +152,8 @@ function cargar_fichas(){
 	    tabla_composicion				=results.rows.item(i).tabla_composicion;
 	    tabla_dosificacion				=results.rows.item(i).tabla_dosificacion;
 	    foto_fichas				        =results.rows.item(i).foto_fichas_fotos;
-		
+	    nombre_laboratorios 			=results.rows.item(i).nombre_laboratorios;
+	    nombre_distribuidores 			=results.rows.item(i).nombre_distribuidores;
 	    
 	    if(foto_fichas != ""){
 			 imgficha = 'data:image/png;base64,'+foto_fichas;
@@ -228,7 +230,6 @@ function cargar_fichas(){
 		$("#efectos_colaterales_fichas").html(efectos_colaterales_fichas);
 		}else{$('#efectos_colaterales_display').css({'display':'none'});}
 		
-		
 		if (conservacion_fichas!=""){
 		$("#conservacion_fichas").html(conservacion_fichas);
 		}else{$('#conservacion_display').css({'display':'none'});}
@@ -255,10 +256,12 @@ function cargar_fichas(){
 			
 		if (tabla_laboratorios!=""){
 		$("#tabla_laboratorios").html(tabla_laboratorios);
+		$("#nombre_laboratorios").html(nombre_laboratorios);
 		}else{$('#fabricado_por_display').css({'display':'none'});}
 			
 		if (tabla_distribuidores!=""){
 		$("#tabla_distribuidores").html(tabla_distribuidores);
+		$("#nombre_distribuidores").html(nombre_distribuidores);
 		}else{$('#distribuido_por_display').css({'display':'none'});}
 		
 		if (tabla_composicion!=""){
