@@ -1,4 +1,3 @@
-
 var base_url = 'http://186.4.203.42:4000/Vademano/webservices/';
 var pag_service = 'SincronizacionService.php?jsoncallback=?' ;
 
@@ -22,16 +21,18 @@ function registrar(id)
 		db.transaction(function (tx) {
 			 tx.executeSql("DELETE FROM usuarios;");
 			});
-		
-		$.each(x, function(i, j) {			
-			   db.transaction(function (tx) {				  
-				   tx.executeSql(queryIns,
-						   [j.estado,j.nombres,j.apellidos,j.usuario,j.celular,j.telefono],
-						   function (tx, res) {/*alert('usuario registrado'); window.location.href = "index.html";*/},
-						   function (e) {alert("ERROR: " + e.message);});
-				 
-			   });
-			  });
+		if(x[0].nombres == 1 || x[0].apellidos==1)
+			{}else{
+			$.each(x, function(i, j) {			
+				   db.transaction(function (tx) {				  
+					   tx.executeSql(queryIns,
+							   [j.estado,j.nombres,j.apellidos,j.usuario,j.celular,j.telefono],
+							   function (tx, res) {/*alert('usuario registrado'); window.location.href = "index.html";*/},
+							   function (e) {alert("ERROR: " + e.message);});
+					 
+				   });
+				  });
+			}
 	});
 }
 
