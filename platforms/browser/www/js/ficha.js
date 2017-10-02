@@ -1,4 +1,4 @@
-var base_url = 'http://186.4.203.42:4000/Vademano/webservices/';
+var base_url = 'http://192.168.10.125:4000/Vademano/webservices/';
 
 var pag_service = 'FichaService.php?jsoncallback=?' ;
 
@@ -27,7 +27,7 @@ function init_pag(tx)
 function traeFichas()
 {
 	
-	var queryIns = 'INSERT INTO fichas_service(id_fichas, nombre_fichas, encabezado_tabla_fichas, farmacocinetica_fichas, accion_terapeutica_fichas, clasificacion_farmacologica_fichas, forma_terapeutica_fichas, indicaciones_uso_fichas, interacciones_fichas, contraindicaciones_fichas, periodo_retiro_fichas, advertencias_fichas, presentacion_fichas, registro_sanitario_fichas, id_fichas_fotos, consultas_fichas, buscador, mecanismo_accion_fichas, efectos_colaterales_fichas, conservacion_fichas, ingredientes_fichas, tipo_alimento_fichas, encabezado_dosificacion_fichas, tipo_ficha, tabla_formas_administracion, tabla_laboratorios, tabla_distribuidores, tabla_composicion, tabla_dosificacion, foto_fichas_fotos, nombre_laboratorios, nombre_distribuidores) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+	var queryIns = 'INSERT INTO fichas_service(id_fichas, nombre_fichas, encabezado_tabla_fichas, farmacocinetica_fichas, accion_terapeutica_fichas, clasificacion_farmacologica_fichas, forma_terapeutica_fichas, indicaciones_uso_fichas, interacciones_fichas, contraindicaciones_fichas, periodo_retiro_fichas, advertencias_fichas, presentacion_fichas, registro_sanitario_fichas, id_fichas_fotos, consultas_fichas, buscador, mecanismo_accion_fichas, efectos_colaterales_fichas, conservacion_fichas, ingredientes_fichas, tipo_alimento_fichas, encabezado_dosificacion_fichas, tipo_ficha, tabla_formas_administracion, tabla_laboratorios, tabla_distribuidores, tabla_composicion, tabla_dosificacion, nombre_laboratorios, nombre_distribuidores, foto_fichas_fotos) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
 	 
 	$.getJSON( base_url+pag_service, { action:'consulta'})
 	.done(function(x) {
@@ -68,7 +68,7 @@ function traeImagenEspecies()
 	var queryIns = 'INSERT INTO foto_especies(id_fichas_especies,id_fichas,id_especies,nombre_especies,logo_especies) VALUES (?,?,?,?,?)';
 	var datosUsuario ='especies';	
 
-	archivoValidacion = "http://186.4.203.42:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
+	archivoValidacion = "http://192.168.10.125:4000/Vademano/webservices/FichaImgService.php?jsoncallback=?"
 
  	$.getJSON( archivoValidacion, { imagen:datosUsuario })
 	.done(function(x) {
