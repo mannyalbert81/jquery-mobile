@@ -39,7 +39,7 @@ function init_pag()
 			});
 		}else{
 			
-			alert("Debes tener internet en tu celular para registralo.");
+			alert("Debes tener internet en tu celular para registralo en nuestro sistema.");
 		}
 	
 }
@@ -103,7 +103,7 @@ function scan()
                 			                				window.location.href = "Bienvenida.html";
                 									   
                 									  },
-                											   function (e) {alert("ERROR: " + e.message);});
+                											   function (e) {alert("El usuario no esta registrado en nuestro sistema o esta inactivo: " + e.message);});
                 								   });
                 						  });
                 					});
@@ -116,7 +116,7 @@ function scan()
                 			
                 	}else{
                 		
-                		alert("No se leer el cordigo Qr.");
+                		alert("No se pudo leer el cordigo Qr.");
                 	}
                 }
             }

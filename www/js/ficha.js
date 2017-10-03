@@ -43,7 +43,7 @@ function checkConnection() {
     		 
     		 traeFichas();
     		 traeImagenEspecies();
-    		 verificarusuario;
+    		 verificarusuario();
     		 alert("Datos Actualizados Correctamente");
     		 cont_real=0;
 			 $("#count_fichas_nuevas").html(cont_real);
@@ -100,15 +100,69 @@ function check_actualizacion() {
 function verificarusuario(){
 	
 	db.transaction(function(transaction) {
-		transaction.executeSql('SELECT * FROM usuarios WHERE 1=1 ', [], function (tx, results) {
+		transaction.executeSql('SELECT * FROM usuarios WHERE 1=1', [], function (tx, results) {
 		var len_usuarios = results.rows.length, i;
-		var id_usuarios=0;
+		var id_usuario=0;
 		
 		for (i=0; i<=len_usuarios-1; i++) {
 			id_usuario = results.rows.item(i).id_usuario;
 		}
-	
-		alert(id_usuario);
+		
+		if(id_usuario > 0){
+			 archivoValidacion = "http://186.4.203.42:4000/Vademano/webservices/SincronizacionUsuarioInactivoService.php?jsoncallback=?"
+				   var queryIns = 'INSERT INTO usuarios(id_usuario, nombres_usuario, apellidos_usuario , usuario_usuario , celular_usuario , telefono_usuario, nombre_estado ) VALUES (?,?,?,?,?,?,?)';
+					 
+					$.getJSON( archivoValidacion, { id_usuario:id_usuario})
+					.done(function(x) {
+						console.log(x);
+						db.transaction(function (tx) {
+							 tx.executeSql("DELETE FROM usuarios;");
+							});
+						
+							$.each(x, function(i, j) {			
+								   db.transaction(function (tx) {				  
+								   tx.executeSql(queryIns,
+										   [j.id_usuario,j.nombres_usuario,j.apellidos_usuario,j.usuario_usuario,j.celular_usuario,j.telefono_usuario,j.nombre_estado],
+									 function (tx, res) {
+										   
+									   db.transaction(function(transaction) {
+											transaction.executeSql('SELECT * FROM usuarios WHERE 1=1', [], function (tx, results) {
+											var len_usuarios1 = results.rows.length, i;
+											var id_usuario1=0;
+											var estado='';
+											
+											for (i=0; i<=len_usuarios1 - 1; i++) {
+												id_usuario1 = results.rows.item(i).id_usuario;
+												estado = results.rows.item(i).nombre_estado;
+											}
+											
+											if(id_usuario1>0){
+												
+												if(estado=='ACTIVO'){
+													
+												}else{
+													
+													window.location.href = "UsuarioInactivo.html";
+												}
+												
+											}else{
+												
+												window.location.href = "index1.html";
+											}
+											
+											}, null);
+											
+										});
+											
+									  },
+											   function (e) {alert("ERROR: " + e.message);});
+								   });
+						  });
+					});
+			
+		}
+		
+		
 		}, null);
 		
 	});
