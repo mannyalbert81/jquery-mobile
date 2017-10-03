@@ -19,8 +19,10 @@ var online;
 
 
 function checkConnection() {
-        var networkState = navigator.network.connection.type;
-        var states = {};
+        
+	var networkState = navigator.network.connection.type;
+    var states = {};
+    
     states[Connection.UNKNOWN]  = '1';  //Conexión desconocida;
     states[Connection.ETHERNET] = '1';  //Conexión ethernet;
     states[Connection.WIFI]     = '1';  //Conexión WiFi';
@@ -33,7 +35,7 @@ function checkConnection() {
    
      if (online=='1'){
     	
-    	 verificarusuario();
+    	 verificarusuario_internet();
     	 
      }else{
     	 
@@ -112,6 +114,9 @@ function verificarusuario_internet(){
 						  });
 					});
 			
+		}else{
+			
+			window.location.href = "index1.html";
 		}
 		
 		

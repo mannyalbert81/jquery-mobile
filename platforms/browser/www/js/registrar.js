@@ -1,5 +1,5 @@
 
-$(document).on("ready",ini);
+$(document).on("ready",init_pag);
 
 function ini()
 {
@@ -31,7 +31,7 @@ function init_pag()
 
 		if(online=='1'){
 			
-			traeFichas();
+			 traeFichas();
  			 traeImagenEspecies();
  			 
 			$(document).on('click', '#btn-scanner', function(){

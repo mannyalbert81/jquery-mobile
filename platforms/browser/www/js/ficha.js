@@ -160,6 +160,9 @@ function verificarusuario(){
 						  });
 					});
 			
+		}else{
+			
+			window.location.href = "index1.html";
 		}
 		
 		
