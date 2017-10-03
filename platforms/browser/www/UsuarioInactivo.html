@@ -27,14 +27,12 @@
     	<br>
 		<h3 align="center" size=3 style="color:#010a01; font-family: Times New Roman;  width:100%;"><strong> Usuario Inactivo </strong></h3>
 		<br>
-		<h5  style= "text-align:justify;" >Lo sentimos este usario se encuentra desactivado, para mayor información comuniquese con nosotros a los siguientes números telefonicos (+59)2 436 4566 - (+59)3 987 968 467 o envie un correo a <a href="info@vademano.com">info@vademano.com</a>
+		<h5  style= "text-align:justify;" >Lo sentimos este usuario se encuentra desactivado, para mayor información comuniquese con nosotros a los siguientes números telefonicos (+59)2 436 4566 - (+59)3 987 968 467 o envie un correo a <a href="info@vademano.com">info@vademano.com</a>
 		</h5>
             </div>
-            <div style="margin-top: 0%" data-role="main" class="ui-content">
+             <div style="margin-top: 0%" data-role="main" class="ui-content">
                 <p>
-
-                    <a href="index.html" data-icon="delete" data-iconpos="top" ><button>Iniciar Sesión</button></a>
-
+                    <a data-icon="delete" data-iconpos="top" ><button id="close">Salir</button></a>
                 </p>
             </div>
    </div>
@@ -46,5 +44,7 @@
 
  
 </body>
-
+<script type="text/javascript">
+$('#close').click(function(){navigator.app.exitApp();})
+</script>
 </html>
