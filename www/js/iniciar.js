@@ -1,34 +1,19 @@
-$(document).on("ready",ini);
+$(document).on("ready",checkConnection);
 
-function ini()
-{
-	
-}
 
 document.addEventListener("deviceready", onDeviceReady, false);
 var db = window.openDatabase("vade.db", "1.0", "MY DB", 200000); 
 
 function onDeviceReady() 
 {
+	$(document).on('click', '#btn_iniciar', function(){
 	
-	fileTransfer.onprogress = function(progressEvent){
-        var total = progressEvent.total;
-        var avanc = progressEvent.loaded;
-
-        var perce = Math.round( (avanc / total) * 100);
-        $("#cargando").html("Cargando Información: "+perce+"%");
-       
-        db.transaction(init_pag, errorCB, successCB);
-    }
-   
-   
+		db.transaction(checkConnection, errorCB, successCB);
 	
+	});
 }
 
-function init_pag(tx)
-{	
-	checkConnection();
-}
+
 
 var online;
 
@@ -48,9 +33,7 @@ function checkConnection() {
    
      if (online=='1'){
     	
-    	 verificarusuario_internet();
-    	 
-    	
+    	 verificarusuario();
     	 
      }else{
     	 
