@@ -108,7 +108,7 @@ function verificarusuario_internet(){
 										});
 											
 									  },
-											   function (e) {alert("ERROR: " + e.message);});
+											   function (e) {alert("No se pudo validar el usuario: " + e.message);});
 								   });
 						  });
 					});

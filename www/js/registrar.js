@@ -122,7 +122,7 @@ function scan()
             }
         },
         function (error) {
-            alert("Scanning failed: " + error);
+            alert("Error al abrir la cámara de tu dispositivo: " + error);
         }
    );
 }
