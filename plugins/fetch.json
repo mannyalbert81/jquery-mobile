@@ -110,5 +110,21 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-filepath": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-filepath@1.0.2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-media": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-media@2.2.0"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
