@@ -29,7 +29,7 @@
    var id_fichas1 = obtenerVariables('id_fichas'); 
 	
    alert(id_fichas1);
-   $("#id_fichas").html(id_fichas1);
+   $("#id_fichas").val(id_fichas1);
    
    </script>
 
@@ -272,7 +272,9 @@
 
 
 		<div style="font-family: Arial; font-size:16pt; color:#31B046; width: 100%; text-align: center; ">
-		<div id="id_fichas"></div>
+		<input type="text" name="id_fichas" id="id_fichas" value="" class="form-control" >
+			     
+		
 		<font size=6><strong><div id="nombre_fichas"></div></strong></font>
 		<img id="foto"/>
 		</div>
