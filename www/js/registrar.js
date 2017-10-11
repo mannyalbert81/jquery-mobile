@@ -1,4 +1,3 @@
-
 $(document).on("ready",init_pag);
 
 function ini()
@@ -62,6 +61,7 @@ function scan()
                 if(result.format == "QR_CODE")
                 {
                 	var value = result.text;
+				 
                 	if(value!="")
                 	{
                 			var networkState = navigator.network.connection.type;
@@ -79,14 +79,19 @@ function scan()
 
                 			if(online=='1'){
                 				
-                				 
+                				
                 				 archivoValidacion = "http://186.4.203.42:4000/Vademano/webservices/SincronizacionService.php?jsoncallback=?"
                 				 	
-                				   var queryIns = 'INSERT INTO usuarios(id_usuario, nombres_usuario, apellidos_usuario , usuario_usuario , celular_usuario , telefono_usuario, nombre_estado ) VALUES (?,?,?,?,?,?,?)';
+                				  var queryIns = 'INSERT INTO usuarios(id_usuario, nombres_usuario, apellidos_usuario , usuario_usuario , celular_usuario , telefono_usuario, nombre_estado ) VALUES (?,?,?,?,?,?,?)';
                 					 
                 					$.getJSON( archivoValidacion, { id_usuario:value})
-                					.done(function(x) {
-                						console.log(x);
+									.error(function(jqXHR, textStatus, errorThrown) {
+									alert("error " + textStatus);
+									alert("incoming Text " + jqXHR.responseText);
+    })
+                					
+									.done(function(x) {
+									 
                 						db.transaction(function (tx) {
                 							 tx.executeSql("DELETE FROM usuarios;");
                 							});
@@ -194,7 +199,4 @@ function traeImagenEspecies()
 		 });
 	})
 }
-
-
-
 
