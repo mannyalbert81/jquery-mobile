@@ -12,16 +12,16 @@
 	<script src="js/main_menu.js"></script>
 	<script src="cordova.js"></script>
 
- <style type="text/css">
+<style type="text/css">
   .boton_personalizado{
     text-decoration: none;
-    padding: 6px;
+    padding: 10px;
     font-weight: 600;
     font-size: 20px;
-    color: #ffffff;
-    background-color: #1883ba;
+    color: #1883ba;
+    background-color: #ffffff;
     border-radius: 6px;
-    border: 2px solid #0016b0;
+    border: 2px solid #FFBF00;
   }
   .boton_personalizado:hover{
     color: #1883ba;
@@ -32,7 +32,7 @@
 input[type=text] {
     width: 250px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 2px solid #FFBF00;
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
@@ -50,9 +50,9 @@ input[type=text]:focus {
 </style>
  
  </head> 	
- <body>
+ <body style="background-color:#FFFFFF;>
  
-	<div data-role="page" id="index" >
+	<div data-role="page" id="index"  style="background-color:#FFFFFF;">
 	<div role="main" class="ui-content">
  <header>
     	<span id="button-menu" class="fa fa-bars"></span>
@@ -73,7 +73,10 @@ input[type=text]:focus {
 						<li><a href="http://vademano.masoft.net/">Sitio Web</a></li>
 					</ul>
 				</li>
+			
 				<li><a id="btn_actualizar" ><span class="fa fa-refresh fa-spin icon-menu"></span>Fichas por Actualizar <span class="badge" id="count_fichas_nuevas"></span></a></li>
+					<li><a id="close"><span class="fa fa-times icon-menu"></span>Salir</a></li>
+			
 		</ul>
 		</nav>
 	 </header>
@@ -94,12 +97,13 @@ input[type=text]:focus {
 			      <span class="input-group-btn">
 			      <br>
 			      
-			      <a class="boton_personalizado" role="presentation"  id="btn_buscar" data-role="button" class="btn btn-primary" class="active" href="#"><i class="fa fa-search" aria-hidden="true"></i>	</a>
+			      <a class="boton_personalizado" role="presentation"  id="btn_buscar" data-role="button" class="btn btn-primary" style="color:#FFBF00" class="active" href="#" ><i class="fa fa-search" aria-hidden="true"></i>	</a>
 		     		
 			       </span>
 			    </div>
 			  </div>
 			</div>
+			<br>
 			<br>
 		<div class="row" style="text-align: center;"  >
 	     <div class="col-xs-5 col-md-5">
@@ -111,8 +115,8 @@ input[type=text]:focus {
 			  	<div class="input-group">
 	
 		 	  		<ul class="nav nav-pills" role="tablist" >
-					 <a class="boton_personalizado" role="presentation"  id="btn_pro" class="active" href="#">Productos <span class="badge" id="countprod"></span></a>
-		     		 <a class="boton_personalizado" role="presentation"  id="btn_ali" class="active" href="#">Alimentos <span class="badge" id="countali"></span></a>
+					 <a class="boton_personalizado" role="presentation"  id="btn_pro" class="active" href="#" style="color:#FFBF00" >Productos<span class="badge" id="countprod"></span></a>
+		     		 <a class="boton_personalizado" role="presentation"  id="btn_ali" class="active" href="#" style="color:#FFBF00" >Alimentos <span class="badge" id="countali"></span></a>
                    
                    </ul>
                    <br>
@@ -127,9 +131,15 @@ input[type=text]:focus {
     		<div align="center"	id="tabla_prod" class="col-lg-12 col-md-12 col-xs-12"></div>
     	 	<div id="tabla_ali"  class="col-lg-12 col-md-12 col-xs-12"></div>
     </div>
-     </div>
-  
+    
 <script type="text/javascript" src="js/ficha.js"></script>
 <script type="text/javascript" src="js/buscador.js"></script>
+     <div style="  position: relative;">
+  		<img src="img/pie_app.png" width="100%" height="225" vspace="2"/>
+  </div>  
+ <script type="text/javascript">
+$('#close').click(function(){navigator.app.exitApp();})
+</script> 
 </body>
+
 </html>

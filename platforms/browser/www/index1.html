@@ -16,11 +16,27 @@
 	    <script src="js/registrar.js"></script>
        	<script src="js/main_menu.js"></script>
        	
+       	<style type="text/css">
+  .boton_personalizado{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #1883ba;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 2px solid #FFBF00;
+  }
+  .boton_personalizado:hover{
+    color: #1883ba;
+    background-color: #ffffff;
+  }
+</style>
  </head>
 <body>
 <!-- index -->
 
-	<div data-role="page" id="index">
+	<div data-role="page" id="index" style="background-color:#FFFFFF;">
 	<div role="main" class="ui-content" >
     	<div style="margin-top: 30%" align="center" >
     	<img  src="img/logo_vademano.png" class="zoom" vspace="2" /> 
@@ -36,13 +52,17 @@
 <h5  style= "text-align:justify;" >Si ya estas afiliado en nuestro sistema y cuentas con un codigo Qr pulse en iniciar sesión
 		</h5>
               </div>
-               <div style="margin-top: 0%" data-role="main" class="ui-content">
-                <p>
-                    <a id="btn-scanner" data-icon="delete" data-iconpos="top" ><button>Iniciar Sesión</button></a>
+           
+                <div style="margin-top: 0%" align="center" >
+  
+               <p >
+                    <a class="boton_personalizado" id="btn-scanner" style="color:#FFBF00">Iniciar Sesión</a>
+						
                 </p>
-            </div>
+    </div>
    </div>
     </div>
+      
 <!-- /index -->
 
 </body>
