@@ -17,7 +17,7 @@
 
 <body >
 <!-- sincronizar -->
-    <div data-role="page" id="sincronizar">
+    <div data-role="page" id="sincronizar" style="background-color:#FFFFFF;">
    <header>
     	<span id="button-menu" class="fa fa-bars"></span>
         <nav class="navegacion">
@@ -34,7 +34,8 @@
 						<li><a href="http://vademano.masoft.net/">Sitio Web</a></li>
 					</ul>
 				</li>
-				
+				 <li><a id="close"><span class="fa fa-times icon-menu"></span>Salir</a></li>
+			
 			</ul>
 		</nav>
 	 </header>
@@ -47,16 +48,23 @@
     	<br>
 		<h3 align="center" size=3 style="color:#010a01; font-family: Times New Roman;  width:100%;"><strong> Bienvenido a Vademano </strong></h3>
 		<br>
-		<h6  style="text-align:justify;">Somos un equipo de trabajo comprometido en PROMOVER SU NEGOCIO AGROPECUARIO como página de contacto y donde usted y su empresa pueden promover e informar sus productos y servicios generando un beneficio entre la oferta y la demanda, a nuestros clientes. Queremos ser facilitadores de negocios, con Actitud positiva, Disfrutamos de lo que hacemos y permanecemos en una permanente búsqueda de oportunidades para usted , trabajamos en equipo con actitud de servicio integrado y organizado, que comienza con la evaluación de sus necesidades de promoción empresarial y concluye en la satisfacción de sus requerimientos, nuestros profesionales exponen su información en las mejores condiciones de presentación e imagen corporativa, ingenieros de sistemas y representantes de ventas permanentemente mantienen con amabilidad, oportunidad y eficiencia, el servicio de promoción empresarial en nuestro portal.
-		</h6>
+		<h4  style="text-align:justify;">Somos un equipo de trabajo comprometido en PROMOVER SU NEGOCIO AGROPECUARIO como página de contacto y donde usted y su empresa pueden promover e informar sus productos y servicios generando un beneficio entre la oferta y la demanda, a nuestros clientes.
+		</h4>
 		
             </div>
+            <footer style="  position: relative;">
+  		<img src="img/pie_app.png" width="100%" height="209" vspace="2"/>
+  </footer>  
        
 </div>
 <!-- /sincronizar -->
 
- 
+<script type="text/javascript">
+$('#close').click(function(){navigator.app.exitApp();})
+</script> 
 </body>
+
+
 <script type="text/javascript">
 $('#btn-registrar').click(function(){window.location.href = "buscador1.html";})
 </script>
