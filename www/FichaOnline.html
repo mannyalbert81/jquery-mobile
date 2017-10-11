@@ -12,6 +12,27 @@
 	<script src="js/cordova.js"></script>
    
 
+   <script type="text/javascript">
+   
+
+	function obtenerVariables(name){
+       var regexS = "[\\?&]"+name+"=([^&#]*)";
+       var regex = new RegExp ( regexS );
+       var tmpURL = window.location.href;
+       var results = regex.exec(tmpURL);
+       if( results == null )
+       return"indefinido";
+       else
+       return results[1];
+     }
+   
+   var id_fichas1 = obtenerVariables('id_fichas'); 
+	
+   alert(id_fichas1);
+   $("#id_fichas").html(id_fichas1);
+   
+   </script>
+
 
     <script >
 	$(document).ready(function(){
@@ -243,7 +264,7 @@
 	  <div align="center" style="margin-top:80px;">
     	<img  src="img/logo_vademano.png" class="zoom" vspace="5" /> 
     	</div>
-    	 <form action=" method=" target="_blank" enctype="multipart/form-data" class="col-lg-12">
+    	 <form  class="col-lg-12">
     	
     	 
   		  	<div class="col-lg-12 col-md-12 division" style="-webkit-box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.69); border-radius: 24px 24px 24px 24px; margin-top: 20px; ">
@@ -251,6 +272,7 @@
 
 
 		<div style="font-family: Arial; font-size:16pt; color:#31B046; width: 100%; text-align: center; ">
+		<div id="id_fichas"></div>
 		<font size=6><strong><div id="nombre_fichas"></div></strong></font>
 		<img id="foto"/>
 		</div>

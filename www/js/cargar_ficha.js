@@ -18,20 +18,6 @@ function onDeviceReady()
 function cargar_fichas(){
 	
 	
-	function obtenerVariables(name){
-        var regexS = "[\\?&]"+name+"=([^&#]*)";
-        var regex = new RegExp ( regexS );
-        var tmpURL = window.location.href;
-        var results = regex.exec(tmpURL);
-        if( results == null )
-        return"indefinido";
-        else
-        return results[1];
-      }
-    
-    var id_fichas1 = obtenerVariables('id_fichas'); 
-	
-    alert(id_fichas1);
 	
 /*
 	var param = document.location.href; 
@@ -55,8 +41,17 @@ function cargar_fichas(){
 */
 
 	//var id_fichas1 = $_GET("id_fichas");
+    var id_fichas1=$("#id_fichas").val();
+    	
     
-
+    if(id_fichas1>0){
+    	
+    	alert(id_fichas1);
+    }else{
+    	
+    	alert("No llega Id");
+    }
+    
 	db.transaction(function(transaction){
 		transaction.executeSql('SELECT logo_especies FROM foto_especies  WHERE 1=1 AND id_fichas = ?', [id_fichas1], function (tx, results) {
 			var len_foto1 = results.rows.length, i;
