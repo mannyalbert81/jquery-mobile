@@ -52,6 +52,8 @@ function cargar_fichas(){
 	var id_fichas1 = $_GET("id_fichas");
     
 
+	alert(id_fichas1);
+	
 	db.transaction(function(transaction) {
 		transaction.executeSql('SELECT logo_especies FROM foto_especies  WHERE 1=1 AND id_fichas = ?', [id_fichas1], function (tx, results) {
 			var len_foto1 = results.rows.length, i;
