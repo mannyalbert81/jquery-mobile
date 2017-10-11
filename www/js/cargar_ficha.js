@@ -1,41 +1,30 @@
+$(document).on("ready",ini);
 
-$(document).on("ready",cargar_fichas);
-
-
-
-document.addEventListener("deviceready", onDeviceReady, false);
-var db = window.openDatabase("vade.db", "1.0", "MY DB", 200000); 
-
-function onDeviceReady() 
+function ini()
 {
-		db.transaction(cargar_fichas, transaction_error, successCB);
-	
+	alert ('inicio');
 }
 
 
+var db;
 
 
-function cargar_fichas(){
-	
-	
-	function obtenerVariables(name){
-        var regexS = "[\\?&]"+name+"=([^&#]*)";
-        var regex = new RegExp ( regexS );
-        var tmpURL = window.location.href;
-        var results = regex.exec(tmpURL);
-        if( results == null )
-        return"indefinido";
-        else
-        return results[1];
-      }
-    
-    var id_fichas1 = obtenerVariables('id_fichas'); 
-	
-    alert(id_fichas1);
-	
-/*
-	var param = document.location.href; 
-	function $_GET(param)
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady(){
+ db = window.openDatabase("vade.db", "1.0", "MY DB", 200000); //will create database Dummy_DB or open it
+ 
+ 	db.transaction(cargar_fichas, transaction_error);
+ 	
+ 
+}
+
+
+function transaction_error(tx, error) {
+ alert("Database Error: " + error);
+}
+
+function $_GET(param)
 	{
 	url = document.URL;
 	url = String(url.match(/\?+.+/));
@@ -52,12 +41,25 @@ function cargar_fichas(){
 	x++;
 	}
 	}
-*/
 
-	//var id_fichas1 = $_GET("id_fichas");
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+
+function cargar_fichas(){
+
+	
+	var id_fichas1 = getQueryVariable("id_fichas");
     
 
-	db.transaction(function(transaction){
+	db.transaction(function(transaction) {
 		transaction.executeSql('SELECT logo_especies FROM foto_especies  WHERE 1=1 AND id_fichas = ?', [id_fichas1], function (tx, results) {
 			var len_foto1 = results.rows.length, i;
 			var foto1="";
@@ -128,7 +130,6 @@ function cargar_fichas(){
     var nombre_distribuidores="";
 	var i=0;
 	var len1 = results.rows.length, i;
-	
 	for (i=0; i<=len1-1; i++) {
 			
 		id_fichas 						= results.rows.item(i).id_fichas;
@@ -283,14 +284,4 @@ function cargar_fichas(){
 	});
 		
 
-	}
-
-
-
-    function transaction_error(tx, error) {
-	 alert("Database Error: " + error);
-	}
-
-
-	function successCB (){
 	}
