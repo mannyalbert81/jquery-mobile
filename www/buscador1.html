@@ -48,6 +48,23 @@ input[type=text]:focus {
     width: 100%;
 }
 </style>
+<style>
+#footer {
+	width: 100%;
+	height: 250px;
+	background: url('img/pie_app.png') no-repeat bottom center;
+	position: absolute;
+	bottom: 0;
+	clear: both;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	margin:0 auto;
+	
+
+</style>
+
+
  
  </head> 	
  <body style="background-color:#FFFFFF;>
@@ -63,6 +80,9 @@ input[type=text]:focus {
 				<!-- TITULAR -->
 				<li><a href="Bienvenida.html"><span class="fa fa-home icon-menu"></span>Inicio</a></li>
    		        <li><a href="buscador1.html"><span class="fa fa-folder icon-menu"></span>Vademécum</a></li>
+				
+			
+				<li><a id="btn_actualizar" ><span class="fa fa-refresh icon-menu"></span>Fichas por Actualizar <span class="badge" id="count_fichas_nuevas"></span></a></li>
 				<li class="item-submenu" menu="1">
 					<a href="#"><span class="fa fa-envelope icon-menu"></span>Contactos</a>
 					<ul class="submenu">
@@ -73,10 +93,8 @@ input[type=text]:focus {
 						<li><a href="http://vademano.masoft.net/">Sitio Web</a></li>
 					</ul>
 				</li>
-			
-				<li><a id="btn_actualizar" ><span class="fa fa-refresh fa-spin icon-menu"></span>Fichas por Actualizar <span class="badge" id="count_fichas_nuevas"></span></a></li>
-					<li><a id="close"><span class="fa fa-times icon-menu"></span>Salir</a></li>
-			
+					<li><a id="close"><span class="fa fa-times icon-menu" class="badge"></span>Salir</a></li>
+		
 		</ul>
 		</nav>
 	 </header>
@@ -134,12 +152,12 @@ input[type=text]:focus {
     
 <script type="text/javascript" src="js/ficha.js"></script>
 <script type="text/javascript" src="js/buscador.js"></script>
-     <footer style="  position: relative;">
-  		<img src="img/pie_app.png" width="100%" height="209" vspace="2"/>
-  </footer>  
+<br><br><br><br>
+   
  <script type="text/javascript">
 $('#close').click(function(){navigator.app.exitApp();})
-</script> 
+</script>
+<div id="footer"></div> 
 </body>
 
 </html>
