@@ -48,6 +48,9 @@ input[type=text]:focus {
     width: 100%;
 }
 </style>
+
+
+
  
  </head> 	
  <body style="background-color:#FFFFFF;>
@@ -63,6 +66,9 @@ input[type=text]:focus {
 				<!-- TITULAR -->
 				<li><a href="Bienvenida.html"><span class="fa fa-home icon-menu"></span>Inicio</a></li>
    		        <li><a href="buscador1.html"><span class="fa fa-folder icon-menu"></span>Vademécum</a></li>
+				
+			
+				<li><a id="btn_actualizar" ><span class="fa fa-refresh icon-menu"></span>Fichas por Actualizar <span class="badge" id="count_fichas_nuevas"></span></a></li>
 				<li class="item-submenu" menu="1">
 					<a href="#"><span class="fa fa-envelope icon-menu"></span>Contactos</a>
 					<ul class="submenu">
@@ -73,10 +79,8 @@ input[type=text]:focus {
 						<li><a href="http://vademano.masoft.net/">Sitio Web</a></li>
 					</ul>
 				</li>
-			
-				<li><a id="btn_actualizar" ><span class="fa fa-refresh fa-spin icon-menu"></span>Fichas por Actualizar <span class="badge" id="count_fichas_nuevas"></span></a></li>
-					<li><a id="close"><span class="fa fa-times icon-menu"></span>Salir</a></li>
-			
+					<li><a id="close"><span class="fa fa-times icon-menu" class="badge"></span>Salir</a></li>
+		
 		</ul>
 		</nav>
 	 </header>
@@ -115,8 +119,8 @@ input[type=text]:focus {
 			  	<div class="input-group">
 	
 		 	  		<ul class="nav nav-pills" role="tablist" >
-					 <a class="boton_personalizado" role="presentation"  id="btn_pro" class="active" href="#" style="color:#FFBF00" >Productos<span class="badge" id="countprod"></span></a>
-		     		 <a class="boton_personalizado" role="presentation"  id="btn_ali" class="active" href="#" style="color:#FFBF00" >Alimentos <span class="badge" id="countali"></span></a>
+					 <a class="boton_personalizado" role="presentation"  id="btn_pro" class="active" href="#" style="color:#FFBF00" >Productos <span class="badge" style="color:#030303" id="countprod"></span></a>
+		     		 <a class="boton_personalizado" role="presentation"  id="btn_ali" class="active" href="#" style="color:#FFBF00" >Alimentos <span class="badge" style="color:#030303" id="countali"></span></a>
                    
                    </ul>
                    <br>
@@ -125,23 +129,24 @@ input[type=text]:focus {
 			</div>
     	 	</div>
     	 	</div>
-    	 	
+ 
+    	
     	 	 
                    
     		<div align="center"	id="tabla_prod" class="col-lg-12 col-md-12 col-xs-12"></div>
     	 	<div id="tabla_ali"  class="col-lg-12 col-md-12 col-xs-12"></div>
     </div>
-    
+     
 <script type="text/javascript" src="js/ficha.js"></script>
 <script type="text/javascript" src="js/buscador.js"></script>
-
-     <footer style="  position: relative;">
-  		<img src="img/pie_app.png" width="100%" height="209" vspace="2"/>
-  </footer>  
-
+<br><br><br><br>
+   
  <script type="text/javascript">
 $('#close').click(function(){navigator.app.exitApp();})
-</script> 
+</script>
+	<div style="margin-top: 0%" align="center" >
+    	<img src="img/pie_app.png" width="100%" height="209" vspace="2"/>
+    </div>
 </body>
 
 </html>
