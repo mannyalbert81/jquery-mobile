@@ -1,4 +1,4 @@
-/*
+cordova.define("cordova-plugin-media-capture.MediaFile", function(require, exports, module) { /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -53,3 +53,5 @@ MediaFile.prototype.getFormatData = function(successCallback, errorCallback) {
 };
 
 module.exports = MediaFile;
+
+});

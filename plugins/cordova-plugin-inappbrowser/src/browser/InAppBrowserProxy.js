@@ -1,4 +1,4 @@
-/*
+cordova.define("cordova-plugin-inappbrowser.InAppBrowserProxy", function(require, exports, module) { /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -222,3 +222,5 @@ var IAB = {
 module.exports = IAB;
 
 require("cordova/exec/proxy").add("InAppBrowser", module.exports);
+
+});

@@ -1,4 +1,4 @@
-/*
+cordova.define("cordova-plugin-contacts.ContactError", function(require, exports, module) { /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -41,3 +41,5 @@ ContactError.OPERATION_CANCELLED_ERROR = 6;
 ContactError.PERMISSION_DENIED_ERROR = 20;
 
 module.exports = ContactError;
+
+});

@@ -1,4 +1,4 @@
-/*
+cordova.define("cordova-plugin-device-motion.AccelerometerProxy", function(require, exports, module) { /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -43,3 +43,5 @@ var Accelerometer = {
 
 module.exports = Accelerometer;
 require('cordova/exec/proxy').add('Accelerometer', Accelerometer);
+
+});

@@ -1,4 +1,4 @@
-function scan(success, error) {
+cordova.define("phonegap-plugin-barcodescanner.BarcodeScannerProxy", function(require, exports, module) { function scan(success, error) {
     var code = window.prompt("Enter barcode value (empty value will fire the error handler):");
     if(code) {
         var result = {
@@ -22,3 +22,4 @@ module.exports = {
 };
 
 require("cordova/exec/proxy").add("BarcodeScanner",module.exports);
+});

@@ -1,4 +1,4 @@
-/*
+cordova.define("cordova-plugin-device.DeviceProxy", function(require, exports, module) { /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -82,3 +82,5 @@ module.exports = {
 };
 
 require("cordova/exec/proxy").add("Device", module.exports);
+
+});
